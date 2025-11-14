@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '@data/siteConfig';
 import { cn } from '@utils/cn';
 
@@ -67,15 +68,40 @@ function Header() {
     }
   };
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMobileMenuOpen && !event.target.closest('nav')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMobileMenuOpen]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-white/80 backdrop-blur-lg shadow-md'
-          : 'bg-transparent'
-      )}
-    >
+    <>
+      <header
+        className={cn(
+          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+          isScrolled
+            ? 'bg-white/80 backdrop-blur-lg shadow-md'
+            : 'bg-transparent'
+        )}
+      >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
@@ -132,35 +158,78 @@ function Header() {
             )}
           </button>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-neutral-200 animate-slide-up">
-            <div className="flex flex-col space-y-4">
-              {siteConfig.navigation.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleNavigation(item.id)}
-                  className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200 text-left px-4 py-2 hover:bg-neutral-50 rounded-lg"
-                >
-                  {item.label}
-                </button>
-              ))}
-              {/* Our Team Link */}
-              <button
-                onClick={() => {
-                  navigate('/team');
-                  setIsMobileMenuOpen(false);
-                }}
-                className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200 text-left px-4 py-2 hover:bg-neutral-50 rounded-lg"
-              >
-                Our Team
-              </button>
-            </div>
-          </div>
-        )}
       </nav>
     </header>
+
+    {/* Mobile Menu Backdrop */}
+    <AnimatePresence>
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+    </AnimatePresence>
+
+    {/* Mobile Navigation Menu */}
+    <AnimatePresence>
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ x: '100%' }}
+          animate={{ x: 0 }}
+          exit={{ x: '100%' }}
+          transition={{ type: 'tween', duration: 0.3 }}
+          className="fixed top-0 right-0 bottom-0 w-[280px] bg-white shadow-2xl z-50 md:hidden"
+        >
+          {/* Mobile Menu Header */}
+          <div className="flex items-center justify-between p-4 border-b border-neutral-200">
+            <span className="text-lg font-bold text-neutral-800">Menu</span>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 text-neutral-700 hover:text-primary-600 transition-colors rounded-lg hover:bg-neutral-100"
+              aria-label="Close menu"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Items */}
+          <nav className="flex flex-col p-4 space-y-2">
+            {siteConfig.navigation.map((item, index) => (
+              <motion.button
+                key={item.id}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.05 }}
+                onClick={() => handleNavigation(item.id)}
+                className="text-neutral-700 hover:text-primary-600 font-medium transition-all duration-200 text-left px-4 py-3 hover:bg-primary-50 rounded-lg active:scale-95"
+              >
+                {item.label}
+              </motion.button>
+            ))}
+            {/* Our Team Link */}
+            <motion.button
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: siteConfig.navigation.length * 0.05 }}
+              onClick={() => {
+                navigate('/team');
+                setIsMobileMenuOpen(false);
+              }}
+              className="text-neutral-700 hover:text-primary-600 font-medium transition-all duration-200 text-left px-4 py-3 hover:bg-primary-50 rounded-lg active:scale-95"
+            >
+              Our Team
+            </motion.button>
+          </nav>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
   );
 }
 
