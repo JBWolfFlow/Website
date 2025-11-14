@@ -1,0 +1,30 @@
+# Security Policy for J&H Digital
+# https://securitytxt.org/
+
+Contact: mailto:security@jhdigital.com
+Contact: https://jhdigital.com/security-report
+Expires: 2025-12-31T23:59:59.000Z
+Encryption: https://jhdigital.com/pgp-key.txt
+Acknowledgments: https://jhdigital.com/security-acknowledgments
+Preferred-Languages: en
+Canonical: https://jhdigital.com/.well-known/security.txt
+Policy: https://jhdigital.com/security-policy
+
+# Reporting Security Vulnerabilities
+# 
+# If you discover a security vulnerability, please report it to us at:
+# security@jhdigital.com
+#
+# Please include:
+# - Description of the vulnerability
+# - Steps to reproduce
+# - Potential impact
+# - Any proof-of-concept code
+#
+# We will acknowledge receipt within 24 hours and provide a detailed
+# response within 72 hours.
+#
+# Please do not publicly disclose the vulnerability until we have had
+# a chance to address it.
+#
+# Thank you for helping keep J&H Digital secure!

@@ -1,0 +1,45 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Neural Network Flow Design -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Neural Network Flowing Lines -->
+  <g opacity="0.8">
+    <!-- Top Left Flow -->
+    <path d="M 40 60 Q 60 40, 80 50 T 100 60" stroke="url(#gradient1)" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M 45 65 Q 65 45, 85 55 T 105 65" stroke="url(#gradient1)" stroke-width="2" fill="none" opacity="0.5"/>
+    <path d="M 50 70 Q 70 50, 90 60 T 110 70" stroke="url(#gradient1)" stroke-width="2" fill="none" opacity="0.4"/>
+    
+    <!-- Top Right Flow -->
+    <path d="M 160 60 Q 140 40, 120 50 T 100 60" stroke="url(#gradient2)" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M 155 65 Q 135 45, 115 55 T 95 65" stroke="url(#gradient2)" stroke-width="2" fill="none" opacity="0.5"/>
+    <path d="M 150 70 Q 130 50, 110 60 T 90 70" stroke="url(#gradient2)" stroke-width="2" fill="none" opacity="0.4"/>
+    
+    <!-- Bottom Left Flow -->
+    <path d="M 40 140 Q 60 160, 80 150 T 100 140" stroke="url(#gradient1)" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M 45 135 Q 65 155, 85 145 T 105 135" stroke="url(#gradient1)" stroke-width="2" fill="none" opacity="0.5"/>
+    <path d="M 50 130 Q 70 150, 90 140 T 110 130" stroke="url(#gradient1)" stroke-width="2" fill="none" opacity="0.4"/>
+    
+    <!-- Bottom Right Flow -->
+    <path d="M 160 140 Q 140 160, 120 150 T 100 140" stroke="url(#gradient2)" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M 155 135 Q 135 155, 115 145 T 95 135" stroke="url(#gradient2)" stroke-width="2" fill="none" opacity="0.5"/>
+    <path d="M 150 130 Q 130 150, 110 140 T 90 130" stroke="url(#gradient2)" stroke-width="2" fill="none" opacity="0.4"/>
+  </g>
+  
+  <!-- Central "N" Letter -->
+  <text x="100" y="120" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="url(#gradient1)" text-anchor="middle">N</text>
+  
+  <!-- Connection Nodes -->
+  <circle cx="40" cy="60" r="4" fill="#8B5CF6" opacity="0.8"/>
+  <circle cx="160" cy="60" r="4" fill="#3B82F6" opacity="0.8"/>
+  <circle cx="40" cy="140" r="4" fill="#8B5CF6" opacity="0.8"/>
+  <circle cx="160" cy="140" r="4" fill="#3B82F6" opacity="0.8"/>
+</svg>
