@@ -162,29 +162,44 @@ function Header() {
     </header>
 
     {/* Mobile Menu Backdrop */}
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.15, ease: 'easeOut' }}
           className="fixed inset-0 bg-black/50 z-40 md:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
           aria-hidden="true"
+          style={{
+            WebkitBackfaceVisibility: 'hidden',
+            backfaceVisibility: 'hidden'
+          }}
         />
       )}
     </AnimatePresence>
 
     {/* Mobile Navigation Menu */}
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isMobileMenuOpen && (
         <motion.div
           initial={{ x: '100%' }}
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
-          transition={{ type: 'tween', duration: 0.3 }}
+          transition={{
+            type: 'spring',
+            damping: 30,
+            stiffness: 300,
+            mass: 0.8
+          }}
           className="fixed top-0 right-0 bottom-0 w-[280px] bg-white shadow-2xl z-50 md:hidden"
+          style={{
+            transform: 'translateZ(0)',
+            WebkitBackfaceVisibility: 'hidden',
+            backfaceVisibility: 'hidden',
+            willChange: 'transform'
+          }}
         >
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between p-4 border-b border-neutral-200">
@@ -198,33 +213,27 @@ function Header() {
             </button>
           </div>
 
-          {/* Mobile Menu Items */}
+          {/* Mobile Menu Items - No individual animations for better performance */}
           <nav className="flex flex-col p-4 space-y-2">
-            {siteConfig.navigation.map((item, index) => (
-              <motion.button
+            {siteConfig.navigation.map((item) => (
+              <button
                 key={item.id}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.05 }}
                 onClick={() => handleNavigation(item.id)}
-                className="text-neutral-700 hover:text-primary-600 font-medium transition-all duration-200 text-left px-4 py-3 hover:bg-primary-50 rounded-lg active:scale-95"
+                className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-150 text-left px-4 py-3 hover:bg-primary-50 rounded-lg active:scale-95"
               >
                 {item.label}
-              </motion.button>
+              </button>
             ))}
             {/* Our Team Link */}
-            <motion.button
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: siteConfig.navigation.length * 0.05 }}
+            <button
               onClick={() => {
                 navigate('/team');
                 setIsMobileMenuOpen(false);
               }}
-              className="text-neutral-700 hover:text-primary-600 font-medium transition-all duration-200 text-left px-4 py-3 hover:bg-primary-50 rounded-lg active:scale-95"
+              className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-150 text-left px-4 py-3 hover:bg-primary-50 rounded-lg active:scale-95"
             >
               Our Team
-            </motion.button>
+            </button>
           </nav>
         </motion.div>
       )}
