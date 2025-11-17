@@ -86,22 +86,28 @@ const Hero = () => {
   const headline = "We Build Digital Experiences That Command Attention.";
   const words = headline.split(' ');
 
-  // Disable animations if user prefers reduced motion or on mobile for performance
+  // Disable complex animations on mobile, but keep simple fade
   const shouldAnimate = !prefersReducedMotion && !isMobile;
   
+  // Always provide animation props to ensure content renders
   const animationProps = shouldAnimate
     ? {
         initial: "hidden",
         animate: "visible",
         variants: containerVariants,
       }
-    : {};
+    : {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        transition: { duration: 0.5 }
+      };
 
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50"
       aria-label="Hero section"
+      style={{ maxWidth: '100vw' }}
     >
       {/* Animated Gradient Background - Disabled on mobile for performance */}
       <div className="absolute inset-0 overflow-hidden">
@@ -177,12 +183,12 @@ const Hero = () => {
 
       {/* Content Container */}
       <motion.div
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         {...animationProps}
       >
         {/* Headline - Simplified animation on mobile */}
         <motion.h1
-          className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 break-words"
           variants={headlineVariants}
         >
           {prefersReducedMotion || isMobile ? (

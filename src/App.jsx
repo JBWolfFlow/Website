@@ -88,7 +88,7 @@ function App() {
   return (
     <HelmetProvider>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col overflow-x-hidden">
         {/* Header with navigation */}
         <Header />
         
