@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import Button from '../ui/Button';
@@ -6,9 +7,22 @@ import Button from '../ui/Button';
  * Hero Section Component
  * Features professional animations, animated gradient background,
  * and full accessibility support
+ * Optimized for mobile performance
  */
 const Hero = () => {
   const prefersReducedMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile device for performance optimization
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Smooth scroll to section
   const scrollToSection = (sectionId) => {
@@ -72,14 +86,16 @@ const Hero = () => {
   const headline = "We Build Digital Experiences That Command Attention.";
   const words = headline.split(' ');
 
-  // Disable animations if user prefers reduced motion
-  const animationProps = prefersReducedMotion
-    ? {}
-    : {
+  // Disable animations if user prefers reduced motion or on mobile for performance
+  const shouldAnimate = !prefersReducedMotion && !isMobile;
+  
+  const animationProps = shouldAnimate
+    ? {
         initial: "hidden",
         animate: "visible",
         variants: containerVariants,
-      };
+      }
+    : {};
 
   return (
     <section
@@ -87,35 +103,37 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50"
       aria-label="Hero section"
     >
-      {/* Animated Gradient Background */}
+      {/* Animated Gradient Background - Disabled on mobile for performance */}
       <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute inset-0 opacity-30"
-          animate={
-            prefersReducedMotion
-              ? {}
-              : {
-                  background: [
-                    'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
-                    'radial-gradient(circle at 80% 50%, rgba(236, 72, 153, 0.15) 0%, transparent 50%)',
-                    'radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)',
-                    'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
-                  ],
-                }
-          }
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
-          style={{
-            background:
-              'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
-          }}
-        />
+        {!isMobile && (
+          <motion.div
+            className="absolute inset-0 opacity-30"
+            animate={
+              prefersReducedMotion
+                ? {}
+                : {
+                    background: [
+                      'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
+                      'radial-gradient(circle at 80% 50%, rgba(236, 72, 153, 0.15) 0%, transparent 50%)',
+                      'radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)',
+                      'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
+                    ],
+                  }
+            }
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+            style={{
+              background:
+                'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
+            }}
+          />
+        )}
 
-        {/* Floating Geometric Shapes */}
-        {!prefersReducedMotion && (
+        {/* Floating Geometric Shapes - Reduced on mobile */}
+        {!prefersReducedMotion && !isMobile && (
           <>
             <motion.div
               className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"
@@ -143,20 +161,17 @@ const Hero = () => {
                 ease: 'easeInOut',
               }}
             />
-            <motion.div
-              className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"
-              animate={{
-                x: [0, 50, 0],
-                y: [0, -100, 0],
-                scale: [1, 1.15, 1],
-              }}
-              transition={{
-                duration: 22,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
           </>
+        )}
+        
+        {/* Static gradient for mobile */}
+        {isMobile && (
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              background: 'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
+            }}
+          />
         )}
       </div>
 
@@ -165,14 +180,26 @@ const Hero = () => {
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
         {...animationProps}
       >
-        {/* Headline with Word Stagger Animation */}
+        {/* Headline - Simplified animation on mobile */}
         <motion.h1
           className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6"
           variants={headlineVariants}
         >
-          {prefersReducedMotion ? (
-            headline
+          {prefersReducedMotion || isMobile ? (
+            // Simple fade-in for mobile and reduced motion
+            <>
+              {words.map((word, index) => (
+                <span key={index} className="inline-block mr-3 md:mr-4">
+                  {word === 'Command' ? (
+                    <span className="text-accent-500">{word}</span>
+                  ) : (
+                    word
+                  )}
+                </span>
+              ))}
+            </>
           ) : (
+            // Stagger animation for desktop only
             <>
               {words.map((word, index) => (
                 <motion.span
@@ -241,8 +268,8 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        {/* Scroll Indicator */}
-        {!prefersReducedMotion && (
+        {/* Scroll Indicator - Disabled on mobile */}
+        {!prefersReducedMotion && !isMobile && (
           <motion.div
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
             initial={{ opacity: 0, y: -10 }}

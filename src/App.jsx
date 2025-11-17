@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/layout/Header';
@@ -12,12 +12,15 @@ import Contact from './components/sections/Contact';
 import SEO from './components/common/SEO';
 import ScrollProgress from './components/common/ScrollProgress';
 import BackToTop from './components/common/BackToTop';
-import Team from './components/pages/Team';
-import Careers from './components/pages/Careers';
-import PrivacyPolicy from './components/legal/PrivacyPolicy';
-import TermsOfService from './components/legal/TermsOfService';
-import CookiePolicy from './components/legal/CookiePolicy';
+import Loading from './components/common/Loading';
 import useSmoothScroll from './hooks/useSmoothScroll';
+
+// Lazy load page components for better performance
+const Team = lazy(() => import('./components/pages/Team'));
+const Careers = lazy(() => import('./components/pages/Careers'));
+const PrivacyPolicy = lazy(() => import('./components/legal/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./components/legal/TermsOfService'));
+const CookiePolicy = lazy(() => import('./components/legal/CookiePolicy'));
 
 /**
  * HomePage Component
@@ -89,15 +92,17 @@ function App() {
         {/* Header with navigation */}
         <Header />
         
-        {/* Routes */}
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<TermsOfService />} />
-          <Route path="/cookies" element={<CookiePolicy />} />
-        </Routes>
+        {/* Routes with Suspense for lazy-loaded components */}
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/cookies" element={<CookiePolicy />} />
+          </Routes>
+        </Suspense>
 
         {/* Footer */}
         <Footer />

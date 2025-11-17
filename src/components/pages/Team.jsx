@@ -37,17 +37,19 @@ const Team = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={member.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 md:hover:-translate-y-2 md:transition-all"
                 style={{
                   animationDelay: `${index * 100}ms`
                 }}
               >
                 {/* Member Image */}
                 <div className="relative h-80 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                  {/* Actual image */}
+                  {/* Actual image with lazy loading */}
                   <img
                     src={member.image}
                     alt={member.name}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover object-top"
                     onLoad={(e) => {
                       // Hide placeholder when image loads
@@ -106,12 +108,12 @@ const Team = () => {
                     <p className="text-gray-600 text-sm">{member.education}</p>
                   </div>
 
-                  {/* Social Links */}
+                  {/* Social Links - Optimized transitions */}
                   <div className="flex items-center gap-3">
                     {member.email && (
                       <a
                         href={`mailto:${member.email}`}
-                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all duration-300"
+                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
                         aria-label={`Email ${member.name}`}
                         title="Email"
                       >
@@ -123,7 +125,7 @@ const Team = () => {
                         href={member.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all duration-300"
+                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
                         aria-label={`${member.name} on LinkedIn`}
                         title="LinkedIn"
                       >
@@ -135,7 +137,7 @@ const Team = () => {
                         href={member.twitter}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all duration-300"
+                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
                         aria-label={`${member.name} on Twitter`}
                         title="Twitter"
                       >
@@ -147,7 +149,7 @@ const Team = () => {
                         href={member.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all duration-300"
+                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
                         aria-label={`${member.name} on GitHub`}
                         title="GitHub"
                       >
@@ -159,7 +161,7 @@ const Team = () => {
                         href={member.dribbble}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-all duration-300"
+                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
                         aria-label={`${member.name} on Dribbble`}
                         title="Dribbble"
                       >
@@ -182,7 +184,7 @@ const Team = () => {
             </p>
             <a
               href="/careers"
-              className="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
+              className="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 md:hover:scale-105 md:transition-all"
             >
               View Open Positions
             </a>
