@@ -181,77 +181,33 @@ const Hero = () => {
         )}
       </div>
 
-      {/* Content Container */}
-      <motion.div
-        className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-        {...animationProps}
-      >
-        {/* Headline - Simplified animation on mobile */}
-        <motion.h1
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 break-words"
-          {...(isMobile ? {} : { variants: headlineVariants })}
-        >
-          {prefersReducedMotion || isMobile ? (
-            // Simple fade-in for mobile and reduced motion
-            <>
-              {words.map((word, index) => (
-                <span key={index} className="inline-block mr-3 md:mr-4">
-                  {word === 'Command' ? (
-                    <span className="text-accent-500">{word}</span>
-                  ) : (
-                    word
-                  )}
-                </span>
-              ))}
-            </>
-          ) : (
-            // Stagger animation for desktop only
-            <>
-              {words.map((word, index) => (
-                <motion.span
-                  key={index}
-                  className="inline-block mr-3 md:mr-4"
-                  variants={{
-                    hidden: { opacity: 0, y: 20 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: {
-                        duration: 0.8,
-                        delay: index * 0.1,
-                        ease: [0.22, 1, 0.36, 1],
-                      },
-                    },
-                  }}
-                >
-                  {word === 'Command' ? (
-                    <span className="text-accent-500">{word}</span>
-                  ) : (
-                    word
-                  )}
-                </motion.span>
-              ))}
-            </>
-          )}
-        </motion.h1>
+      {/* Content Container - Separate rendering for mobile vs desktop */}
+      {isMobile || prefersReducedMotion ? (
+        // MOBILE & REDUCED MOTION: Pure HTML/CSS (no Framer Motion)
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+          {/* Headline */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 break-words">
+            {words.map((word, index) => (
+              <span key={index} className="inline-block mr-3 md:mr-4">
+                {word === 'Command' ? (
+                  <span className="text-accent-500">{word}</span>
+                ) : (
+                  word
+                )}
+              </span>
+            ))}
+          </h1>
 
-        {/* Subheadline */}
-        <motion.p
-          className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto"
-          {...(isMobile ? {} : { variants: subtextVariants })}
-        >
-          Intelligent systems. Scalable apps.{' '}
-          <span className="font-semibold text-gray-900">
-            Code engineered for tomorrow.
-          </span>
-        </motion.p>
+          {/* Subheadline */}
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto">
+            Intelligent systems. Scalable apps.{' '}
+            <span className="font-semibold text-gray-900">
+              Code engineered for tomorrow.
+            </span>
+          </p>
 
-        {/* CTA Buttons */}
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          {...(isMobile ? {} : { variants: containerVariants })}
-        >
-          <motion.div {...(isMobile ? {} : { variants: ctaVariants, custom: 0 })}>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               variant="primary"
               size="lg"
@@ -260,9 +216,7 @@ const Hero = () => {
             >
               Get a Quote
             </Button>
-          </motion.div>
 
-          <motion.div {...(isMobile ? {} : { variants: ctaVariants, custom: 1 })}>
             <Button
               variant="secondary"
               size="lg"
@@ -271,36 +225,114 @@ const Hero = () => {
             >
               View Our Work
             </Button>
+          </div>
+        </div>
+      ) : (
+        // DESKTOP: Fancy Framer Motion animations
+        <motion.div
+          className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
+        >
+          {/* Headline with word stagger */}
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 break-words"
+            variants={headlineVariants}
+          >
+            {words.map((word, index) => (
+              <motion.span
+                key={index}
+                className="inline-block mr-3 md:mr-4"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.8,
+                      delay: index * 0.1,
+                      ease: [0.22, 1, 0.36, 1],
+                    },
+                  },
+                }}
+              >
+                {word === 'Command' ? (
+                  <span className="text-accent-500">{word}</span>
+                ) : (
+                  word
+                )}
+              </motion.span>
+            ))}
+          </motion.h1>
+
+          {/* Subheadline */}
+          <motion.p
+            className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto"
+            variants={subtextVariants}
+          >
+            Intelligent systems. Scalable apps.{' '}
+            <span className="font-semibold text-gray-900">
+              Code engineered for tomorrow.
+            </span>
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            variants={containerVariants}
+          >
+            <motion.div variants={ctaVariants} custom={0}>
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => scrollToSection('contact')}
+                aria-label="Get a quote for your project"
+              >
+                Get a Quote
+              </Button>
+            </motion.div>
+
+            <motion.div variants={ctaVariants} custom={1}>
+              <Button
+                variant="secondary"
+                size="lg"
+                onClick={() => scrollToSection('portfolio')}
+                aria-label="View our portfolio of work"
+              >
+                View Our Work
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
+      )}
 
-        {/* Scroll Indicator - Disabled on mobile */}
-        {!prefersReducedMotion && !isMobile && (
-          <motion.div
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1,
-              delay: 1.5,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
+      {/* Scroll Indicator - Disabled on mobile */}
+      {!prefersReducedMotion && !isMobile && (
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            delay: 1.5,
+            repeat: Infinity,
+            repeatType: 'reverse',
+          }}
+        >
+          <svg
+            className="w-6 h-6 text-gray-400"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
           >
-            <svg
-              className="w-6 h-6 text-gray-400"
-              fill="none"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </motion.div>
-        )}
-      </motion.div>
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </motion.div>
+      )}
     </section>
   );
 };
