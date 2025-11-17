@@ -228,9 +228,9 @@ const Contact = () => {
     <section
       ref={ref}
       id="contact"
-      className="py-20 bg-white"
+      className="py-20 bg-white overflow-hidden"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-full">
         {/* Section Header */}
         <div
           className={`text-center mb-16 transition-all duration-700 ${
@@ -247,8 +247,8 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-5 gap-12">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="grid md:grid-cols-5 gap-6 md:gap-12">
             {/* Contact Form - 60% width on desktop */}
             <div
               className={`md:col-span-3 transition-all duration-700 delay-200 ${
@@ -257,11 +257,11 @@ const Contact = () => {
                   : 'opacity-0 translate-y-8'
               }`}
             >
-              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+              <form onSubmit={handleSubmit} className="space-y-6 w-full" noValidate>
                 {/* Security Badge */}
-                <div className="flex items-center gap-2 text-sm text-gray-600 bg-green-50 border border-green-200 rounded-lg p-3">
-                  <Shield className="text-green-600" size={18} />
-                  <span>This form is protected by advanced security measures</span>
+                <div className="flex items-center gap-2 text-sm text-gray-600 bg-green-50 border border-green-200 rounded-lg p-3 max-w-full">
+                  <Shield className="text-green-600 flex-shrink-0" size={18} />
+                  <span className="break-words">This form is protected by advanced security measures</span>
                 </div>
                 
                 {/* Honeypot Field (hidden from users, visible to bots) */}
@@ -433,11 +433,11 @@ const Contact = () => {
                       <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
                         <Icon className="text-primary-600" size={24} />
                       </div>
-                      <div>
+                      <div className="min-w-0 flex-1">
                         <h3 className="font-semibold text-gray-900 mb-1">
                           {info.label}
                         </h3>
-                        <p className="text-gray-600">{info.value}</p>
+                        <p className="text-gray-600 break-all text-sm">{info.value}</p>
                       </div>
                     </div>
                   </div>

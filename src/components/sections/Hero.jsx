@@ -189,7 +189,7 @@ const Hero = () => {
         {/* Headline - Simplified animation on mobile */}
         <motion.h1
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 break-words"
-          variants={headlineVariants}
+          {...(isMobile ? {} : { variants: headlineVariants })}
         >
           {prefersReducedMotion || isMobile ? (
             // Simple fade-in for mobile and reduced motion
@@ -238,7 +238,7 @@ const Hero = () => {
         {/* Subheadline */}
         <motion.p
           className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto"
-          variants={subtextVariants}
+          {...(isMobile ? {} : { variants: subtextVariants })}
         >
           Intelligent systems. Scalable apps.{' '}
           <span className="font-semibold text-gray-900">
@@ -249,9 +249,9 @@ const Hero = () => {
         {/* CTA Buttons */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          variants={containerVariants}
+          {...(isMobile ? {} : { variants: containerVariants })}
         >
-          <motion.div variants={ctaVariants} custom={0}>
+          <motion.div {...(isMobile ? {} : { variants: ctaVariants, custom: 0 })}>
             <Button
               variant="primary"
               size="lg"
@@ -262,7 +262,7 @@ const Hero = () => {
             </Button>
           </motion.div>
 
-          <motion.div variants={ctaVariants} custom={1}>
+          <motion.div {...(isMobile ? {} : { variants: ctaVariants, custom: 1 })}>
             <Button
               variant="secondary"
               size="lg"
