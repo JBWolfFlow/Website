@@ -300,7 +300,7 @@ const TermsOfService = () => {
               <p className="text-gray-700"><strong>NeuroForge Technologies</strong></p>
               <p className="text-gray-700">Email: <a href="mailto:legal@neuroforgetechnologies.net" className="text-primary-600 hover:text-primary-700 underline">legal@neuroforgetechnologies.net</a></p>
               <p className="text-gray-700">General Inquiries: <a href="mailto:contact@neuroforgetechnologies.net" className="text-primary-600 hover:text-primary-700 underline">contact@neuroforgetechnologies.net</a></p>
-              <p className="text-gray-700">Phone: +1 (555) 123-4567</p>
+              <p className="text-gray-700">Phone: <a href="tel:+12068760437" className="text-primary-600 hover:text-primary-700 underline">(206) 876-0437</a></p>
               <p className="text-gray-700">Location: Temple, TX, United States</p>
             </div>
           </section>
