@@ -1,4 +1,4 @@
-# J&H Digital Website - Maintenance Guide
+# NeuroForge Technologies Website - Maintenance Guide
 
 **Version:** 1.0.0  
 **Last Updated:** 2024-01-24  
@@ -263,7 +263,7 @@ find public/images -type f -size +500k
 npm install -g lighthouse
 
 # Run audit
-lighthouse https://jhdigital.com --view
+lighthouse https://neuroforgetechnologies.net --view
 
 # Or use Chrome DevTools
 # Open DevTools → Lighthouse → Generate Report
@@ -338,7 +338,7 @@ npx vite-bundle-visualizer
 
 ### Security Overview
 
-Regular security maintenance is critical for protecting the J&H Digital website from threats and vulnerabilities.
+Regular security maintenance is critical for protecting the NeuroForge Technologies website from threats and vulnerabilities.
 
 ### Daily Security Tasks
 
@@ -361,10 +361,10 @@ npm audit
 
 ```bash
 # Verify site is accessible
-curl -I https://jhdigital.com
+curl -I https://neuroforgetechnologies.net
 
 # Check response time
-time curl -s https://jhdigital.com > /dev/null
+time curl -s https://neuroforgetechnologies.net > /dev/null
 ```
 
 **Monitoring tools:**
@@ -413,7 +413,7 @@ npm run preview
 
 ```bash
 # Test security headers
-curl -I https://jhdigital.com
+curl -I https://neuroforgetechnologies.net
 
 # Or use online tools:
 # - https://securityheaders.com
@@ -496,7 +496,7 @@ git push origin main
 **Review security headers:**
 ```bash
 # Check current headers
-curl -I https://jhdigital.com
+curl -I https://neuroforgetechnologies.net
 
 # Compare with security policy
 # See: SECURITY_HARDENING_GUIDE.md
@@ -524,10 +524,10 @@ diff .env.example .env.production.example
 
 ```bash
 # Check certificate expiration
-echo | openssl s_client -servername jhdigital.com -connect jhdigital.com:443 2>/dev/null | openssl x509 -noout -dates
+echo | openssl s_client -servername neuroforgetechnologies.net -connect neuroforgetechnologies.net:443 2>/dev/null | openssl x509 -noout -dates
 
 # Check certificate details
-echo | openssl s_client -servername jhdigital.com -connect jhdigital.com:443 2>/dev/null | openssl x509 -noout -text
+echo | openssl s_client -servername neuroforgetechnologies.net -connect neuroforgetechnologies.net:443 2>/dev/null | openssl x509 -noout -text
 
 # Test SSL configuration
 # Use: https://www.ssllabs.com/ssltest/
@@ -581,13 +581,13 @@ npm audit
 npm outdated
 
 # Review security headers
-curl -I https://jhdigital.com
+curl -I https://neuroforgetechnologies.net
 
 # Test SSL configuration
 # https://www.ssllabs.com/ssltest/
 
 # Run Lighthouse audit
-lighthouse https://jhdigital.com --view
+lighthouse https://neuroforgetechnologies.net --view
 
 # Check for exposed secrets
 # Use: GitGuardian, TruffleHog
@@ -888,8 +888,8 @@ Sentry.init({
 ### Emergency Contacts
 
 **Security Team:**
-- Security Lead: security@jhdigital.com
-- Technical Lead: tech@jhdigital.com
+- Security Lead: security@neuroforgetechnologies.net
+- Technical Lead: tech@neuroforgetechnologies.net
 - Emergency: [Emergency contact]
 
 **External Support:**
@@ -986,7 +986,7 @@ git push origin feature/new-feature
 **Weekly:**
 ```bash
 # Create local backup
-git clone https://github.com/jhdigital/website.git backup-$(date +%Y%m%d)
+git clone https://github.com/JBWolfFlow/website.git backup-$(date +%Y%m%d)
 
 # Or create archive
 git archive --format=zip --output=backup-$(date +%Y%m%d).zip HEAD
@@ -1020,10 +1020,10 @@ cp -r src/data/ backups/data-$(date +%Y%m%d)/
 **Daily (automated):**
 ```bash
 # MongoDB backup
-mongodump --uri="mongodb://localhost/jhdigital" --out=backup-$(date +%Y%m%d)
+mongodump --uri="mongodb://localhost/neuroforgetechnologies" --out=backup-$(date +%Y%m%d)
 
 # PostgreSQL backup
-pg_dump jhdigital > backup-$(date +%Y%m%d).sql
+pg_dump neuroforgetechnologies > backup-$(date +%Y%m%d).sql
 ```
 
 ### Backup Verification
@@ -1083,7 +1083,7 @@ npm run preview
 **Diagnosis:**
 ```bash
 # Run Lighthouse audit
-lighthouse https://jhdigital.com
+lighthouse https://neuroforgetechnologies.net
 
 # Check bundle size
 npm run build
@@ -1433,9 +1433,9 @@ _______________________________________
 
 ### Internal Team
 
-- **Lead Developer**: dev@jhdigital.com
-- **DevOps**: ops@jhdigital.com
-- **Support**: support@jhdigital.com
+- **Lead Developer**: dev@neuroforgetechnologies.net
+- **DevOps**: ops@neuroforgetechnologies.net
+- **Support**: support@neuroforgetechnologies.net
 
 ### External Services
 
@@ -1453,12 +1453,12 @@ Regular maintenance is essential for:
 - User experience
 - Business continuity
 
-Follow this guide to keep the J&H Digital website running smoothly and efficiently.
+Follow this guide to keep the NeuroForge Technologies website running smoothly and efficiently.
 
 ---
 
 **Last Updated:** 2024-01-24  
 **Version:** 1.0.0  
-**Maintained by:** J&H Digital Operations Team
+**Maintained by:** NeuroForge Technologies Operations Team
 
 **Next Review Date:** 2024-04-24

@@ -191,7 +191,7 @@ ServerSignature Off
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteCond %{HTTP_REFERER} !^$
-  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?jhdigital\.com [NC]
+  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?neuroforgetechnologies\.net [NC]
   RewriteRule \.(jpg|jpeg|png|gif|webp|svg)$ - [F,L]
 </IfModule>
 

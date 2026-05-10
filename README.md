@@ -1,4 +1,4 @@
-# J&H Digital Website
+# NeuroForge Technologies Website
 
 > Professional web development agency website built with modern technologies and best practices.
 
@@ -28,7 +28,7 @@
 
 ## 🎯 Overview
 
-J&H Digital's website is a modern, high-performance single-page application showcasing web development services. Built with React and Vite, it features smooth animations, responsive design, and optimal performance across all devices.
+NeuroForge Technologies's website is a modern, high-performance single-page application showcasing web development services. Built with React and Vite, it features smooth animations, responsive design, and optimal performance across all devices.
 
 ### Key Highlights
 
@@ -111,7 +111,7 @@ J&H Digital's website is a modern, high-performance single-page application show
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/jhdigital/website.git
+git clone https://github.com/JBWolfFlow/website.git
 cd website
 ```
 
@@ -155,7 +155,7 @@ See [`CUSTOMIZATION_GUIDE.md`](CUSTOMIZATION_GUIDE.md) for detailed instructions
 ## 📁 Project Structure
 
 ```
-jh-digital-website/
+neuroforge-technologies-website/
 ├── public/                      # Static assets
 │   ├── manifest.json           # PWA manifest
 │   ├── robots.txt              # SEO robots file
@@ -322,7 +322,7 @@ Comprehensive documentation is available for all aspects of the project:
 
 #### Vercel (Recommended)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/jhdigital/website)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/JBWolfFlow/website)
 
 1. Click the button above
 2. Connect your GitHub account
@@ -331,7 +331,7 @@ Comprehensive documentation is available for all aspects of the project:
 
 #### Netlify
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jhdigital/website)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/JBWolfFlow/website)
 
 1. Click the button above
 2. Connect your GitHub account
@@ -454,11 +454,11 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## 📄 License
 
-Copyright © 2024 J&H Digital. All rights reserved.
+Copyright © 2024 NeuroForge Technologies. All rights reserved.
 
 This project is proprietary software. Unauthorized copying, modification, distribution, or use of this software, via any medium, is strictly prohibited.
 
-For licensing inquiries, contact: hello@jhdigital.com
+For licensing inquiries, contact: hello@neuroforgetechnologies.net
 
 ---
 
@@ -467,9 +467,9 @@ For licensing inquiries, contact: hello@jhdigital.com
 ### Getting Help
 
 - **Documentation**: Check the guides in this repository
-- **Issues**: [GitHub Issues](https://github.com/jhdigital/website/issues)
-- **Email**: dev@jhdigital.com
-- **Website**: [jhdigital.com](https://jhdigital.com)
+- **Issues**: [GitHub Issues](https://github.com/JBWolfFlow/website/issues)
+- **Email**: dev@neuroforgetechnologies.net
+- **Website**: [neuroforgetechnologies.net](https://neuroforgetechnologies.net)
 
 ### Reporting Bugs
 
@@ -561,14 +561,12 @@ Design inspiration from:
 
 ## 📞 Contact
 
-**J&H Digital**
+**NeuroForge Technologies**
 
-- **Website**: [jhdigital.com](https://jhdigital.com)
-- **Email**: hello@jhdigital.com
-- **Phone**: +1 (555) 123-4567
-- **Twitter**: [@jhdigital](https://twitter.com/jhdigital)
-- **LinkedIn**: [J&H Digital](https://linkedin.com/company/jhdigital)
-- **GitHub**: [@jhdigital](https://github.com/jhdigital)
+- **Website**: [neuroforgetechnologies.net](https://neuroforgetechnologies.net)
+- **Email**: contact@neuroforgetechnologies.net
+- **Phone**: (206) 876-0437
+- **GitHub**: [@JBWolfFlow](https://github.com/JBWolfFlow)
 
 ---
 
@@ -585,8 +583,8 @@ If you find this project helpful, please consider:
 
 <div align="center">
 
-**Built with ❤️ by J&H Digital**
+**Built with ❤️ by NeuroForge Technologies**
 
-[Website](https://jhdigital.com) • [Documentation](ARCHITECTURE.md) • [Support](mailto:hello@jhdigital.com)
+[Website](https://neuroforgetechnologies.net) • [Documentation](ARCHITECTURE.md) • [Support](mailto:hello@neuroforgetechnologies.net)
 
 </div>

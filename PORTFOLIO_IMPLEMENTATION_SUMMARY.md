@@ -224,4 +224,4 @@ src/
 - ✅ Easy to replace placeholders with real content
 
 ## Conclusion
-The Portfolio section is complete and production-ready. It showcases J&H Digital's work with a visually stunning, interactive gallery that maintains professional quality across all devices and user preferences. The implementation is flexible, accessible, and easy to enhance with real project data.
+The Portfolio section is complete and production-ready. It showcases NeuroForge Technologies's work with a visually stunning, interactive gallery that maintains professional quality across all devices and user preferences. The implementation is flexible, accessible, and easy to enhance with real project data.

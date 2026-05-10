@@ -1,7 +1,7 @@
 # SEO & Performance Implementation Summary
 
 ## Overview
-This document summarizes the comprehensive SEO optimization, smooth scroll enhancements, and performance improvements implemented for the J&H Digital website.
+This document summarizes the comprehensive SEO optimization, smooth scroll enhancements, and performance improvements implemented for the NeuroForge Technologies website.
 
 ## ✅ Completed Components
 
@@ -19,10 +19,10 @@ This document summarizes the comprehensive SEO optimization, smooth scroll enhan
 **Usage:**
 ```jsx
 <SEO 
-  title="J&H Digital | Premium Web Development"
+  title="NeuroForge Technologies | Premium Web Development"
   description="Professional web development services"
   ogImage="/og-image.jpg"
-  url="https://jhdigital.com"
+  url="https://neuroforgetechnologies.net"
 />
 ```
 
@@ -330,9 +330,9 @@ function NewPage() {
   return (
     <>
       <SEO
-        title="New Page | J&H Digital"
+        title="New Page | NeuroForge Technologies"
         description="Description of the new page"
-        url="https://jhdigital.com/new-page"
+        url="https://neuroforgetechnologies.net/new-page"
       />
       {/* Page content */}
     </>

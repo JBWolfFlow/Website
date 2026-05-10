@@ -14,7 +14,6 @@ const SEO = ({
   url = 'https://neuroforgetechnologies.net',
   type = 'website',
   author = 'NeuroForge Technologies',
-  twitterHandle = '@neuroforgetech',
 }) => {
   // Structured data for Organization
   const organizationData = {
@@ -37,9 +36,7 @@ const SEO = ({
       contactOption: 'TollFree',
     },
     sameAs: [
-      'https://twitter.com/neuroforgetech',
-      'https://linkedin.com/company/neuroforgetechnologies',
-      'https://github.com/neuroforgetech',
+      'https://github.com/JBWolfFlow',
     ],
     address: {
       '@type': 'PostalAddress',
@@ -191,9 +188,7 @@ const SEO = ({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${url}${ogImage}`} />
-      <meta name="twitter:creator" content={twitterHandle} />
-      <meta name="twitter:site" content={twitterHandle} />
-      
+
       {/* Additional SEO Meta Tags */}
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow" />
@@ -236,7 +231,6 @@ SEO.propTypes = {
   url: PropTypes.string,
   type: PropTypes.string,
   author: PropTypes.string,
-  twitterHandle: PropTypes.string,
 };
 
 export default SEO;

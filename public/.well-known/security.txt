@@ -1,19 +1,19 @@
-# Security Policy for J&H Digital
+# Security Policy for NeuroForge Technologies
 # https://securitytxt.org/
 
-Contact: mailto:security@jhdigital.com
-Contact: https://jhdigital.com/security-report
-Expires: 2025-12-31T23:59:59.000Z
-Encryption: https://jhdigital.com/pgp-key.txt
-Acknowledgments: https://jhdigital.com/security-acknowledgments
+Contact: mailto:security@neuroforgetechnologies.net
+Contact: https://neuroforgetechnologies.net/security-report
+Expires: 2026-12-31T23:59:59.000Z
+Encryption: https://neuroforgetechnologies.net/pgp-key.txt
+Acknowledgments: https://neuroforgetechnologies.net/security-acknowledgments
 Preferred-Languages: en
-Canonical: https://jhdigital.com/.well-known/security.txt
-Policy: https://jhdigital.com/security-policy
+Canonical: https://neuroforgetechnologies.net/.well-known/security.txt
+Policy: https://neuroforgetechnologies.net/security-policy
 
 # Reporting Security Vulnerabilities
-# 
+#
 # If you discover a security vulnerability, please report it to us at:
-# security@jhdigital.com
+# security@neuroforgetechnologies.net
 #
 # Please include:
 # - Description of the vulnerability
@@ -27,4 +27,4 @@ Policy: https://jhdigital.com/security-policy
 # Please do not publicly disclose the vulnerability until we have had
 # a chance to address it.
 #
-# Thank you for helping keep J&H Digital secure!
+# Thank you for helping keep NeuroForge Technologies secure!

@@ -1,8 +1,8 @@
-# J&H Digital Website - Deployment Guide
+# NeuroForge Technologies Website - Deployment Guide
 
 **Version:** 1.0.0  
 **Last Updated:** 2024-01-24  
-**Maintainer:** J&H Digital Development Team
+**Maintainer:** NeuroForge Technologies Development Team
 
 ---
 
@@ -25,7 +25,7 @@
 
 ## Prerequisites
 
-Before deploying the J&H Digital website, ensure you have the following installed and configured:
+Before deploying the NeuroForge Technologies website, ensure you have the following installed and configured:
 
 ### Required Software
 
@@ -65,10 +65,10 @@ Depending on your chosen deployment platform:
 
 ```bash
 # Clone via HTTPS
-git clone https://github.com/jhdigital/website.git
+git clone https://github.com/JBWolfFlow/website.git
 
 # Or clone via SSH
-git clone git@github.com:jhdigital/website.git
+git clone git@github.com:JBWolfFlow/website.git
 
 # Navigate to project directory
 cd website
@@ -140,15 +140,13 @@ Create a `.env` file in the root directory with the following variables:
 
 ```bash
 # Site Configuration
-VITE_SITE_URL=https://jhdigital.com
-VITE_SITE_NAME=J&H Digital
-VITE_CONTACT_EMAIL=hello@jhdigital.com
+VITE_SITE_URL=https://neuroforgetechnologies.net
+VITE_SITE_NAME=NeuroForge Technologies
+VITE_CONTACT_EMAIL=hello@neuroforgetechnologies.net
 VITE_CONTACT_PHONE=+1-555-0123
 
 # Social Media
-VITE_TWITTER_HANDLE=jhdigital
-VITE_LINKEDIN_URL=https://linkedin.com/company/jhdigital
-VITE_GITHUB_URL=https://github.com/jhdigital
+VITE_GITHUB_URL=https://github.com/JBWolfFlow
 
 # Analytics (Optional)
 VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
@@ -289,7 +287,7 @@ vercel --prod
 #### Custom Domain Setup (Vercel)
 
 1. Go to Project Settings → Domains
-2. Add your custom domain (e.g., `jhdigital.com`)
+2. Add your custom domain (e.g., `neuroforgetechnologies.net`)
 3. Configure DNS records:
    ```
    Type: A
@@ -487,7 +485,7 @@ export default defineConfig({
 
 1. Add `CNAME` file to `public/` directory:
    ```
-   jhdigital.com
+   neuroforgetechnologies.net
    ```
 
 2. Configure DNS:
@@ -562,7 +560,7 @@ Create `.htaccess` in upload directory:
 ```nginx
 server {
     listen 80;
-    server_name jhdigital.com www.jhdigital.com;
+    server_name neuroforgetechnologies.net www.neuroforgetechnologies.net;
     root /var/www/html;
     index index.html;
 
@@ -636,7 +634,7 @@ After deploying, verify the following:
   npm install -g lighthouse
 
   # Run audit
-  lighthouse https://jhdigital.com --view
+  lighthouse https://neuroforgetechnologies.net --view
   ```
 
   **Target scores:**
@@ -661,11 +659,11 @@ After deploying, verify the following:
   - Verify title, description, OG tags
 
 - [ ] **Sitemap accessible**
-  - Visit `https://jhdigital.com/sitemap.xml`
+  - Visit `https://neuroforgetechnologies.net/sitemap.xml`
   - Verify all URLs listed
 
 - [ ] **Robots.txt configured**
-  - Visit `https://jhdigital.com/robots.txt`
+  - Visit `https://neuroforgetechnologies.net/robots.txt`
   - Verify allows crawling
 
 - [ ] **Submit to search engines**
@@ -699,7 +697,7 @@ After deploying, verify the following:
 
 ### Overview
 
-Security must be configured before deploying to production. This section covers essential security measures for the J&H Digital website.
+Security must be configured before deploying to production. This section covers essential security measures for the NeuroForge Technologies website.
 
 ### Pre-Deployment Security Checklist
 
@@ -760,7 +758,7 @@ Include [`nginx-security.conf`](nginx-security.conf:1) in your server block:
 ```nginx
 server {
     listen 443 ssl http2;
-    server_name jhdigital.com;
+    server_name neuroforgetechnologies.net;
     
     # Include security configuration
     include /path/to/nginx-security.conf;
@@ -823,7 +821,7 @@ HTTPS is essential for security. Most modern hosting platforms provide automatic
 sudo apt-get install certbot python3-certbot-apache
 
 # Get certificate
-sudo certbot --apache -d jhdigital.com -d www.jhdigital.com
+sudo certbot --apache -d neuroforgetechnologies.net -d www.neuroforgetechnologies.net
 
 # Auto-renewal (already configured)
 sudo certbot renew --dry-run
@@ -832,7 +830,7 @@ sudo certbot renew --dry-run
 **Verify HTTPS:**
 ```bash
 # Check SSL certificate
-openssl s_client -connect jhdigital.com:443 -servername jhdigital.com
+openssl s_client -connect neuroforgetechnologies.net:443 -servername neuroforgetechnologies.net
 
 # Test SSL configuration
 # Use: https://www.ssllabs.com/ssltest/
@@ -844,15 +842,13 @@ openssl s_client -connect jhdigital.com:443 -servername jhdigital.com
 
 ```bash
 # Required variables
-VITE_SITE_URL=https://jhdigital.com
-VITE_SITE_NAME=J&H Digital
-VITE_CONTACT_EMAIL=hello@jhdigital.com
+VITE_SITE_URL=https://neuroforgetechnologies.net
+VITE_SITE_NAME=NeuroForge Technologies
+VITE_CONTACT_EMAIL=hello@neuroforgetechnologies.net
 VITE_CONTACT_PHONE=+1-555-0123
 
 # Social media
-VITE_TWITTER_HANDLE=jhdigital
-VITE_LINKEDIN_URL=https://linkedin.com/company/jhdigital
-VITE_GITHUB_URL=https://github.com/jhdigital
+VITE_GITHUB_URL=https://github.com/JBWolfFlow
 
 # Security settings
 VITE_ENVIRONMENT=production
@@ -980,7 +976,7 @@ ls -lh dist/assets/
 
 ```bash
 # 1. Test security headers
-curl -I https://jhdigital.com
+curl -I https://neuroforgetechnologies.net
 
 # 2. Test SSL
 # Visit: https://www.ssllabs.com/ssltest/
@@ -992,7 +988,7 @@ curl -I https://jhdigital.com
 # Open browser console and check for violations
 
 # 5. Run Lighthouse audit
-lighthouse https://jhdigital.com --view
+lighthouse https://neuroforgetechnologies.net --view
 ```
 
 ### Security Incident Response
@@ -1024,8 +1020,8 @@ lighthouse https://jhdigital.com --view
    - Implement preventive measures
 
 **Emergency Contacts:**
-- Security Team: security@jhdigital.com
-- Technical Lead: tech@jhdigital.com
+- Security Team: security@neuroforgetechnologies.net
+- Technical Lead: tech@neuroforgetechnologies.net
 - Emergency: [Your emergency contact]
 
 ### Security Maintenance
@@ -1063,8 +1059,8 @@ lighthouse https://jhdigital.com --view
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse) - Performance & security
 
 **Support:**
-- Security Issues: security@jhdigital.com
-- Technical Support: support@jhdigital.com
+- Security Issues: security@neuroforgetechnologies.net
+- Technical Support: support@neuroforgetechnologies.net
 - Documentation: See [README.md](README.md:1)
 
 
@@ -1193,7 +1189,7 @@ git push --force origin main
 - [GTmetrix](https://gtmetrix.com)
 
 ### Support
-- **Email**: dev@jhdigital.com
+- **Email**: dev@neuroforgetechnologies.net
 - **Documentation**: See [`README.md`](README.md:1)
 - **Issues**: GitHub Issues
 
@@ -1201,4 +1197,4 @@ git push --force origin main
 
 **Last Updated:** 2024-01-24  
 **Version:** 1.0.0  
-**Maintained by:** J&H Digital Development Team
+**Maintained by:** NeuroForge Technologies Development Team

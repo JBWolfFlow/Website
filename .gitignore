@@ -18,6 +18,9 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+._*
+Thumbs.db
+desktop.ini
 *.suo
 *.ntvs*
 *.njsproj
@@ -32,3 +35,6 @@ dist-ssr
 # Build output
 build
 .cache
+
+# Claude Code session metadata
+.claude/

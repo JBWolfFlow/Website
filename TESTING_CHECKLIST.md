@@ -1,4 +1,4 @@
-# J&H Digital Website - Testing Checklist
+# NeuroForge Technologies Website - Testing Checklist
 
 **Version:** 1.0.0  
 **Last Updated:** 2024-01-24  
@@ -878,4 +878,4 @@ After deployment, verify:
 
 **Last Updated:** 2024-01-24  
 **Version:** 1.0.0  
-**Maintained by:** J&H Digital QA Team
+**Maintained by:** NeuroForge Technologies QA Team

@@ -1,7 +1,7 @@
 # About Section Implementation Summary
 
 ## Overview
-Successfully implemented a professional About section for J&H Digital with animated value proposition cards, scroll-triggered animations, and full responsive design.
+Successfully implemented a professional About section for NeuroForge Technologies with animated value proposition cards, scroll-triggered animations, and full responsive design.
 
 ## Components Created
 

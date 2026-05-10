@@ -1,4 +1,4 @@
-# J&H Digital Website - Quick Implementation Guide
+# NeuroForge Technologies Website - Quick Implementation Guide
 
 This guide provides a streamlined path to implement the architecture defined in [`ARCHITECTURE.md`](ARCHITECTURE.md).
 
@@ -10,8 +10,8 @@ This guide provides a streamlined path to implement the architecture defined in 
 
 ```bash
 # Create project
-npm create vite@latest jh-digital-website -- --template react
-cd jh-digital-website
+npm create vite@latest neuroforge-technologies-website -- --template react
+cd neuroforge-technologies-website
 
 # Install core dependencies
 npm install
@@ -123,16 +123,14 @@ Create these files in `src/data/`:
 ### 1. `siteConfig.js`
 ```javascript
 export const siteConfig = {
-  name: 'J&H Digital',
+  name: 'NeuroForge Technologies',
   tagline: 'Crafting Digital Excellence',
   description: 'Professional web development agency specializing in modern, high-performance websites',
-  url: 'https://jhdigital.com',
-  email: 'hello@jhdigital.com',
+  url: 'https://neuroforgetechnologies.net',
+  email: 'hello@neuroforgetechnologies.net',
   phone: '+1-XXX-XXX-XXXX',
   social: {
-    twitter: 'https://twitter.com/jhdigital',
-    linkedin: 'https://linkedin.com/company/jhdigital',
-    github: 'https://github.com/jhdigital'
+    github: 'https://github.com/JBWolfFlow'
   }
 };
 ```

@@ -8,18 +8,15 @@ export const siteConfig = {
   name: 'NeuroForge Technologies',
   tagline: 'Forging Intelligent Solutions for a Connected Future',
   description: 'At NeuroForge Technologies, we merge artificial intelligence, modern software engineering, and human creativity to build systems that think, learn, and evolve. Every line of code we write is crafted with precision and purpose — shaping the future of digital innovation one solution at a time.',
-  url: 'https://jhdigital.com',
-  
+  url: 'https://neuroforgetechnologies.net',
+
   // Contact information
   email: 'contact@neuroforgetechnologies.net',
   phone: '(206) 876-0437',
-  
+
   // Social media links
   social: {
-    twitter: 'https://twitter.com/jhdigital',
-    linkedin: 'https://linkedin.com/company/jhdigital',
-    github: 'https://github.com/jhdigital',
-    instagram: 'https://instagram.com/jhdigital',
+    github: 'https://github.com/JBWolfFlow',
   },
   
   // Navigation sections
