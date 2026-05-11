@@ -240,10 +240,10 @@ const Contact = () => {
           }`}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Let's Build Something Amazing
+            Let&apos;s Build Your Future
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Get in touch to discuss your project
+            Tell us what you&apos;re building. We&apos;ll tell you how we&apos;d build it.
           </p>
         </div>
 
