@@ -28,7 +28,7 @@ const Team = () => {
               Meet Our Team
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The brilliant minds behind NeuroForge Technologies. A diverse team of engineers, AI specialists, and designers united by a passion for innovation and excellence.
+              The engineers building NeuroForge Technologies&apos; product portfolio. Small and senior by design — every product owned end-to-end by an experienced engineer.
             </p>
           </div>
 

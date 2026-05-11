@@ -83,9 +83,9 @@ const Hero = () => {
   };
 
   // Split headline into words for stagger animation
-  const headline = "Two founders. Three products. Two markets.";
+  const headline = "We build production software.";
   const words = headline.split(' ');
-  const accentWord = 'products.';
+  const accentWord = 'production';
 
   // Disable complex animations on mobile, but keep simple fade
   const shouldAnimate = !prefersReducedMotion && !isMobile;
@@ -201,9 +201,9 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto">
-            NeuroForge Technologies is a founder-led engineering company shipping production software in{' '}
+            NeuroForge Technologies engineers software across desktop, web, and mobile. We build our own product portfolio and partner with companies that need{' '}
             <span className="font-semibold text-gray-900">
-              B2B security and B2C consumer products.
+              production software built right.
             </span>
           </p>
 
@@ -272,9 +272,9 @@ const Hero = () => {
             className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto"
             variants={subtextVariants}
           >
-            NeuroForge Technologies is a founder-led engineering company shipping production software in{' '}
+            NeuroForge Technologies engineers software across desktop, web, and mobile. We build our own product portfolio and partner with companies that need{' '}
             <span className="font-semibold text-gray-900">
-              B2B security and B2C consumer products.
+              production software built right.
             </span>
           </motion.p>
 

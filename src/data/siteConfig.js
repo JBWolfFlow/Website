@@ -6,8 +6,8 @@
 export const siteConfig = {
   // Basic site information
   name: 'NeuroForge Technologies',
-  tagline: 'Two founders. Three products. Production software across two markets.',
-  description: 'NeuroForge Technologies is a two-founder engineering company shipping production software in B2B security and B2C consumer products. We build our own products end-to-end — Huntress, Watch & See, and Urban Aid — across desktop, web, and mobile.',
+  tagline: 'Engineering production software across desktop, web, and mobile.',
+  description: 'NeuroForge Technologies is an engineering company designing and shipping production software across desktop, web, and mobile. We build our own product portfolio — Huntress, Watch & See, and Urban Aid — and partner with companies that need software built to a production standard.',
   url: 'https://neuroforgetechnologies.net',
 
   // Contact information
@@ -40,7 +40,7 @@ export const siteConfig = {
       'Rust engineering',
       'mobile development',
       'SwiftUI iOS',
-      'founder-led software',
+      'production software engineering',
       'Temple TX',
     ],
     author: 'NeuroForge Technologies',

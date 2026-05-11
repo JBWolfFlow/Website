@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, Rocket, Coins, Layers } from 'lucide-react';
+import { Users, Rocket, Layers, Briefcase } from 'lucide-react';
 import { useInView } from '../../hooks/useInView';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { Card, CardHeader, CardTitle, CardDescription } from '../ui/Card';
@@ -8,29 +8,29 @@ import { cn } from '../../utils/cn';
 const valuePropositions = [
   {
     icon: Users,
-    title: 'Founder-Led',
-    description: "Both products owned end-to-end by an engineer-founder. No handoffs, no account managers.",
+    title: 'Senior Engineering',
+    description: "Every product owned end-to-end by an experienced engineer. No handoffs, no account managers, no junior code in production.",
     iconBgColor: 'bg-primary-50',
     iconColor: 'text-primary-600',
   },
   {
     icon: Rocket,
     title: 'Production-First',
-    description: 'Live App Store deployments, real-world security hunts, full CI/CD pipelines. We ship.',
-    iconBgColor: 'bg-primary-50',
-    iconColor: 'text-primary-600',
-  },
-  {
-    icon: Coins,
-    title: 'Capital-Efficient',
-    description: 'Three products built on near-zero capital before our raise. Small team, deep range.',
+    description: 'Live App Store deployments, real-world security hunts, full CI/CD pipelines. We ship code that runs in production.',
     iconBgColor: 'bg-primary-50',
     iconColor: 'text-primary-600',
   },
   {
     icon: Layers,
-    title: 'Multi-Market Range',
-    description: "Shipping in both B2B security (Huntress) and B2C consumer + civic tech (Watch & See, Urban Aid).",
+    title: 'Full Technical Range',
+    description: 'AI orchestration, Rust systems, native iOS, React Native, and production backends — applied across desktop, web, and mobile.',
+    iconBgColor: 'bg-primary-50',
+    iconColor: 'text-primary-600',
+  },
+  {
+    icon: Briefcase,
+    title: 'Available for Client Work',
+    description: "Selective engagements for companies building production software. The same standards and depth we apply to our own products.",
     iconBgColor: 'bg-primary-50',
     iconColor: 'text-primary-600',
   },
@@ -176,13 +176,13 @@ export function About() {
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto space-y-4"
             >
               <p>
-                NeuroForge Technologies is a two-founder operation building production software. We&apos;re not an agency. We don&apos;t take on outside client work. We ship our own products.
+                NeuroForge Technologies is an engineering company focused on production software. We design, build, and operate our own product portfolio, and we partner with companies that need software built to the same standard we apply to our own work.
               </p>
               <p>
-                Jacob and Ethan are equal co-founders, each leading the product matched to their technical specialty — Jacob on <span className="font-semibold text-gray-900">Huntress</span>, an AI-orchestrated bug bounty platform, and Ethan on <span className="font-semibold text-gray-900">Watch &amp; See</span> (iOS marketplace for watch enthusiasts) and <span className="font-semibold text-gray-900">Urban Aid</span> (a civic-tech mobile app, live on the App Store with a 5.0★ rating).
+                The portfolio includes <span className="font-semibold text-gray-900">Huntress</span>, an AI-orchestrated bug bounty platform; <span className="font-semibold text-gray-900">Watch &amp; See</span>, a native iOS marketplace entering beta; and <span className="font-semibold text-gray-900">Urban Aid</span>, a civic-tech mobile app live on the App Store with a 5.0★ rating.
               </p>
               <p className="font-semibold text-gray-900">
-                Three products. Two markets. One thesis: small teams with deep technical range can ship more than the industry assumes.
+                We work end-to-end across security, web, and mobile. The team is small and senior by design — every product owned by an experienced engineer, every line of code accountable.
               </p>
             </motion.div>
           </motion.div>

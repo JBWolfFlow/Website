@@ -76,7 +76,7 @@ const Testimonials = () => {
               variants={headingVariants}
               className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto"
             >
-              Numbers we&apos;ll defend.
+              Concrete metrics from work shipped and in active development.
             </motion.p>
           </div>
 

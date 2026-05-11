@@ -169,7 +169,7 @@ export function Portfolio() {
             className="text-center pt-8"
           >
             <p className="text-lg text-gray-600 mb-6">
-              Want to talk to a founder?
+              Interested in working together?
             </p>
             <motion.a
               href="#contact"

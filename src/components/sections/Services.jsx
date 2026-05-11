@@ -9,12 +9,12 @@ const services = [
   {
     icon: Bot,
     title: 'AI Orchestration & Agents',
-    tagline: 'Multi-agent systems built around foundation models — production, not prototype.',
+    tagline: 'Multi-agent systems combining major AI providers, local models, and task-specific custom training.',
     features: [
-      'Claude Opus primary orchestrator',
-      '29 specialist agents via ReAct loops',
-      'Multi-provider abstraction (Anthropic, OpenAI, Google)',
-      'Native tool use with default-deny sandboxing',
+      'Major provider integrations (Anthropic, OpenAI, Google, OpenRouter)',
+      'Local model deployment for sensitive or offline workloads',
+      'Custom model training for task-specific applications',
+      'Specialist agents coordinated via ReAct loops with native tool use',
     ],
   },
   {
@@ -253,7 +253,7 @@ export function Services() {
               variants={subheadingVariants}
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              Six engineering disciplines we apply across Huntress, Watch &amp; See, and Urban Aid.
+              Six engineering disciplines we apply across our product portfolio and client engagements.
             </motion.p>
           </div>
 
