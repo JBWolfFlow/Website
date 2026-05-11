@@ -1,128 +1,124 @@
-import { useState, useEffect } from 'react';
-import { Quote, Star } from 'lucide-react';
-import { testimonials } from '../../data/testimonials';
+import { motion } from 'framer-motion';
+import { trackRecord } from '../../data/testimonials';
 import { useInView } from '../../hooks/useInView';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
+import { cn } from '../../utils/cn';
 
+/**
+ * Track Record Section
+ * Replaces the old testimonials carousel with a grid of concrete metrics
+ * from shipped and in-development products.
+ */
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [ref, isInView] = useInView({ threshold: 0.2 });
+  const [ref, isInView] = useInView({ threshold: 0.1 }, true);
   const prefersReducedMotion = useReducedMotion();
 
-  // Auto-rotate testimonials every 5 seconds
-  useEffect(() => {
-    if (isHovered || prefersReducedMotion) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [isHovered, prefersReducedMotion]);
-
-  const goToTestimonial = (index) => {
-    setCurrentIndex(index);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: prefersReducedMotion ? 0 : 0.1,
+      },
+    },
   };
 
-  const currentTestimonial = testimonials[currentIndex];
+  const headingVariants = {
+    hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: prefersReducedMotion ? 0 : 0.6,
+        ease: 'easeOut',
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 30 },
+    visible: (custom) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: prefersReducedMotion ? 0 : 0.6,
+        delay: prefersReducedMotion ? 0 : custom * 0.1,
+        ease: 'easeOut',
+      },
+    }),
+  };
 
   return (
     <section
       ref={ref}
       id="testimonials"
-      className="py-20 bg-gray-50"
+      className="py-20 md:py-32 bg-gray-50"
+      aria-labelledby="trackrecord-heading"
     >
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div
-          className={`text-center mb-16 transition-all duration-700 ${
-            isInView
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-8'
-          }`}
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          variants={containerVariants}
+          className="space-y-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            What Our Clients Say
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Trusted by businesses worldwide
-          </p>
-        </div>
+          {/* Section Heading */}
+          <div className="text-center space-y-4">
+            <motion.h2
+              id="trackrecord-heading"
+              variants={headingVariants}
+              className="text-4xl md:text-5xl font-bold text-gray-900"
+            >
+              Track Record
+            </motion.h2>
 
-        {/* Testimonial Card */}
-        <div
-          className={`max-w-4xl mx-auto transition-all duration-700 delay-200 ${
-            isInView
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 translate-y-8'
-          }`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 relative">
-            {/* Quote Icon */}
-            <div className="absolute top-8 left-8 text-primary-100">
-              <Quote size={64} strokeWidth={1.5} />
-            </div>
-
-            {/* Testimonial Content */}
-            <div className="relative z-10">
-              {/* Rating Stars */}
-              <div className="flex justify-center mb-6">
-                {[...Array(currentTestimonial.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={24}
-                    className="text-accent-500 fill-accent-500"
-                  />
-                ))}
-              </div>
-
-              {/* Review Text */}
-              <blockquote className="text-xl md:text-2xl text-gray-700 text-center mb-8 leading-relaxed">
-                "{currentTestimonial.review}"
-              </blockquote>
-
-              {/* Client Info */}
-              <div className="flex items-center justify-center gap-4">
-                {/* Avatar */}
-                <div
-                  className={`w-16 h-16 rounded-full bg-gradient-to-br ${currentTestimonial.avatar.gradient} flex items-center justify-center text-white text-2xl font-bold`}
-                >
-                  {currentTestimonial.name.charAt(0)}
-                </div>
-
-                {/* Name and Company */}
-                <div className="text-left">
-                  <div className="font-semibold text-gray-900 text-lg">
-                    {currentTestimonial.name}
-                  </div>
-                  <div className="text-gray-600">
-                    {currentTestimonial.role} at {currentTestimonial.company}
-                  </div>
-                </div>
-              </div>
-            </div>
+            <motion.p
+              variants={headingVariants}
+              className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto"
+            >
+              Numbers we&apos;ll defend.
+            </motion.p>
           </div>
 
-          {/* Navigation Dots */}
-          <div className="flex justify-center gap-3 mt-8">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => goToTestimonial(index)}
-                className={`transition-all duration-300 rounded-full ${
-                  index === currentIndex
-                    ? 'w-12 h-3 bg-primary-600'
-                    : 'w-3 h-3 bg-gray-300 hover:bg-gray-400'
-                }`}
-                aria-label={`Go to testimonial ${index + 1}`}
-                aria-current={index === currentIndex ? 'true' : 'false'}
-              />
+          {/* Stat Grid */}
+          <motion.div
+            variants={containerVariants}
+            className={cn(
+              'grid gap-6 md:gap-8',
+              'grid-cols-1',
+              'sm:grid-cols-2',
+              'lg:grid-cols-3'
+            )}
+          >
+            {trackRecord.map((stat, index) => (
+              <motion.div
+                key={stat.id}
+                custom={index}
+                variants={cardVariants}
+                className={cn(
+                  'relative overflow-hidden rounded-2xl shadow-lg',
+                  'p-8 md:p-10',
+                  'bg-gradient-to-br',
+                  stat.gradient,
+                  'text-white'
+                )}
+              >
+                <div className="absolute inset-0 bg-black/10" aria-hidden="true" />
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="text-5xl md:text-6xl font-bold tracking-tight mb-3">
+                    {stat.value}
+                  </div>
+                  <div className="text-lg md:text-xl font-semibold mb-2">
+                    {stat.label}
+                  </div>
+                  <div className="text-sm text-white/85">
+                    {stat.source}
+                  </div>
+                </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

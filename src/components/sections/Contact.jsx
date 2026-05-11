@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin, Loader2, Shield } from 'lucide-react';
+import { Mail, Phone, MapPin, Loader2, Shield, Users } from 'lucide-react';
 import Input from '../ui/Input';
 import Textarea from '../ui/Textarea';
 import Button from '../ui/Button';
@@ -443,6 +443,45 @@ const Contact = () => {
                   </div>
                 );
               })}
+
+              {/* Reach a Founder Directly */}
+              <div
+                className={`bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 ${
+                  isInView
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: '600ms' }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <Users className="text-primary-600" size={24} />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      Reach a Founder Directly
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Jacob —{' '}
+                      <a
+                        href="mailto:jacobgonsalves@neuroforgetechnologies.net"
+                        className="text-primary-600 hover:text-primary-700 break-all"
+                      >
+                        jacobgonsalves@neuroforgetechnologies.net
+                      </a>
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed mt-1">
+                      Ethan —{' '}
+                      <a
+                        href="mailto:ethanhoover@neuroforgetechnologies.net"
+                        className="text-primary-600 hover:text-primary-700 break-all"
+                      >
+                        ethanhoover@neuroforgetechnologies.net
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

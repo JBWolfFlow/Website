@@ -83,8 +83,9 @@ const Hero = () => {
   };
 
   // Split headline into words for stagger animation
-  const headline = "We Build Digital Experiences That Command Attention.";
+  const headline = "Two founders. Three products. Two markets.";
   const words = headline.split(' ');
+  const accentWord = 'products.';
 
   // Disable complex animations on mobile, but keep simple fade
   const shouldAnimate = !prefersReducedMotion && !isMobile;
@@ -189,7 +190,7 @@ const Hero = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 break-words">
             {words.map((word, index) => (
               <span key={index} className="inline-block mr-3 md:mr-4">
-                {word === 'Command' ? (
+                {word === accentWord ? (
                   <span className="text-accent-500">{word}</span>
                 ) : (
                   word
@@ -200,9 +201,9 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto">
-            Intelligent systems. Scalable apps.{' '}
+            NeuroForge Technologies is a founder-led engineering company shipping production software in{' '}
             <span className="font-semibold text-gray-900">
-              Code engineered for tomorrow.
+              B2B security and B2C consumer products.
             </span>
           </p>
 
@@ -212,9 +213,9 @@ const Hero = () => {
               variant="primary"
               size="lg"
               onClick={() => scrollToSection('contact')}
-              aria-label="Get a quote for your project"
+              aria-label="Get in touch with NeuroForge Technologies"
             >
-              Get a Quote
+              Get in Touch
             </Button>
 
             <Button
@@ -257,7 +258,7 @@ const Hero = () => {
                   },
                 }}
               >
-                {word === 'Command' ? (
+                {word === accentWord ? (
                   <span className="text-accent-500">{word}</span>
                 ) : (
                   word
@@ -271,9 +272,9 @@ const Hero = () => {
             className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto"
             variants={subtextVariants}
           >
-            Intelligent systems. Scalable apps.{' '}
+            NeuroForge Technologies is a founder-led engineering company shipping production software in{' '}
             <span className="font-semibold text-gray-900">
-              Code engineered for tomorrow.
+              B2B security and B2C consumer products.
             </span>
           </motion.p>
 
@@ -287,9 +288,9 @@ const Hero = () => {
                 variant="primary"
                 size="lg"
                 onClick={() => scrollToSection('contact')}
-                aria-label="Get a quote for your project"
+                aria-label="Get in touch with NeuroForge Technologies"
               >
-                Get a Quote
+                Get in Touch
               </Button>
             </motion.div>
 

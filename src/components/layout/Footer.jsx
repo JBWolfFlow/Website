@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, Github } from 'lucide-react';
 import { siteConfig } from '@data/siteConfig';
 
 /**
@@ -86,6 +86,20 @@ function Footer() {
                   <span>{siteConfig.phone}</span>
                 </a>
               </li>
+              {siteConfig.social?.github && (
+                <li>
+                  <a
+                    href={siteConfig.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-2 text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200"
+                    aria-label="NeuroForge Technologies on GitHub"
+                  >
+                    <Github className="w-4 h-4" />
+                    <span>GitHub</span>
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>

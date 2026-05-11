@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Zap, Code2, Sparkles, TrendingUp } from 'lucide-react';
+import { Users, Rocket, Coins, Layers } from 'lucide-react';
 import { useInView } from '../../hooks/useInView';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { Card, CardHeader, CardTitle, CardDescription } from '../ui/Card';
@@ -7,30 +7,30 @@ import { cn } from '../../utils/cn';
 
 const valuePropositions = [
   {
-    icon: Zap,
-    title: 'Fast Delivery',
-    description: "Lightning-fast turnaround without compromising quality. We deliver on time, every time.",
+    icon: Users,
+    title: 'Founder-Led',
+    description: "Both products owned end-to-end by an engineer-founder. No handoffs, no account managers.",
     iconBgColor: 'bg-primary-50',
     iconColor: 'text-primary-600',
   },
   {
-    icon: Code2,
-    title: 'Modern Stack',
-    description: 'Built with cutting-edge technologies. React, Next.js, Node.js, and modern frameworks.',
+    icon: Rocket,
+    title: 'Production-First',
+    description: 'Live App Store deployments, real-world security hunts, full CI/CD pipelines. We ship.',
     iconBgColor: 'bg-primary-50',
     iconColor: 'text-primary-600',
   },
   {
-    icon: Sparkles,
-    title: 'Pixel-Perfect Design',
-    description: 'Obsessive attention to detail. Every pixel crafted for visual perfection and user delight.',
+    icon: Coins,
+    title: 'Capital-Efficient',
+    description: 'Three products built on near-zero capital before our raise. Small team, deep range.',
     iconBgColor: 'bg-primary-50',
     iconColor: 'text-primary-600',
   },
   {
-    icon: TrendingUp,
-    title: 'Scalable Code',
-    description: "Enterprise-grade architecture. Clean, maintainable code that grows with your business.",
+    icon: Layers,
+    title: 'Multi-Market Range',
+    description: "Shipping in both B2B security (Huntress) and B2C consumer + civic tech (Watch & See, Urban Aid).",
     iconBgColor: 'bg-primary-50',
     iconColor: 'text-primary-600',
   },
@@ -164,28 +164,25 @@ export function About() {
             variants={headingVariants}
             className="text-center space-y-4"
           >
-            <h2 
+            <h2
               id="about-heading"
               className="text-4xl md:text-5xl font-bold text-gray-900"
             >
-              Why Choose NeuroForge Technologies
+              Who We Are
             </h2>
-            
+
             <motion.div
               variants={storyVariants}
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto space-y-4"
             >
               <p>
-                At NeuroForge Technologies, we don't just build — we engineer intelligence. Our team of developers, AI specialists, and digital designers are united by one mission: to create technology that moves the world forward.
+                NeuroForge Technologies is a two-founder operation building production software. We&apos;re not an agency. We don&apos;t take on outside client work. We ship our own products.
               </p>
               <p>
-                From next-generation AI systems to custom web and mobile applications, we combine precision engineering with creative design to forge powerful digital solutions that perform, scale, and evolve.
-              </p>
-              <p>
-                Whether you need a high-impact website, an advanced automation platform, or a fully integrated AI-driven system, we transform ideas into intelligent, beautifully-crafted products — built to last, built to lead.
+                Jacob and Ethan are equal co-founders, each leading the product matched to their technical specialty — Jacob on <span className="font-semibold text-gray-900">Huntress</span>, an AI-orchestrated bug bounty platform, and Ethan on <span className="font-semibold text-gray-900">Watch &amp; See</span> (iOS marketplace for watch enthusiasts) and <span className="font-semibold text-gray-900">Urban Aid</span> (a civic-tech mobile app, live on the App Store with a 5.0★ rating).
               </p>
               <p className="font-semibold text-gray-900">
-                Innovation. Precision. Intelligence. That's the NeuroForge standard.
+                Three products. Two markets. One thesis: small teams with deep technical range can ship more than the industry assumes.
               </p>
             </motion.div>
           </motion.div>

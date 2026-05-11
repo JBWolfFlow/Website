@@ -127,10 +127,10 @@ export function Portfolio() {
               className="text-center max-w-4xl mx-auto space-y-3"
             >
               <p className="text-xl md:text-2xl font-semibold text-gray-800">
-                DCOP: Our Flagship Defense Contracting Operations Platform
+                Three production codebases across two markets.
               </p>
               <p className="text-base md:text-lg text-gray-600">
-                Revolutionizing federal procurement with AI-powered opportunity discovery, real-time NAICS analytics, and secure, offline-first mobile access—integrating SAM.gov and USAspending.gov for streamlined insights and strategic advantage.
+                One in active development, one entering beta, one live on the App Store.
               </p>
             </motion.div>
           </div>
@@ -149,13 +149,16 @@ export function Portfolio() {
               <ProjectCard
                 key={project.id}
                 title={project.title}
+                subtitle={project.subtitle}
+                status={project.status}
                 category={project.category}
                 description={project.description}
                 techStack={project.techStack}
                 gradient={project.gradient}
                 image={project.image}
+                url={project.url}
                 index={index}
-                onClick={() => handleProjectClick(project.id)}
+                onClick={project.image ? () => handleProjectClick(project.id) : undefined}
               />
             ))}
           </motion.div>
@@ -166,7 +169,7 @@ export function Portfolio() {
             className="text-center pt-8"
           >
             <p className="text-lg text-gray-600 mb-6">
-              Interested in working together?
+              Want to talk to a founder?
             </p>
             <motion.a
               href="#contact"
@@ -188,7 +191,7 @@ export function Portfolio() {
                 }
               }}
             >
-              Start Your Project
+              Get in Touch
             </motion.a>
           </motion.div>
         </motion.div>

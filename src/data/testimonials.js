@@ -1,35 +1,51 @@
-export const testimonials = [
+/**
+ * Track Record — concrete metrics from shipped and in-development products.
+ * Renders as a stat-card grid (see Testimonials.jsx).
+ */
+
+export const trackRecord = [
   {
     id: 1,
-    name: 'Sarah Johnson',
-    company: 'TechStart Inc.',
-    role: 'CEO',
-    review: 'NeuroForge Technologies transformed our online presence. Their attention to detail and technical expertise is unmatched. Our conversion rate increased by 150%.',
-    rating: 5,
-    avatar: {
-      gradient: 'from-purple-400 to-pink-600'
-    }
+    value: '5.0★',
+    label: 'App Store Rating',
+    source: 'Urban Aid · live today',
+    gradient: 'from-teal-500 to-cyan-600',
   },
   {
     id: 2,
-    name: 'Michael Chen',
-    company: 'FinanceFlow',
-    role: 'CTO',
-    review: 'Working with NeuroForge Technologies was seamless. They delivered our mobile app ahead of schedule with exceptional quality. Highly recommended!',
-    rating: 5,
-    avatar: {
-      gradient: 'from-blue-400 to-cyan-600'
-    }
+    value: '12',
+    label: 'Real-World Hunts Executed',
+    source: 'Huntress · 6 Juice Shop + 6 H1 programs',
+    gradient: 'from-red-600 to-rose-700',
   },
   {
     id: 3,
-    name: 'Emily Rodriguez',
-    company: 'HealthCare Plus',
-    role: 'Product Manager',
-    review: 'The team\'s professionalism and communication throughout the project was outstanding. They truly understand modern web development.',
-    rating: 5,
-    avatar: {
-      gradient: 'from-green-400 to-emerald-600'
-    }
-  }
+    value: '2,029',
+    label: 'TypeScript Tests Passing',
+    source: 'Huntress · plus 108 Rust tests',
+    gradient: 'from-slate-700 to-zinc-800',
+  },
+  {
+    id: 4,
+    value: '~4,000',
+    label: 'Public Utilities Indexed',
+    source: 'Urban Aid · offline-first',
+    gradient: 'from-cyan-500 to-blue-700',
+  },
+  {
+    id: 5,
+    value: '2 months',
+    label: 'Solo Build Time',
+    source: 'Urban Aid · self-funded, live on App Store',
+    gradient: 'from-emerald-500 to-teal-700',
+  },
+  {
+    id: 6,
+    value: '3 / 2',
+    label: 'Products Shipped / Markets',
+    source: 'NeuroForge · B2B + B2C',
+    gradient: 'from-indigo-600 to-purple-700',
+  },
 ];
+
+export default trackRecord;

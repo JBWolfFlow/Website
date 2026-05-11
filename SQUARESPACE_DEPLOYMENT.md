@@ -162,13 +162,10 @@ Your Squarespace directory should look like:
 │   ├── index-[hash].css
 │   └── [other bundled files]
 ├── team/
-│   ├── adam-arias.jpg
 │   ├── ethan-hoover.jpg
 │   └── jacob-gonsalves.jpg
 ├── projects/
-│   ├── dcop-home.png
-│   ├── dcop-analytics.png
-│   └── [other project images]
+│   └── [product screenshots — currently using gradient placeholders]
 ├── logo.svg
 ├── robots.txt
 ├── sitemap.xml

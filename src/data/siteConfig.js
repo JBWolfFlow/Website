@@ -6,8 +6,8 @@
 export const siteConfig = {
   // Basic site information
   name: 'NeuroForge Technologies',
-  tagline: 'Forging Intelligent Solutions for a Connected Future',
-  description: 'At NeuroForge Technologies, we merge artificial intelligence, modern software engineering, and human creativity to build systems that think, learn, and evolve. Every line of code we write is crafted with precision and purpose — shaping the future of digital innovation one solution at a time.',
+  tagline: 'Two founders. Three products. Production software across two markets.',
+  description: 'NeuroForge Technologies is a two-founder engineering company shipping production software in B2B security and B2C consumer products. We build our own products end-to-end — Huntress, Watch & See, and Urban Aid — across desktop, web, and mobile.',
   url: 'https://neuroforgetechnologies.net',
 
   // Contact information
@@ -23,22 +23,25 @@ export const siteConfig = {
   navigation: [
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'services', label: 'Services' },
+    { id: 'services', label: 'Capabilities' },
     { id: 'portfolio', label: 'Portfolio' },
-    { id: 'testimonials', label: 'Testimonials' },
+    { id: 'testimonials', label: 'Track Record' },
     { id: 'contact', label: 'Contact' },
   ],
   
   // SEO metadata
   seo: {
     keywords: [
-      'web development',
-      'digital agency',
-      'react development',
-      'modern websites',
-      'UI/UX design',
-      'responsive design',
-      'web applications',
+      'AI orchestration',
+      'bug bounty platform',
+      'watch marketplace',
+      'civic tech',
+      'React Native',
+      'Rust engineering',
+      'mobile development',
+      'SwiftUI iOS',
+      'founder-led software',
+      'Temple TX',
     ],
     author: 'NeuroForge Technologies',
     ogImage: '/og-image.jpg',

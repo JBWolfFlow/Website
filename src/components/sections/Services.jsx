@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Globe, Code, Server, Smartphone, Monitor, Brain, Check } from 'lucide-react';
+import { Bot, Cpu, Smartphone, Code2, Tablet, Server, Check } from 'lucide-react';
 import { useInView } from '../../hooks/useInView';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 import { Card, CardHeader, CardTitle, CardDescription } from '../ui/Card';
@@ -7,69 +7,69 @@ import { cn } from '../../utils/cn';
 
 const services = [
   {
-    icon: Globe,
-    title: 'Web Design & Development',
-    tagline: 'Fast, modern websites built for performance and conversion',
+    icon: Bot,
+    title: 'AI Orchestration & Agents',
+    tagline: 'Multi-agent systems built around foundation models — production, not prototype.',
     features: [
-      'Responsive design',
-      'SEO optimization',
-      'Performance-first approach',
-      'Modern frameworks (React, Next.js)',
+      'Claude Opus primary orchestrator',
+      '29 specialist agents via ReAct loops',
+      'Multi-provider abstraction (Anthropic, OpenAI, Google)',
+      'Native tool use with default-deny sandboxing',
     ],
   },
   {
-    icon: Code,
-    title: 'Frontend Development',
-    tagline: 'Beautiful, interactive user interfaces that users love',
+    icon: Cpu,
+    title: 'Rust Systems Engineering',
+    tagline: 'High-performance backends and security-critical services.',
     features: [
-      'React & Vue.js expertise',
-      'Component-driven architecture',
-      'Smooth animations',
-      'Cross-browser compatibility',
-    ],
-  },
-  {
-    icon: Server,
-    title: 'Backend Development',
-    tagline: 'Robust, scalable server solutions and APIs',
-    features: [
-      'RESTful & GraphQL APIs',
-      'Database design',
-      'Cloud deployment',
-      'Security best practices',
+      'Scope validators and kill-switch logic',
+      'Docker sandbox + proxy enforcement',
+      'Async runtimes (Tokio)',
+      '108 Rust tests passing in Huntress',
     ],
   },
   {
     icon: Smartphone,
-    title: 'Mobile App Development',
-    tagline: 'Native-quality mobile experiences for iOS and Android',
+    title: 'Native iOS (SwiftUI)',
+    tagline: 'SwiftUI apps shipped to the App Store.',
     features: [
-      'React Native development',
-      'Cross-platform solutions',
-      'App Store deployment',
-      'Push notifications & analytics',
+      'SwiftUI + MVVM architecture',
+      'StoreKit 2 subscriptions',
+      'Stripe Connect payments + payouts',
+      'Custom design systems',
     ],
   },
   {
-    icon: Monitor,
-    title: 'Desktop Applications',
-    tagline: 'Cross-platform desktop solutions for Windows, Linux, and macOS',
+    icon: Code2,
+    title: 'Full-Stack TypeScript',
+    tagline: 'React + Tauri + Vite, end-to-end typed.',
     features: [
-      'Multi-platform support (Windows, Linux, macOS)',
-      'Python, JavaScript, C++, Rust, Go',
-      'Native performance & UI',
-      'System integration & automation',
+      'React 19 with TypeScript',
+      'Tauri 2.0 desktop applications',
+      'Component-driven architecture',
+      '2,029 tests passing in Huntress',
     ],
   },
   {
-    icon: Brain,
-    title: 'AI & Automation Systems',
-    tagline: 'Intelligent automation and machine learning solutions engineered to evolve with your business',
+    icon: Tablet,
+    title: 'Cross-Platform Mobile',
+    tagline: 'React Native + Expo with the New Architecture.',
     features: [
-      'Custom AI model development & deployment',
-      'Process automation & intelligent workflows',
-      'Data analytics, NLP & predictive systems',
-      'API integration & scalable ML pipelines',
+      'Expo SDK 53 with Fabric enabled',
+      'Offline-first with bundled data',
+      'Native maps + i18n in 5 languages',
+      'EAS Build for CI/CD',
+    ],
+  },
+  {
+    icon: Server,
+    title: 'Backend & Infrastructure',
+    tagline: 'Production APIs, auth, and infrastructure.',
+    features: [
+      'FastAPI with async/await',
+      'PostgreSQL + SQLAlchemy ORM',
+      'JWT auth with refresh-token rotation',
+      'Redis caching + rate limiting',
     ],
   },
 ];
@@ -241,19 +241,19 @@ export function Services() {
         >
           {/* Section Heading */}
           <div className="text-center space-y-4">
-            <motion.h2 
+            <motion.h2
               id="services-heading"
               variants={headingVariants}
               className="text-4xl md:text-5xl font-bold text-gray-900"
             >
-              Our Services
+              What We Build
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               variants={subheadingVariants}
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
             >
-              Comprehensive digital solutions tailored to your needs
+              Six engineering disciplines we apply across Huntress, Watch &amp; See, and Urban Aid.
             </motion.p>
           </div>
 

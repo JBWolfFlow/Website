@@ -6,31 +6,40 @@ import LazyImage from '../common/LazyImage';
 
 /**
  * ProjectCard Component
- * Displays a single project with image, overlay, and hover effects
- * 
+ * Renders a project tile with either a screenshot or a gradient placeholder.
+ * When there is no image, content (title, subtitle, status, description, tech) is
+ * always visible. When there is an image, content slides up on hover (original behavior).
+ *
  * @param {Object} props
  * @param {string} props.title - Project title
- * @param {string} props.category - Project category
+ * @param {string} [props.subtitle] - Short positioning line (e.g. "Flagship · B2B Security")
+ * @param {string} [props.status] - Status badge text (e.g. "In Development · v0.8"). Falls back to `category`.
+ * @param {string} [props.category] - Legacy category label, used as fallback for status
  * @param {string} props.description - Project description
  * @param {string[]} props.techStack - Array of technologies used
  * @param {string} props.gradient - Tailwind gradient classes for placeholder
- * @param {string} props.image - Image URL (optional, uses gradient if null)
+ * @param {string} [props.image] - Image URL (when absent, gradient placeholder is shown with always-visible content)
+ * @param {string} [props.url] - Optional external URL (opens in new tab)
  * @param {number} props.index - Card index for stagger animation
- * @param {Function} props.onClick - Click handler for "View Project" button
+ * @param {Function} [props.onClick] - Click handler (used when no url provided)
  */
 export function ProjectCard({
   title,
+  subtitle,
+  status,
   category,
   description,
   techStack,
   gradient,
   image,
+  url,
   index,
   onClick,
 }) {
   const prefersReducedMotion = useReducedMotion();
+  const noImage = !image;
+  const badgeText = status || category;
 
-  // Card animation variants
   const cardVariants = {
     hidden: {
       opacity: 0,
@@ -47,7 +56,6 @@ export function ProjectCard({
     },
   };
 
-  // Image scale on hover
   const imageVariants = {
     hover: {
       scale: prefersReducedMotion ? 1 : 1.05,
@@ -58,7 +66,6 @@ export function ProjectCard({
     },
   };
 
-  // Overlay slide up animation
   const overlayVariants = {
     initial: {
       opacity: 0,
@@ -74,7 +81,6 @@ export function ProjectCard({
     },
   };
 
-  // Category badge slide down animation
   const badgeVariants = {
     initial: {
       opacity: 0,
@@ -90,22 +96,15 @@ export function ProjectCard({
     },
   };
 
-  // Button fade in with delay
-  const buttonVariants = {
-    initial: {
-      opacity: 0,
-      scale: prefersReducedMotion ? 1 : 0.9,
-    },
-    hover: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.3,
-        delay: 0.1,
-        ease: 'easeOut',
-      },
-    },
+  const handleCardClick = () => {
+    if (url) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    } else if (onClick) {
+      onClick();
+    }
   };
+
+  const isInteractive = !!url || !!onClick;
 
   return (
     <motion.article
@@ -113,24 +112,24 @@ export function ProjectCard({
         'group relative overflow-hidden rounded-lg',
         'bg-gray-900 shadow-lg',
         'aspect-[9/16]',
-        'cursor-pointer'
+        isInteractive ? 'cursor-pointer' : 'cursor-default'
       )}
       variants={cardVariants}
       initial="hidden"
       animate="visible"
-      whileHover="hover"
-      onClick={onClick}
-      role="button"
-      tabIndex={0}
+      whileHover={noImage ? undefined : 'hover'}
+      onClick={isInteractive ? handleCardClick : undefined}
+      role={isInteractive ? 'button' : undefined}
+      tabIndex={isInteractive ? 0 : undefined}
       onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+        if (isInteractive && (e.key === 'Enter' || e.key === ' ')) {
           e.preventDefault();
-          onClick?.();
+          handleCardClick();
         }
       }}
-      aria-label={`View ${title} project details`}
+      aria-label={isInteractive ? `View ${title} project details` : `${title} project`}
     >
-      {/* Project Image/Gradient Background */}
+      {/* Background: image or gradient placeholder */}
       {image ? (
         <motion.div
           className="absolute inset-0 w-full h-full"
@@ -144,30 +143,30 @@ export function ProjectCard({
           />
         </motion.div>
       ) : (
-        <motion.div
+        <div
           className={cn(
             'absolute inset-0 w-full h-full',
-            `bg-gradient-to-br ${gradient}`
+            'bg-gradient-to-br',
+            gradient
           )}
-          variants={imageVariants}
         />
       )}
 
-      {/* Dark overlay gradient (always visible, intensifies on hover) */}
+      {/* Dark overlay — image cards intensify on hover, gradient cards stay readable */}
       <div
         className={cn(
           'absolute inset-0',
-          'bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent',
-          'transition-opacity duration-300',
-          'opacity-60 group-hover:opacity-90'
+          noImage
+            ? 'bg-gradient-to-t from-black/70 via-black/30 to-black/10'
+            : 'bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300'
         )}
       />
 
-      {/* Category Badge (slides down on hover) */}
+      {/* Status badge */}
       <motion.div
         className="absolute top-4 left-4 z-10"
-        variants={badgeVariants}
-        initial="initial"
+        variants={noImage ? undefined : badgeVariants}
+        initial={noImage ? false : 'initial'}
       >
         <span
           className={cn(
@@ -176,39 +175,47 @@ export function ProjectCard({
             'shadow-lg'
           )}
         >
-          {category}
+          {badgeText}
         </span>
       </motion.div>
 
-      {/* Content Overlay (slides up on hover) */}
+      {/* Content overlay */}
       <motion.div
         className={cn(
           'absolute inset-x-0 bottom-0 z-10',
           'p-6 md:p-8',
           'flex flex-col justify-end'
         )}
-        variants={overlayVariants}
-        initial="initial"
+        variants={noImage ? undefined : overlayVariants}
+        initial={noImage ? false : 'initial'}
       >
-        {/* Project Title */}
-        <h3 className="text-2xl font-bold text-white mb-2">
+        {subtitle && (
+          <p className="text-xs md:text-sm text-gray-200 uppercase tracking-widest mb-2">
+            {subtitle}
+          </p>
+        )}
+
+        <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
           {title}
         </h3>
 
-        {/* Project Description */}
-        <p className="text-base text-gray-200 mb-4 line-clamp-2">
+        <p
+          className={cn(
+            'text-sm md:text-base text-gray-200 mb-4',
+            !noImage && 'line-clamp-2'
+          )}
+        >
           {description}
         </p>
 
-        {/* Tech Stack */}
         <div className="flex flex-wrap gap-2 mb-4">
           {techStack.map((tech, idx) => (
             <span
               key={idx}
               className={cn(
-                'text-sm text-gray-300',
+                'text-xs md:text-sm text-gray-200',
                 'px-2 py-1 rounded',
-                'bg-white/10 backdrop-blur-sm'
+                'bg-white/15 backdrop-blur-sm'
               )}
             >
               {tech}
@@ -216,29 +223,28 @@ export function ProjectCard({
           ))}
         </div>
 
-        {/* View Project Button (fades in with delay) */}
-        <motion.button
-          className={cn(
-            'inline-flex items-center gap-2',
-            'text-white font-medium',
-            'hover:text-primary-400 transition-colors duration-200',
-            'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900',
-            'rounded-md px-1 py-1'
-          )}
-          variants={buttonVariants}
-          initial="initial"
-          onClick={(e) => {
-            e.stopPropagation();
-            onClick?.();
-          }}
-          aria-label={`View details for ${title}`}
-        >
-          <span>View Project</span>
-          <ExternalLink className="w-4 h-4" aria-hidden="true" />
-        </motion.button>
+        {url && (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              'inline-flex items-center gap-2 self-start',
+              'text-white font-medium',
+              'hover:text-primary-300 transition-colors duration-200',
+              'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-900',
+              'rounded-md px-1 py-1'
+            )}
+            onClick={(e) => e.stopPropagation()}
+            aria-label={`Open ${title} external link`}
+          >
+            <span>View Project</span>
+            <ExternalLink className="w-4 h-4" aria-hidden="true" />
+          </a>
+        )}
       </motion.div>
 
-      {/* Focus indicator for keyboard navigation */}
+      {/* Focus ring for keyboard navigation */}
       <div
         className={cn(
           'absolute inset-0 rounded-lg',
