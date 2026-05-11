@@ -23,7 +23,7 @@ const valuePropositions = [
   {
     icon: Layers,
     title: 'Full Technical Range',
-    description: 'AI orchestration, Rust systems, native iOS, React Native, and production backends — applied across desktop, web, and mobile.',
+    description: 'Rust, Swift, TypeScript, Python, Java, and Dart — production work across AI orchestration, native iOS, mobile, desktop applications, and backend infrastructure.',
     iconBgColor: 'bg-primary-50',
     iconColor: 'text-primary-600',
   },
