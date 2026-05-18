@@ -1,196 +1,271 @@
 import { Helmet } from 'react-helmet-async';
-import { Users, Linkedin, Twitter, Github, Dribbble, Mail } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Mail, Github, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { teamMembers } from '../../data/team';
+import { useReducedMotion } from '../../hooks/useReducedMotion';
+import { cn } from '../../utils/cn';
 
 /**
- * Team Page Component
- * Displays team member profiles with photos, bios, and contact information
+ * Team page — AryaTech "Meet the team"
+ *
+ * Two founder cards (Jacob + Ethan), each with photo, name, role, bio,
+ * specialties as mono chips, education, and contact icon buttons.
+ * Calm CTA card below. Same modest liquid-glass-on-light aesthetic as
+ * the homepage sections. Designed via gpt-image-2 mockup
+ * (public/generated/mockups/team/image-20260518-004523-e91094-team-v1.png).
  */
+
+function SectionLabel({ children }) {
+  return (
+    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-500 mb-2">
+      {children}
+    </p>
+  );
+}
+
+function FounderCard({ member, index }) {
+  const prefersReducedMotion = useReducedMotion();
+  const variants = {
+    hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: prefersReducedMotion ? 0 : 0.7,
+        delay: prefersReducedMotion ? 0 : index * 0.12,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
+  return (
+    <motion.article
+      initial="hidden"
+      animate="visible"
+      variants={variants}
+      className={cn(
+        'rounded-2xl overflow-hidden flex flex-col',
+        'bg-white/70 backdrop-blur-md border border-neutral-200/70',
+        'shadow-[0_1px_2px_rgba(11,42,107,0.04),0_8px_24px_rgba(11,42,107,0.05)]'
+      )}
+    >
+      {/* Photo */}
+      <div className="relative w-full aspect-[4/3] bg-neutral-100 overflow-hidden">
+        <img
+          src={member.image}
+          alt={member.name}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover object-top"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col gap-5 p-7 sm:p-8">
+        <div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-primary-800 leading-tight">
+            {member.name}
+          </h2>
+          <p className="text-sm sm:text-base text-primary-600 font-medium mt-1.5">
+            {member.role}
+          </p>
+        </div>
+
+        <div className="h-px bg-neutral-200/80" aria-hidden="true" />
+
+        {/* Bio */}
+        <div>
+          <SectionLabel>Bio</SectionLabel>
+          <p className="text-sm sm:text-[15px] text-neutral-700 leading-relaxed">
+            {member.bio}
+          </p>
+        </div>
+
+        {/* Specialties */}
+        {member.specialties?.length > 0 && (
+          <div>
+            <SectionLabel>Specialties</SectionLabel>
+            <ul className="flex flex-wrap gap-1.5" role="list">
+              {member.specialties.map((s) => (
+                <li
+                  key={s}
+                  className="font-mono text-[11px] tracking-tight px-2.5 py-1 rounded-md bg-neutral-100 text-neutral-700 border border-neutral-200/80"
+                >
+                  {s}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Education */}
+        {member.education && (
+          <div>
+            <SectionLabel>Education</SectionLabel>
+            <p className="text-sm text-neutral-600 leading-relaxed">{member.education}</p>
+          </div>
+        )}
+
+        {/* Contact icons */}
+        <div className="pt-2 flex items-center gap-2">
+          {member.email && (
+            <a
+              href={`mailto:${member.email}`}
+              aria-label={`Email ${member.name}`}
+              title={member.email}
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-neutral-100 hover:bg-primary-50 border border-neutral-200/80 hover:border-primary-200 text-neutral-700 hover:text-primary-600 transition-all duration-200"
+            >
+              <Mail className="w-4 h-4" aria-hidden="true" />
+            </a>
+          )}
+          {member.github && (
+            <a
+              href={member.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${member.name} on GitHub`}
+              title="GitHub"
+              className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-neutral-100 hover:bg-primary-50 border border-neutral-200/80 hover:border-primary-200 text-neutral-700 hover:text-primary-600 transition-all duration-200"
+            >
+              <Github className="w-4 h-4" aria-hidden="true" />
+            </a>
+          )}
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
 const Team = () => {
+  const prefersReducedMotion = useReducedMotion();
+  const navigate = useNavigate();
+
+  const goContact = () => {
+    navigate('/');
+    setTimeout(() => {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const headerReveal = (delay = 0) => ({
+    hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 16 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: prefersReducedMotion ? 0 : 0.6,
+        delay: prefersReducedMotion ? 0 : delay,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  });
+
   return (
     <>
       <Helmet>
         <title>Our Team | AryaTech</title>
-        <meta name="description" content="Meet the talented team behind AryaTech. Expert engineers, AI specialists, and designers building the future of technology." />
+        <meta
+          name="description"
+          content="Meet the two founders behind AryaTech. Jacob Gonsalves (CEO, product lead for Huntress) and Ethan Hoover (COO, product lead for Watch & See and Urban Aid). Small and senior by design — every product owned end-to-end."
+        />
         <meta name="robots" content="index, follow" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          {/* Page Header */}
-          <div className="text-center mb-16">
-            <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-gradient-to-br from-primary-600 to-accent-500 rounded-full flex items-center justify-center">
-                <Users className="w-10 h-10 text-white" />
-              </div>
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-              Meet Our Team
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The engineers building AryaTech&apos;s product portfolio. Small and senior by design — every product owned end-to-end by an experienced engineer.
-            </p>
+      <main className="relative min-h-screen bg-[#F7F9FC] overflow-hidden pt-32 pb-24 md:pt-36 md:pb-32 px-4 sm:px-6 lg:px-8">
+        {/* Subtle blue glow upper-right */}
+        <div
+          className="pointer-events-none absolute -top-40 -right-40 w-[520px] h-[520px] rounded-full opacity-40"
+          aria-hidden="true"
+          style={{
+            background:
+              'radial-gradient(circle, rgba(30, 91, 255, 0.10) 0%, transparent 70%)',
+            filter: 'blur(60px)',
+          }}
+        />
+
+        <div className="relative max-w-6xl mx-auto">
+          {/* Page header */}
+          <div className="text-center max-w-2xl mx-auto space-y-4 mb-14 md:mb-16">
+            <motion.p
+              initial="hidden"
+              animate="visible"
+              variants={headerReveal(0)}
+              className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-primary-500"
+            >
+              Meet the team
+            </motion.p>
+            <motion.h1
+              initial="hidden"
+              animate="visible"
+              variants={headerReveal(0.1)}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-800 leading-tight"
+            >
+              Two founders. End-to-end ownership.
+            </motion.h1>
+            <motion.p
+              initial="hidden"
+              animate="visible"
+              variants={headerReveal(0.2)}
+              className="text-base md:text-lg text-neutral-600 leading-relaxed"
+            >
+              The engineers building AryaTech&rsquo;s product portfolio. Small and senior by design — every product owned by an experienced engineer.
+            </motion.p>
           </div>
 
-          {/* Team Members Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {teamMembers.map((member, index) => (
-              <div
-                key={member.id}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 md:hover:-translate-y-2 md:transition-all"
-                style={{
-                  animationDelay: `${index * 100}ms`
-                }}
-              >
-                {/* Member Image */}
-                <div className="relative h-80 bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden">
-                  {/* Actual image with lazy loading */}
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover object-top"
-                    onLoad={(e) => {
-                      // Hide placeholder when image loads
-                      const placeholder = e.target.parentElement.querySelector('.placeholder-circle');
-                      if (placeholder) placeholder.style.display = 'none';
-                    }}
-                    onError={(e) => {
-                      // Show placeholder if image fails to load
-                      e.target.style.display = 'none';
-                      const placeholder = e.target.parentElement.querySelector('.placeholder-circle');
-                      if (placeholder) placeholder.style.display = 'flex';
-                    }}
-                  />
-                  {/* Placeholder circle - only shows if image fails to load */}
-                  <div className="placeholder-circle absolute inset-0 flex items-center justify-center">
-                    <div className="w-32 h-32 bg-gradient-to-br from-primary-600 to-accent-500 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-5xl">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Member Info */}
-                <div className="p-6">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                    {member.name}
-                  </h2>
-                  <p className="text-primary-600 font-semibold mb-4">
-                    {member.role}
-                  </p>
-
-                  {/* Bio */}
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {member.bio}
-                  </p>
-
-                  {/* Specialties */}
-                  <div className="mb-6">
-                    <h3 className="text-sm font-semibold text-gray-900 mb-3">Specialties</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {member.specialties.map((specialty, idx) => (
-                        <span
-                          key={idx}
-                          className="px-3 py-1 bg-primary-50 text-primary-700 text-sm rounded-full"
-                        >
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Education */}
-                  <div className="mb-6 pb-6 border-b border-gray-200">
-                    <h3 className="text-sm font-semibold text-gray-900 mb-2">Education</h3>
-                    <p className="text-gray-600 text-sm">{member.education}</p>
-                  </div>
-
-                  {/* Social Links - Optimized transitions */}
-                  <div className="flex items-center gap-3">
-                    {member.email && (
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
-                        aria-label={`Email ${member.name}`}
-                        title="Email"
-                      >
-                        <Mail className="w-5 h-5" />
-                      </a>
-                    )}
-                    {member.linkedin && (
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
-                        aria-label={`${member.name} on LinkedIn`}
-                        title="LinkedIn"
-                      >
-                        <Linkedin className="w-5 h-5" />
-                      </a>
-                    )}
-                    {member.twitter && (
-                      <a
-                        href={member.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
-                        aria-label={`${member.name} on Twitter`}
-                        title="Twitter"
-                      >
-                        <Twitter className="w-5 h-5" />
-                      </a>
-                    )}
-                    {member.github && (
-                      <a
-                        href={member.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
-                        aria-label={`${member.name} on GitHub`}
-                        title="GitHub"
-                      >
-                        <Github className="w-5 h-5" />
-                      </a>
-                    )}
-                    {member.dribbble && (
-                      <a
-                        href={member.dribbble}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors duration-200"
-                        aria-label={`${member.name} on Dribbble`}
-                        title="Dribbble"
-                      >
-                        <Dribbble className="w-5 h-5" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
+          {/* Founder cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
+            {teamMembers.map((member, idx) => (
+              <FounderCard key={member.id} member={member} index={idx} />
             ))}
           </div>
 
-          {/* Join Our Team CTA */}
-          <div className="bg-gradient-to-r from-primary-600 to-accent-500 rounded-2xl p-12 text-center text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Want to Join Our Team?
+          {/* Bottom CTA card */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={headerReveal(0.4)}
+            className={cn(
+              'rounded-2xl p-8 sm:p-10 text-center',
+              'bg-white/70 backdrop-blur-md border border-neutral-200/70',
+              'shadow-[0_1px_2px_rgba(11,42,107,0.04),0_8px_24px_rgba(11,42,107,0.05)]'
+            )}
+          >
+            <h2 className="text-2xl sm:text-3xl font-bold text-primary-800 leading-tight">
+              Want to work with us?
             </h2>
-            <p className="text-xl mb-8 opacity-90">
-              We're always looking for talented individuals who share our passion for innovation and excellence.
+            <p className="mt-2 text-sm sm:text-base text-neutral-600">
+              Either build something together, or join the team.
             </p>
-            <a
-              href="/careers"
-              className="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 md:hover:scale-105 md:transition-all"
-            >
-              View Open Positions
-            </a>
-          </div>
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                type="button"
+                onClick={goContact}
+                className={cn(
+                  'inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-white',
+                  'bg-primary-500 hover:bg-primary-600',
+                  'shadow-[0_4px_20px_rgba(30,91,255,0.30)] hover:shadow-[0_8px_30px_rgba(30,91,255,0.45)]',
+                  'transition-all duration-300 hover:scale-[1.02]',
+                  'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2'
+                )}
+              >
+                Get in Touch
+                <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              </button>
+
+              <button
+                type="button"
+                onClick={() => navigate('/careers')}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold text-primary-600 border border-primary-200/80 bg-white/70 hover:bg-primary-50 hover:border-primary-300 transition-colors duration-300"
+              >
+                View Open Positions
+                <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+              </button>
+            </div>
+          </motion.div>
         </div>
-      </div>
+      </main>
     </>
   );
 };
