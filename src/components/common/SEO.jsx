@@ -7,33 +7,31 @@ import PropTypes from 'prop-types';
  * for optimal search engine optimization and social media sharing
  */
 const SEO = ({
-  title = 'NeuroForge Technologies | AI-Powered Software Solutions',
-  description = 'NeuroForge Technologies delivers cutting-edge AI systems, custom software development, and intelligent automation solutions. From web and mobile apps to desktop applications and machine learning pipelines — we engineer the future.',
-  keywords = 'AI development, machine learning, custom software, web development, mobile apps, desktop applications, automation systems, React, Python, artificial intelligence, software engineering, Temple TX',
+  title = 'AryaTech — Intelligent Solutions, Secure Future',
+  description = 'AryaTech is an engineering company designing and shipping production software across desktop, web, and mobile. We build our own product portfolio — Huntress, Watch & See, and Urban Aid — and partner with companies that need software built to a production standard.',
+  keywords = 'AI orchestration, bug bounty platform, watch marketplace, civic tech, React Native, Rust engineering, mobile development, SwiftUI iOS, production software engineering, Temple TX',
   ogImage = '/og-image.jpg',
-  url = 'https://neuroforgetechnologies.net',
+  url = 'https://ayra-tech.net',
   type = 'website',
-  author = 'NeuroForge Technologies',
+  author = 'AryaTech',
 }) => {
   // Structured data for Organization
   const organizationData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'NeuroForge Technologies',
-    alternateName: 'NeuroForge',
+    name: 'AryaTech',
+    alternateName: 'AryaTech',
     description: description,
     url: url,
-    logo: `${url}/logo.svg`,
+    logo: `${url}/logo.png`,
     image: `${url}${ogImage}`,
     foundingDate: '2024',
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-555-123-4567',
       contactType: 'Customer Service',
-      email: 'contact@neuroforgetechnologies.net',
+      email: 'jacobgonsalves@ayra-tech.net',
       areaServed: 'US',
       availableLanguage: ['English'],
-      contactOption: 'TollFree',
     },
     sameAs: [
       'https://github.com/JBWolfFlow',
@@ -55,11 +53,10 @@ const SEO = ({
   const localBusinessData = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'NeuroForge Technologies',
+    name: 'AryaTech',
     description: description,
     url: url,
-    telephone: '+1-555-123-4567',
-    email: 'contact@neuroforgetechnologies.net',
+    email: 'jacobgonsalves@ayra-tech.net',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Temple',
@@ -88,15 +85,15 @@ const SEO = ({
   const websiteData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'NeuroForge Technologies',
+    name: 'AryaTech',
     url: url,
     description: description,
     publisher: {
       '@type': 'Organization',
-      name: 'NeuroForge Technologies',
+      name: 'AryaTech',
       logo: {
         '@type': 'ImageObject',
-        url: `${url}/logo.svg`,
+        url: `${url}/logo.png`,
       },
     },
     potentialAction: {
@@ -113,7 +110,7 @@ const SEO = ({
     serviceType: 'Software Development',
     provider: {
       '@type': 'Organization',
-      name: 'NeuroForge Technologies',
+      name: 'AryaTech',
     },
     areaServed: {
       '@type': 'Country',
@@ -179,7 +176,7 @@ const SEO = ({
       <meta property="og:image" content={`${url}${ogImage}`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content="NeuroForge Technologies" />
+      <meta property="og:site_name" content="AryaTech" />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card */}
@@ -197,8 +194,8 @@ const SEO = ({
       <meta name="revisit-after" content="7 days" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#3b82f6" />
-      <meta name="msapplication-TileColor" content="#3b82f6" />
+      <meta name="theme-color" content="#1E5BFF" />
+      <meta name="msapplication-TileColor" content="#1E5BFF" />
       
       {/* Geographic Meta Tags */}
       <meta name="geo.region" content="US-TX" />
