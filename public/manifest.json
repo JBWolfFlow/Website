@@ -1,11 +1,11 @@
 {
-  "name": "NeuroForge Technologies - Premium Web Development Agency",
-  "short_name": "NeuroForge",
-  "description": "Professional web development, mobile apps, and custom software solutions. Modern, scalable, and pixel-perfect digital experiences.",
+  "name": "AryaTech — Intelligent Solutions, Secure Future",
+  "short_name": "AryaTech",
+  "description": "AryaTech is an engineering company designing and shipping production software across desktop, web, and mobile.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "theme_color": "#1E5BFF",
   "orientation": "portrait-primary",
   "icons": [
     {
