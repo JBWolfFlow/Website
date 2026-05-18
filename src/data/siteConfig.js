@@ -5,13 +5,14 @@
 
 export const siteConfig = {
   // Basic site information
-  name: 'NeuroForge Technologies',
-  tagline: 'Engineering production software across desktop, web, and mobile.',
-  description: 'NeuroForge Technologies is an engineering company designing and shipping production software across desktop, web, and mobile. We build our own product portfolio — Huntress, Watch & See, and Urban Aid — and partner with companies that need software built to a production standard.',
-  url: 'https://neuroforgetechnologies.net',
+  name: 'AryaTech',
+  tagline: 'Intelligent Solutions, Secure Future.',
+  description: 'AryaTech is an engineering company designing and shipping production software across desktop, web, and mobile. We build our own product portfolio — Huntress, Watch & See, and Urban Aid — and partner with companies that need software built to a production standard.',
+  url: 'https://ayra-tech.net',
 
   // Contact information
-  email: 'contact@neuroforgetechnologies.net',
+  email: 'jacobgonsalves@ayra-tech.net',
+  secondaryEmail: 'ethanhoover@ayra-tech.net',
   phone: '(206) 876-0437',
 
   // Social media links
@@ -43,7 +44,7 @@ export const siteConfig = {
       'production software engineering',
       'Temple TX',
     ],
-    author: 'NeuroForge Technologies',
+    author: 'AryaTech',
     ogImage: '/og-image.jpg',
   },
 };
