@@ -35,8 +35,16 @@ if (!handle) {
   process.exit(1);
 }
 
-// Scroll element into view, then capture just that element
-await handle.scrollIntoViewIfNeeded();
+// Scroll element into view honoring fixed-header offset.
+// scrollIntoViewIfNeeded bypasses CSS scroll-margin-top, so do it manually.
+const HEADER_OFFSET = 96; // matches CSS `scroll-margin-top: 6rem` on `section[id]`
+await page.evaluate(({ sel, offset }) => {
+  const el = document.querySelector(sel);
+  if (!el) return;
+  const rect = el.getBoundingClientRect();
+  const target = rect.top + window.scrollY - offset;
+  window.scrollTo({ top: target, behavior: 'instant' });
+}, { sel: selector, offset: HEADER_OFFSET });
 await page.waitForTimeout(500);
 await handle.screenshot({ path: outPath });
 

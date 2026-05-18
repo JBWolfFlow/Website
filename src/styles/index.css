@@ -32,6 +32,11 @@
     scroll-behavior: smooth;
   }
 
+  /* Account for the floating Header pill when scrolling to a section via anchor link */
+  section[id] {
+    scroll-margin-top: 6rem;
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 10px;
