@@ -1,4 +1,4 @@
-# NeuroForge Technologies Website - Testing Checklist
+# AryaTech Website - Testing Checklist
 
 **Version:** 1.0.0  
 **Last Updated:** 2024-01-24  
@@ -878,4 +878,4 @@ After deployment, verify:
 
 **Last Updated:** 2024-01-24  
 **Version:** 1.0.0  
-**Maintained by:** NeuroForge Technologies QA Team
+**Maintained by:** AryaTech QA Team

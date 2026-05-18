@@ -1,8 +1,8 @@
-# NeuroForge Technologies Website - Deployment Guide
+# AryaTech Website - Deployment Guide
 
 **Version:** 1.0.0  
 **Last Updated:** 2024-01-24  
-**Maintainer:** NeuroForge Technologies Development Team
+**Maintainer:** AryaTech Development Team
 
 ---
 
@@ -25,7 +25,7 @@
 
 ## Prerequisites
 
-Before deploying the NeuroForge Technologies website, ensure you have the following installed and configured:
+Before deploying the AryaTech website, ensure you have the following installed and configured:
 
 ### Required Software
 
@@ -140,9 +140,9 @@ Create a `.env` file in the root directory with the following variables:
 
 ```bash
 # Site Configuration
-VITE_SITE_URL=https://neuroforgetechnologies.net
-VITE_SITE_NAME=NeuroForge Technologies
-VITE_CONTACT_EMAIL=hello@neuroforgetechnologies.net
+VITE_SITE_URL=https://ayra-tech.net
+VITE_SITE_NAME=AryaTech
+VITE_CONTACT_EMAIL=hello@ayra-tech.net
 VITE_CONTACT_PHONE=+1-555-0123
 
 # Social Media
@@ -287,7 +287,7 @@ vercel --prod
 #### Custom Domain Setup (Vercel)
 
 1. Go to Project Settings → Domains
-2. Add your custom domain (e.g., `neuroforgetechnologies.net`)
+2. Add your custom domain (e.g., `ayra-tech.net`)
 3. Configure DNS records:
    ```
    Type: A
@@ -485,7 +485,7 @@ export default defineConfig({
 
 1. Add `CNAME` file to `public/` directory:
    ```
-   neuroforgetechnologies.net
+   ayra-tech.net
    ```
 
 2. Configure DNS:
@@ -560,7 +560,7 @@ Create `.htaccess` in upload directory:
 ```nginx
 server {
     listen 80;
-    server_name neuroforgetechnologies.net www.neuroforgetechnologies.net;
+    server_name ayra-tech.net www.ayra-tech.net;
     root /var/www/html;
     index index.html;
 
@@ -634,7 +634,7 @@ After deploying, verify the following:
   npm install -g lighthouse
 
   # Run audit
-  lighthouse https://neuroforgetechnologies.net --view
+  lighthouse https://ayra-tech.net --view
   ```
 
   **Target scores:**
@@ -659,11 +659,11 @@ After deploying, verify the following:
   - Verify title, description, OG tags
 
 - [ ] **Sitemap accessible**
-  - Visit `https://neuroforgetechnologies.net/sitemap.xml`
+  - Visit `https://ayra-tech.net/sitemap.xml`
   - Verify all URLs listed
 
 - [ ] **Robots.txt configured**
-  - Visit `https://neuroforgetechnologies.net/robots.txt`
+  - Visit `https://ayra-tech.net/robots.txt`
   - Verify allows crawling
 
 - [ ] **Submit to search engines**
@@ -697,7 +697,7 @@ After deploying, verify the following:
 
 ### Overview
 
-Security must be configured before deploying to production. This section covers essential security measures for the NeuroForge Technologies website.
+Security must be configured before deploying to production. This section covers essential security measures for the AryaTech website.
 
 ### Pre-Deployment Security Checklist
 
@@ -758,7 +758,7 @@ Include [`nginx-security.conf`](nginx-security.conf:1) in your server block:
 ```nginx
 server {
     listen 443 ssl http2;
-    server_name neuroforgetechnologies.net;
+    server_name ayra-tech.net;
     
     # Include security configuration
     include /path/to/nginx-security.conf;
@@ -821,7 +821,7 @@ HTTPS is essential for security. Most modern hosting platforms provide automatic
 sudo apt-get install certbot python3-certbot-apache
 
 # Get certificate
-sudo certbot --apache -d neuroforgetechnologies.net -d www.neuroforgetechnologies.net
+sudo certbot --apache -d ayra-tech.net -d www.ayra-tech.net
 
 # Auto-renewal (already configured)
 sudo certbot renew --dry-run
@@ -830,7 +830,7 @@ sudo certbot renew --dry-run
 **Verify HTTPS:**
 ```bash
 # Check SSL certificate
-openssl s_client -connect neuroforgetechnologies.net:443 -servername neuroforgetechnologies.net
+openssl s_client -connect ayra-tech.net:443 -servername ayra-tech.net
 
 # Test SSL configuration
 # Use: https://www.ssllabs.com/ssltest/
@@ -842,9 +842,9 @@ openssl s_client -connect neuroforgetechnologies.net:443 -servername neuroforget
 
 ```bash
 # Required variables
-VITE_SITE_URL=https://neuroforgetechnologies.net
-VITE_SITE_NAME=NeuroForge Technologies
-VITE_CONTACT_EMAIL=hello@neuroforgetechnologies.net
+VITE_SITE_URL=https://ayra-tech.net
+VITE_SITE_NAME=AryaTech
+VITE_CONTACT_EMAIL=hello@ayra-tech.net
 VITE_CONTACT_PHONE=+1-555-0123
 
 # Social media
@@ -976,7 +976,7 @@ ls -lh dist/assets/
 
 ```bash
 # 1. Test security headers
-curl -I https://neuroforgetechnologies.net
+curl -I https://ayra-tech.net
 
 # 2. Test SSL
 # Visit: https://www.ssllabs.com/ssltest/
@@ -988,7 +988,7 @@ curl -I https://neuroforgetechnologies.net
 # Open browser console and check for violations
 
 # 5. Run Lighthouse audit
-lighthouse https://neuroforgetechnologies.net --view
+lighthouse https://ayra-tech.net --view
 ```
 
 ### Security Incident Response
@@ -1020,8 +1020,8 @@ lighthouse https://neuroforgetechnologies.net --view
    - Implement preventive measures
 
 **Emergency Contacts:**
-- Security Team: security@neuroforgetechnologies.net
-- Technical Lead: tech@neuroforgetechnologies.net
+- Security Team: security@ayra-tech.net
+- Technical Lead: tech@ayra-tech.net
 - Emergency: [Your emergency contact]
 
 ### Security Maintenance
@@ -1059,8 +1059,8 @@ lighthouse https://neuroforgetechnologies.net --view
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse) - Performance & security
 
 **Support:**
-- Security Issues: security@neuroforgetechnologies.net
-- Technical Support: support@neuroforgetechnologies.net
+- Security Issues: security@ayra-tech.net
+- Technical Support: support@ayra-tech.net
 - Documentation: See [README.md](README.md:1)
 
 
@@ -1189,7 +1189,7 @@ git push --force origin main
 - [GTmetrix](https://gtmetrix.com)
 
 ### Support
-- **Email**: dev@neuroforgetechnologies.net
+- **Email**: dev@ayra-tech.net
 - **Documentation**: See [`README.md`](README.md:1)
 - **Issues**: GitHub Issues
 
@@ -1197,4 +1197,4 @@ git push --force origin main
 
 **Last Updated:** 2024-01-24  
 **Version:** 1.0.0  
-**Maintained by:** NeuroForge Technologies Development Team
+**Maintained by:** AryaTech Development Team

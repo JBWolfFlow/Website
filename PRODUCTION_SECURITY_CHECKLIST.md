@@ -7,7 +7,7 @@
 
 ## 🎯 Executive Summary
 
-This document provides a comprehensive pre-launch security verification checklist for the NeuroForge Technologies website. All security implementations have been tested and verified as of the date above.
+This document provides a comprehensive pre-launch security verification checklist for the AryaTech website. All security implementations have been tested and verified as of the date above.
 
 ---
 
@@ -391,11 +391,11 @@ npm run preview
 ## 📞 Support & Contacts
 
 **Security Issues:**
-- Email: security@neuroforgetechnologies.net
+- Email: security@ayra-tech.net
 - Report vulnerabilities privately
 
 **Technical Support:**
-- Email: support@neuroforgetechnologies.net
+- Email: support@ayra-tech.net
 - Documentation: See project README.md
 
 ---

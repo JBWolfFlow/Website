@@ -1,4 +1,4 @@
-# Security Documentation - NeuroForge Technologies Website
+# Security Documentation - AryaTech Website
 
 **Version:** 1.0.0  
 **Last Updated:** 2024-01-24  
@@ -23,7 +23,7 @@
 
 ## Overview
 
-This directory contains comprehensive security documentation for the NeuroForge Technologies website. All security measures have been designed following industry best practices, OWASP guidelines, and modern web security standards.
+This directory contains comprehensive security documentation for the AryaTech website. All security measures have been designed following industry best practices, OWASP guidelines, and modern web security standards.
 
 ### Security Rating: **B+ → A** (After Implementation)
 
@@ -402,8 +402,8 @@ curl -I https://your-site.vercel.app
 
 ### How to Report
 
-**Email:** security@neuroforgetechnologies.net  
-**Security.txt:** https://neuroforgetechnologies.net/.well-known/security.txt
+**Email:** security@ayra-tech.net  
+**Security.txt:** https://ayra-tech.net/.well-known/security.txt
 
 ### What to Include
 
@@ -483,9 +483,9 @@ Please do not publicly disclose vulnerabilities until:
 
 ### Contact
 
-- **Security Issues:** security@neuroforgetechnologies.net
-- **Technical Support:** support@neuroforgetechnologies.net
-- **General Inquiries:** hello@neuroforgetechnologies.net
+- **Security Issues:** security@ayra-tech.net
+- **Technical Support:** support@ayra-tech.net
+- **General Inquiries:** hello@ayra-tech.net
 
 ---
 
@@ -499,13 +499,13 @@ Please do not publicly disclose vulnerabilities until:
 
 ## License
 
-This security documentation is part of the NeuroForge Technologies website project.
+This security documentation is part of the AryaTech website project.
 
 ---
 
 **Last Updated:** 2024-01-24  
 **Next Review:** 2024-04-24  
-**Maintained By:** NeuroForge Technologies Security Team
+**Maintained By:** AryaTech Security Team
 
 ---
 

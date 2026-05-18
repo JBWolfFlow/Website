@@ -1,4 +1,4 @@
-# NeuroForge Technologies Website - Quick Implementation Guide
+# AryaTech Website - Quick Implementation Guide
 
 This guide provides a streamlined path to implement the architecture defined in [`ARCHITECTURE.md`](ARCHITECTURE.md).
 
@@ -10,8 +10,8 @@ This guide provides a streamlined path to implement the architecture defined in 
 
 ```bash
 # Create project
-npm create vite@latest neuroforge-technologies-website -- --template react
-cd neuroforge-technologies-website
+npm create vite@latest aryatech-website -- --template react
+cd aryatech-website
 
 # Install core dependencies
 npm install
@@ -123,11 +123,11 @@ Create these files in `src/data/`:
 ### 1. `siteConfig.js`
 ```javascript
 export const siteConfig = {
-  name: 'NeuroForge Technologies',
+  name: 'AryaTech',
   tagline: 'Crafting Digital Excellence',
   description: 'Professional web development agency specializing in modern, high-performance websites',
-  url: 'https://neuroforgetechnologies.net',
-  email: 'hello@neuroforgetechnologies.net',
+  url: 'https://ayra-tech.net',
+  email: 'hello@ayra-tech.net',
   phone: '+1-XXX-XXX-XXXX',
   social: {
     github: 'https://github.com/JBWolfFlow'

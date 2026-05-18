@@ -1,4 +1,4 @@
-# NeuroForge Technologies Website - Security Audit Report
+# AryaTech Website - Security Audit Report
 
 **Version:** 1.0.0  
 **Audit Date:** 2024-01-24  
@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-This security audit report provides a comprehensive assessment of the NeuroForge Technologies website's security posture. The audit evaluated the application against OWASP Top 10, CWE/SANS Top 25, and industry best practices for static websites.
+This security audit report provides a comprehensive assessment of the AryaTech website's security posture. The audit evaluated the application against OWASP Top 10, CWE/SANS Top 25, and industry best practices for static websites.
 
 ### Overall Security Rating: **B+ (Good)**
 
@@ -465,10 +465,10 @@ Missing `security.txt` file for responsible disclosure of security vulnerabiliti
 **Recommendation:**
 Create `public/.well-known/security.txt`:
 ```
-Contact: mailto:security@neuroforgetechnologies.net
+Contact: mailto:security@ayra-tech.net
 Expires: 2025-12-31T23:59:59.000Z
 Preferred-Languages: en
-Canonical: https://neuroforgetechnologies.net/.well-known/security.txt
+Canonical: https://ayra-tech.net/.well-known/security.txt
 ```
 
 **Priority:** Low - Implement within 1 month
@@ -853,7 +853,7 @@ Week 4: M-005, Documentation
 
 ## Conclusion
 
-The NeuroForge Technologies website demonstrates good security fundamentals with clean code and no critical vulnerabilities. However, several important security enhancements are needed before production deployment:
+The AryaTech website demonstrates good security fundamentals with clean code and no critical vulnerabilities. However, several important security enhancements are needed before production deployment:
 
 ### Strengths
 - Clean, secure codebase
@@ -911,8 +911,8 @@ npx vite-bundle-visualizer
 
 ## Appendix C: Contact Information
 
-**Security Issues:** security@neuroforgetechnologies.net  
-**General Support:** support@neuroforgetechnologies.net  
+**Security Issues:** security@ayra-tech.net  
+**General Support:** support@ayra-tech.net  
 **Emergency:** [Emergency contact procedure]
 
 ---

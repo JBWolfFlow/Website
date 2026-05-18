@@ -1,4 +1,4 @@
-# NeuroForge Technologies Website - System Architecture Document
+# AryaTech Website - System Architecture Document
 
 **Version:** 1.0.0  
 **Last Updated:** 2025-10-24  
@@ -24,7 +24,7 @@
 ## Executive Summary
 
 ### Project Overview
-NeuroForge Technologies's professional website is a single-page application (SPA) designed to showcase the agency's expertise in web development. The site emphasizes visual excellence, smooth interactions, and optimal performance, drawing inspiration from industry leaders like Apple, Notion, Linear, and Stripe.
+AryaTech's professional website is a single-page application (SPA) designed to showcase the agency's expertise in web development. The site emphasizes visual excellence, smooth interactions, and optimal performance, drawing inspiration from industry leaders like Apple, Notion, Linear, and Stripe.
 
 ### Core Objectives
 - **Visual Excellence**: Apple-level design quality with smooth animations
@@ -95,7 +95,7 @@ Framer Motion 11+
 ### Folder Hierarchy
 
 ```
-neuroforge-technologies-website/
+aryatech-website/
 ├── public/
 │   ├── favicon.ico
 │   ├── logo.svg
@@ -542,7 +542,7 @@ export const services = [
 export const testimonials = [
   {
     id: 'testimonial-1',
-    quote: 'NeuroForge Technologies transformed our online presence...',
+    quote: 'AryaTech transformed our online presence...',
     author: 'John Smith',
     role: 'CEO',
     company: 'Tech Corp',
@@ -553,11 +553,11 @@ export const testimonials = [
 
 // src/data/siteConfig.js
 export const siteConfig = {
-  name: 'NeuroForge Technologies',
+  name: 'AryaTech',
   tagline: 'Crafting Digital Excellence',
   description: 'Professional web development agency...',
-  url: 'https://neuroforgetechnologies.net',
-  email: 'hello@neuroforgetechnologies.net',
+  url: 'https://ayra-tech.net',
+  email: 'hello@ayra-tech.net',
   social: {
     github: 'https://github.com/JBWolfFlow'
   }
@@ -1305,9 +1305,9 @@ export default function SEO({
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "NeuroForge Technologies",
-  "url": "https://neuroforgetechnologies.net",
-  "logo": "https://neuroforgetechnologies.net/logo.svg",
+  "name": "AryaTech",
+  "url": "https://ayra-tech.net",
+  "logo": "https://ayra-tech.net/logo.svg",
   "description": "Professional web development agency specializing in modern, high-performance websites",
   "address": {
     "@type": "PostalAddress",
@@ -1317,7 +1317,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "telephone": "+1-XXX-XXX-XXXX",
     "contactType": "Customer Service",
-    "email": "hello@neuroforgetechnologies.net"
+    "email": "hello@ayra-tech.net"
   },
   "sameAs": [
     "https://github.com/JBWolfFlow"
@@ -1330,11 +1330,11 @@ export const organizationSchema = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "NeuroForge Technologies",
-  "url": "https://neuroforgetechnologies.net",
+  "name": "AryaTech",
+  "url": "https://ayra-tech.net",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://neuroforgetechnologies.net/search?q={search_term_string}",
+    "target": "https://ayra-tech.net/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
@@ -1348,7 +1348,7 @@ export const serviceSchema = {
   "serviceType": "Web Development",
   "provider": {
     "@type": "Organization",
-    "name": "NeuroForge Technologies"
+    "name": "AryaTech"
   },
   "areaServed": "Worldwide",
   "hasOfferCatalog": {
@@ -1404,7 +1404,7 @@ function App() {
 User-agent: *
 Allow: /
 
-Sitemap: https://neuroforgetechnologies.net/sitemap.xml
+Sitemap: https://ayra-tech.net/sitemap.xml
 ```
 
 #### Sitemap Generation
@@ -1413,19 +1413,19 @@ Sitemap: https://neuroforgetechnologies.net/sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://neuroforgetechnologies.net/</loc>
+    <loc>https://ayra-tech.net/</loc>
     <lastmod>2025-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://neuroforgetechnologies.net/#about</loc>
+    <loc>https://ayra-tech.net/#about</loc>
     <lastmod>2025-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neuroforgetechnologies.net/#portfolio</loc>
+    <loc>https://ayra-tech.net/#portfolio</loc>
     <lastmod>2025-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -1609,11 +1609,11 @@ jobs:
 
 ```bash
 # .env.example
-VITE_SITE_URL=https://neuroforgetechnologies.net
-VITE_CONTACT_EMAIL=hello@neuroforgetechnologies.net
+VITE_SITE_URL=https://ayra-tech.net
+VITE_CONTACT_EMAIL=hello@ayra-tech.net
 VITE_FORMSPREE_ID=your_formspree_id
 VITE_GA_TRACKING_ID=G-XXXXXXXXXX
-VITE_API_URL=https://api.neuroforgetechnologies.net
+VITE_API_URL=https://api.ayra-tech.net
 ```
 
 **Security Note**: Never commit `.env` file. Use platform-specific environment variable management.
@@ -1721,8 +1721,8 @@ Sentry.init({
 
 ```bash
 # 1. Create project
-npm create vite@latest neuroforge-technologies-website -- --template react
-cd neuroforge-technologies-website
+npm create vite@latest aryatech-website -- --template react
+cd aryatech-website
 
 # 2. Install dependencies
 npm install
@@ -2294,7 +2294,7 @@ const handleSubmit = (data) => {
 
 ## Conclusion
 
-This architecture document provides a comprehensive blueprint for building NeuroForge Technologies's professional website. The design emphasizes:
+This architecture document provides a comprehensive blueprint for building AryaTech's professional website. The design emphasizes:
 
 1. **Performance**: Fast load times, optimized assets, efficient code
 2. **User Experience**: Smooth animations, intuitive navigation, responsive design

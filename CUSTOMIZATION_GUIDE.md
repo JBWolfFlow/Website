@@ -1,4 +1,4 @@
-# NeuroForge Technologies Website - Customization Guide
+# AryaTech Website - Customization Guide
 
 **Version:** 1.0.0  
 **Last Updated:** 2024-01-24  
@@ -21,7 +21,7 @@
 
 ## Quick Start
 
-This guide helps you customize the NeuroForge Technologies website to match your brand and content needs. All customizations can be made without deep technical knowledge by editing configuration files.
+This guide helps you customize the AryaTech website to match your brand and content needs. All customizations can be made without deep technical knowledge by editing configuration files.
 
 ### What You Can Customize
 
@@ -54,7 +54,7 @@ Most customizations involve editing these files:
 ```javascript
 export const siteConfig = {
   // Change these values
-  name: 'Your Company Name',           // Replace "NeuroForge Technologies"
+  name: 'Your Company Name',           // Replace "AryaTech"
   tagline: 'Your Company Tagline',     // Replace "Crafting Digital Excellence"
   description: 'Your company description for SEO',
   url: 'https://yourcompany.com',
@@ -1026,11 +1026,11 @@ npm run build
 Need help with customization?
 
 - **Documentation**: See [`README.md`](README.md:1)
-- **Email**: dev@neuroforgetechnologies.net
+- **Email**: dev@ayra-tech.net
 - **Issues**: GitHub Issues
 
 ---
 
 **Last Updated:** 2024-01-24  
 **Version:** 1.0.0  
-**Maintained by:** NeuroForge Technologies Development Team
+**Maintained by:** AryaTech Development Team

@@ -231,7 +231,7 @@ All critical security fixes have been successfully implemented for production de
 
 1. **Domain Whitelist** (Primary Protection)
    - Configured in Web3Forms dashboard
-   - Only `neuroforgetechnologies.net` can submit
+   - Only `ayra-tech.net` can submit
    - Enforced server-side by Web3Forms
    - Cannot be bypassed by attackers
 
@@ -258,8 +258,8 @@ Before deploying to production, you MUST:
 - [ ] Log into Web3Forms dashboard
 - [ ] Navigate to form settings → Security
 - [ ] Add domain whitelist:
-  - [ ] `neuroforgetechnologies.net`
-  - [ ] `www.neuroforgetechnologies.net`
+  - [ ] `ayra-tech.net`
+  - [ ] `www.ayra-tech.net`
 - [ ] Enable rate limiting:
   - [ ] 10 submissions per hour per IP
   - [ ] 3 submissions per hour per email
@@ -380,7 +380,7 @@ grep -r "3132cd65-fd46-4930-beef-ee0a0fd4fd3f" dist/assets/js/ | wc -l
 
 1. **Configure Web3Forms** (CRITICAL - Do this FIRST)
    - Log into Web3Forms dashboard
-   - Add domain whitelist: `neuroforgetechnologies.net`
+   - Add domain whitelist: `ayra-tech.net`
    - Enable rate limiting: 10/hour per IP
    - Enable email notifications
    - Test and verify

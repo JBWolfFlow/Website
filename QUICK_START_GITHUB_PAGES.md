@@ -46,7 +46,7 @@ git push -u origin main
 ### Step 4: Configure DNS (5 minutes)
 
 **In Squarespace**:
-1. Go to Settings → Domains → neuroforgetechnologies.net → DNS Settings
+1. Go to Settings → Domains → ayra-tech.net → DNS Settings
 2. **Delete existing A records**
 3. **Add 4 new A records**:
    ```
@@ -67,12 +67,12 @@ git push -u origin main
 
 1. Go to: https://github.com/JBWolfFlow/Website/settings/pages
 2. Under "Custom domain"
-3. Enter: `neuroforgetechnologies.net`
+3. Enter: `ayra-tech.net`
 4. Click **"Save"**
 5. Wait for DNS check
 6. Check **"Enforce HTTPS"**
 
-**✅ Your site will be live at**: `https://neuroforgetechnologies.net`
+**✅ Your site will be live at**: `https://ayra-tech.net`
 
 ---
 
@@ -85,7 +85,7 @@ https://jbwolfflow.github.io/Website/
 
 ### After DNS (Custom Domain)
 ```
-https://neuroforgetechnologies.net
+https://ayra-tech.net
 ```
 
 **Test**:

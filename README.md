@@ -1,4 +1,4 @@
-# NeuroForge Technologies Website
+# AryaTech Website
 
 > Professional web development agency website built with modern technologies and best practices.
 
@@ -28,7 +28,7 @@
 
 ## 🎯 Overview
 
-NeuroForge Technologies's website is a modern, high-performance single-page application showcasing web development services. Built with React and Vite, it features smooth animations, responsive design, and optimal performance across all devices.
+AryaTech's website is a modern, high-performance single-page application showcasing web development services. Built with React and Vite, it features smooth animations, responsive design, and optimal performance across all devices.
 
 ### Key Highlights
 
@@ -155,7 +155,7 @@ See [`CUSTOMIZATION_GUIDE.md`](CUSTOMIZATION_GUIDE.md) for detailed instructions
 ## 📁 Project Structure
 
 ```
-neuroforge-technologies-website/
+aryatech-website/
 ├── public/                      # Static assets
 │   ├── manifest.json           # PWA manifest
 │   ├── robots.txt              # SEO robots file
@@ -454,11 +454,11 @@ We follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## 📄 License
 
-Copyright © 2024 NeuroForge Technologies. All rights reserved.
+Copyright © 2024 AryaTech. All rights reserved.
 
 This project is proprietary software. Unauthorized copying, modification, distribution, or use of this software, via any medium, is strictly prohibited.
 
-For licensing inquiries, contact: hello@neuroforgetechnologies.net
+For licensing inquiries, contact: hello@ayra-tech.net
 
 ---
 
@@ -468,8 +468,8 @@ For licensing inquiries, contact: hello@neuroforgetechnologies.net
 
 - **Documentation**: Check the guides in this repository
 - **Issues**: [GitHub Issues](https://github.com/JBWolfFlow/website/issues)
-- **Email**: dev@neuroforgetechnologies.net
-- **Website**: [neuroforgetechnologies.net](https://neuroforgetechnologies.net)
+- **Email**: dev@ayra-tech.net
+- **Website**: [ayra-tech.net](https://ayra-tech.net)
 
 ### Reporting Bugs
 
@@ -561,10 +561,10 @@ Design inspiration from:
 
 ## 📞 Contact
 
-**NeuroForge Technologies**
+**AryaTech**
 
-- **Website**: [neuroforgetechnologies.net](https://neuroforgetechnologies.net)
-- **Email**: contact@neuroforgetechnologies.net
+- **Website**: [ayra-tech.net](https://ayra-tech.net)
+- **Email**: contact@ayra-tech.net
 - **Phone**: (206) 876-0437
 - **GitHub**: [@JBWolfFlow](https://github.com/JBWolfFlow)
 
@@ -583,8 +583,8 @@ If you find this project helpful, please consider:
 
 <div align="center">
 
-**Built with ❤️ by NeuroForge Technologies**
+**Built with ❤️ by AryaTech**
 
-[Website](https://neuroforgetechnologies.net) • [Documentation](ARCHITECTURE.md) • [Support](mailto:hello@neuroforgetechnologies.net)
+[Website](https://ayra-tech.net) • [Documentation](ARCHITECTURE.md) • [Support](mailto:hello@ayra-tech.net)
 
 </div>

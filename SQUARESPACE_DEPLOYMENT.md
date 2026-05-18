@@ -1,6 +1,6 @@
 # Squarespace Deployment Guide
 
-Complete guide for deploying your NeuroForge Technologies website to Squarespace.
+Complete guide for deploying your AryaTech website to Squarespace.
 
 ## Table of Contents
 
@@ -48,9 +48,9 @@ VITE_FORM_SERVICE_TYPE=web3forms
 VITE_WEB3FORMS_ACCESS_KEY=your-actual-access-key-here
 
 # Site Configuration
-VITE_SITE_URL=https://neuroforgetechnologies.net
-VITE_SITE_NAME=NeuroForge Technologies
-VITE_CONTACT_EMAIL=contact@neuroforgetechnologies.net
+VITE_SITE_URL=https://ayra-tech.net
+VITE_SITE_NAME=AryaTech
+VITE_CONTACT_EMAIL=contact@ayra-tech.net
 
 # Production Settings
 VITE_ENVIRONMENT=production
@@ -192,8 +192,8 @@ Ensure proper permissions (usually handled automatically by Squarespace):
 2. Select your form
 3. Go to **Settings** → **Security**
 4. Configure **Domain Whitelist**:
-   - Add: `neuroforgetechnologies.net`
-   - Add: `www.neuroforgetechnologies.net`
+   - Add: `ayra-tech.net`
+   - Add: `www.ayra-tech.net`
    - **DO NOT** add wildcards or development domains
 5. Enable **Rate Limiting**:
    - Recommended: 10 submissions per hour per IP
@@ -260,7 +260,7 @@ Squarespace allows adding custom code via **Settings** → **Advanced** → **Co
 ### Step 4: Set Up Custom Domain
 
 1. Go to **Settings** → **Domains**
-2. Add your custom domain: `neuroforgetechnologies.net`
+2. Add your custom domain: `ayra-tech.net`
 3. Configure DNS settings as instructed by Squarespace
 4. Wait for DNS propagation (can take 24-48 hours)
 5. Verify SSL certificate is issued for custom domain
@@ -560,7 +560,7 @@ Squarespace allows adding custom code via **Settings** → **Advanced** → **Co
 ### Support Contacts
 - **Squarespace Support**: support@squarespace.com
 - **Web3Forms Support**: support@web3forms.com
-- **Technical Issues**: contact@neuroforgetechnologies.net
+- **Technical Issues**: contact@ayra-tech.net
 
 ### Useful Links
 - [Squarespace Status](https://status.squarespace.com/)
@@ -611,7 +611,7 @@ Use this checklist for each deployment:
 
 ## Conclusion
 
-Following this guide ensures a secure, performant deployment of your NeuroForge Technologies website to Squarespace. Remember:
+Following this guide ensures a secure, performant deployment of your AryaTech website to Squarespace. Remember:
 
 1. **Security is paramount** - Always configure Web3Forms domain restrictions
 2. **Test thoroughly** - Use the testing checklist before going live
@@ -625,4 +625,4 @@ For additional help, refer to the [WEB3FORMS_SECURITY_SETUP.md](./WEB3FORMS_SECU
 
 **Last Updated**: 2025-01-14  
 **Version**: 1.0.0  
-**Maintained By**: NeuroForge Technologies
+**Maintained By**: AryaTech

@@ -62,7 +62,7 @@ Use these in your EmailJS template:
 - `{{company}}` - Company name
 - `{{project_type}}` - Selected project type
 - `{{message}}` - Message content
-- `{{to_email}}` - Your email (contact@neuroforgetechnologies.net)
+- `{{to_email}}` - Your email (jacobgonsalves@ayra-tech.net)
 
 #### Features:
 - ✅ Custom email templates
@@ -121,7 +121,7 @@ export default async function handler(req, res) {
   try {
     // Send email logic
     await sendEmail({
-      to: 'contact@neuroforgetechnologies.net',
+      to: 'jacobgonsalves@ayra-tech.net',
       from: email,
       subject: `New Contact: ${projectType}`,
       text: `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\n${message}`
@@ -387,7 +387,7 @@ Before going live:
 - **Web3Forms**: support@web3forms.com
 
 ### Project Support
-- Email: contact@neuroforgetechnologies.net
+- Email: jacobgonsalves@ayra-tech.net
 - Review: `SECURITY_IMPLEMENTATION.md` for security details
 
 ---

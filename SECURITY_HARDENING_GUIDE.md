@@ -1,4 +1,4 @@
-# NeuroForge Technologies Website - Security Hardening Guide
+# AryaTech Website - Security Hardening Guide
 
 **Version:** 1.0.0  
 **Last Updated:** 2024-01-24  
@@ -27,7 +27,7 @@
 
 ## Introduction
 
-This guide provides comprehensive, step-by-step instructions for hardening the NeuroForge Technologies website security. Follow these procedures in order to achieve enterprise-grade security.
+This guide provides comprehensive, step-by-step instructions for hardening the AryaTech website security. Follow these procedures in order to achieve enterprise-grade security.
 
 ### Security Hardening Goals
 
@@ -303,7 +303,7 @@ After deploying, test your headers:
 
 ```bash
 # Using curl
-curl -I https://neuroforgetechnologies.net
+curl -I https://ayra-tech.net
 
 # Or use online tools:
 # - https://securityheaders.com
@@ -562,8 +562,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'contact@neuroforgetechnologies.net',
-      href: 'mailto:contact@neuroforgetechnologies.net'
+      value: 'contact@ayra-tech.net',
+      href: 'mailto:contact@ayra-tech.net'
     },
     {
       icon: Phone,
@@ -1288,20 +1288,20 @@ Update [`.env.example`](.env.example:1) with security warnings:
 # ==============================================
 
 # Site URL (used for SEO and canonical URLs)
-# Production: https://neuroforgetechnologies.net
-# Staging: https://staging.neuroforgetechnologies.net
+# Production: https://ayra-tech.net
+# Staging: https://staging.ayra-tech.net
 # Development: http://localhost:3000
-VITE_SITE_URL=https://neuroforgetechnologies.net
+VITE_SITE_URL=https://ayra-tech.net
 
 # Site Name
-VITE_SITE_NAME=NeuroForge Technologies
+VITE_SITE_NAME=AryaTech
 
 # ==============================================
 # Contact Information
 # ==============================================
 
 # Contact Email (will be visible on website)
-VITE_CONTACT_EMAIL=hello@neuroforgetechnologies.net
+VITE_CONTACT_EMAIL=hello@ayra-tech.net
 
 # Contact Phone (will be visible on website)
 VITE_CONTACT_PHONE=+1-555-0123
@@ -1339,7 +1339,7 @@ VITE_GITHUB_URL=https://github.com/JBWolfFlow
 # ==============================================
 
 # API Base URL (if using a backend API)
-# VITE_API_BASE_URL=https://api.neuroforgetechnologies.net
+# VITE_API_BASE_URL=https://api.ayra-tech.net
 
 # ⚠️ WARNING: Never put API keys in VITE_ variables!
 # API keys should be handled server-side only
@@ -1435,8 +1435,8 @@ VITE_ENABLE_RATE_LIMITING=true
 # Emergency Contacts
 # ==============================================
 #
-# Security Issues: security@neuroforgetechnologies.net
-# Technical Support: support@neuroforgetechnologies.net
+# Security Issues: security@ayra-tech.net
+# Technical Support: support@ayra-tech.net
 # Emergency: [Your emergency contact]
 #
 # ==============================================
@@ -1633,7 +1633,7 @@ Create `public/privacy-policy.html`:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - NeuroForge Technologies</title>
+  <title>Privacy Policy - AryaTech</title>
   <style>
     body {
       font-family: system-ui, -apple-system, sans-serif;
@@ -1682,7 +1682,7 @@ Create `public/privacy-policy.html`:
   </ul>
   
   <h2>5. Contact Us</h2>
-  <p>For privacy-related questions, contact us at: privacy@neuroforgetechnologies.net</p>
+  <p>For privacy-related questions, contact us at: privacy@ayra-tech.net</p>
 </body>
 </html>
 ```
@@ -1928,8 +1928,8 @@ npm run build
 
 ### Emergency Contacts
 
-- **Security Team:** security@neuroforgetechnologies.net
-- **Technical Lead:** tech@neuroforgetechnologies.net
+- **Security Team:** security@ayra-tech.net
+- **Technical Lead:** tech@ayra-tech.net
 - **Emergency:** [Emergency contact]
 
 ---
@@ -1960,7 +1960,7 @@ npm run build
 
 ## Conclusion
 
-Following this hardening guide will significantly improve the security posture of the NeuroForge Technologies website. Remember:
+Following this hardening guide will significantly improve the security posture of the AryaTech website. Remember:
 
 1. **Security is ongoing** - Regular updates and monitoring are essential
 2. **Test thoroughly** - Always test security features before deployment
@@ -1968,7 +1968,7 @@ Following this hardening guide will significantly improve the security posture o
 4. **Document everything** - Maintain clear documentation of security measures
 5. **Plan for incidents** - Have a response plan ready
 
-For questions or concerns, contact: security@neuroforgetechnologies.net
+For questions or concerns, contact: security@ayra-tech.net
 
 ---
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document outlines the comprehensive security measures implemented in the NeuroForge Technologies website to protect against common web vulnerabilities and attacks.
+This document outlines the comprehensive security measures implemented in the AryaTech website to protect against common web vulnerabilities and attacks.
 
 ## 🛡️ Security Features Implemented
 
@@ -88,7 +88,7 @@ script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net;
 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
 font-src 'self' https://fonts.gstatic.com;
 img-src 'self' data: https:;
-connect-src 'self' https://api.neuroforgetechnologies.net;
+connect-src 'self' https://api.ayra-tech.net;
 frame-ancestors 'none';
 base-uri 'self';
 form-action 'self';
@@ -338,7 +338,7 @@ isSuspiciouslyFast(startTime, submitTime, minTime)
 ## 📞 Support
 
 For security concerns or questions:
-- Email: security@neuroforgetechnologies.net
+- Email: security@ayra-tech.net
 - Review: SECURITY_AUDIT.md for detailed security analysis
 
 ## 🔄 Version History

@@ -1,7 +1,7 @@
 # SEO & Performance Implementation Summary
 
 ## Overview
-This document summarizes the comprehensive SEO optimization, smooth scroll enhancements, and performance improvements implemented for the NeuroForge Technologies website.
+This document summarizes the comprehensive SEO optimization, smooth scroll enhancements, and performance improvements implemented for the AryaTech website.
 
 ## ✅ Completed Components
 
@@ -19,10 +19,10 @@ This document summarizes the comprehensive SEO optimization, smooth scroll enhan
 **Usage:**
 ```jsx
 <SEO 
-  title="NeuroForge Technologies | Premium Web Development"
+  title="AryaTech | Premium Web Development"
   description="Professional web development services"
   ogImage="/og-image.jpg"
-  url="https://neuroforgetechnologies.net"
+  url="https://ayra-tech.net"
 />
 ```
 
@@ -330,9 +330,9 @@ function NewPage() {
   return (
     <>
       <SEO
-        title="New Page | NeuroForge Technologies"
+        title="New Page | AryaTech"
         description="Description of the new page"
-        url="https://neuroforgetechnologies.net/new-page"
+        url="https://ayra-tech.net/new-page"
       />
       {/* Page content */}
     </>
