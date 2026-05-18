@@ -43,9 +43,9 @@ jobs:
           # Environment variables for production build
           VITE_FORM_SERVICE_TYPE: web3forms
           VITE_WEB3FORMS_ACCESS_KEY: ${{ secrets.VITE_WEB3FORMS_ACCESS_KEY }}
-          VITE_SITE_URL: https://neuroforgetechnologies.net
-          VITE_SITE_NAME: NeuroForge Technologies
-          VITE_CONTACT_EMAIL: contact@neuroforgetechnologies.net
+          VITE_SITE_URL: https://ayra-tech.net
+          VITE_SITE_NAME: AryaTech
+          VITE_CONTACT_EMAIL: contact@ayra-tech.net
           VITE_ENVIRONMENT: production
           VITE_DEV_MODE: false
           VITE_DEBUG: false
