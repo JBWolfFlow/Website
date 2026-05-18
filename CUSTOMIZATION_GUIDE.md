@@ -82,7 +82,7 @@ The site currently uses text-based logo. To keep using text, just update the com
 1. **Add your logo file:**
    ```bash
    # Place logo in public folder
-   public/logo.svg        # SVG format (recommended)
+   public/logo.png        # SVG format (recommended)
    # or
    public/logo.png        # PNG format (with transparency)
    ```
@@ -97,7 +97,7 @@ The site currently uses text-based logo. To keep using text, just update the com
    
    <a href="#hero" className="flex items-center gap-2">
      <img 
-       src="/logo.svg" 
+       src="/logo.png" 
        alt={siteConfig.name}
        className="h-8 w-auto"  // Adjust height as needed
      />

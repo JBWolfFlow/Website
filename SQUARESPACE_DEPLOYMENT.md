@@ -166,7 +166,7 @@ Your Squarespace directory should look like:
 │   └── jacob-gonsalves.jpg
 ├── projects/
 │   └── [product screenshots — currently using gradient placeholders]
-├── logo.svg
+├── logo.png
 ├── robots.txt
 ├── sitemap.xml
 └── manifest.json

@@ -98,7 +98,7 @@ Framer Motion 11+
 aryatech-website/
 ├── public/
 │   ├── favicon.ico
-│   ├── logo.svg
+│   ├── logo.png
 │   ├── og-image.jpg
 │   └── robots.txt
 │
@@ -1307,7 +1307,7 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": "AryaTech",
   "url": "https://ayra-tech.net",
-  "logo": "https://ayra-tech.net/logo.svg",
+  "logo": "https://ayra-tech.net/logo.png",
   "description": "Professional web development agency specializing in modern, high-performance websites",
   "address": {
     "@type": "PostalAddress",
