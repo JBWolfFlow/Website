@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" role="img">
+  <title>Paper plane</title>
+  <defs>
+    <linearGradient id="ppWing" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFB94F" />
+      <stop offset="100%" stop-color="#FF8A1E" />
+    </linearGradient>
+    <linearGradient id="ppFold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D9650D" />
+      <stop offset="100%" stop-color="#B05208" />
+    </linearGradient>
+    <filter id="ppGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.6" />
+    </filter>
+  </defs>
+
+  <!-- Soft warm glow halo behind the plane -->
+  <g filter="url(#ppGlow)" opacity="0.55">
+    <path d="M4 42 L60 6 L32 30 Z" fill="#FF8A1E" />
+    <path d="M32 30 L60 6 L38 54 Z" fill="#FF8A1E" />
+  </g>
+
+  <!-- Lower fold face (darker, sits behind the wing) -->
+  <path d="M4 42 L32 30 L38 54 Z" fill="url(#ppFold)" />
+
+  <!-- Top wing face (large, lighter) -->
+  <path d="M4 42 L60 6 L32 30 Z" fill="url(#ppWing)" />
+
+  <!-- Side fin face (catches the light at the nose) -->
+  <path d="M32 30 L60 6 L38 54 Z" fill="url(#ppWing)" opacity="0.92" />
+
+  <!-- Subtle highlight stroke along the upper crease -->
+  <path
+    d="M4 42 L60 6"
+    stroke="#FFD08A"
+    stroke-width="0.6"
+    stroke-linecap="round"
+    fill="none"
+    opacity="0.7"
+  />
+</svg>

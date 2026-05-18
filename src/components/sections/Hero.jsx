@@ -75,13 +75,12 @@ const Hero = () => {
         />
       </div>
 
-      {/* Paper-plane accent — upper-right. PNG bg is solid #0B1A3A matching the hero base; mix-blend-mode: lighten cleanly blends any slight bg variance. */}
+      {/* Paper-plane accent — upper-right. SVG with transparent bg + gradient fills + soft glow filter. */}
       <img
-        src="/generated/hero/paper-plane.png"
+        src="/generated/hero/paper-plane.svg"
         alt=""
         aria-hidden="true"
-        className="absolute top-20 right-8 sm:right-16 w-20 sm:w-28 opacity-85 pointer-events-none select-none"
-        style={{ mixBlendMode: 'lighten' }}
+        className="absolute top-24 right-8 sm:right-16 w-16 sm:w-20 opacity-90 pointer-events-none select-none drop-shadow-[0_0_20px_rgba(255,138,30,0.35)]"
       />
 
       {/* Content */}
