@@ -3,7 +3,7 @@
 
 /*
   # Content Security Policy - Prevents XSS attacks
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.neuroforgetechnologies.net; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.ayra-tech.net; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   
   # Strict Transport Security - Forces HTTPS
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
@@ -33,7 +33,7 @@
 
 # API endpoints - more permissive for functionality
 /api/*
-  Access-Control-Allow-Origin: https://neuroforgetechnologies.net
+  Access-Control-Allow-Origin: https://ayra-tech.net
   Access-Control-Allow-Methods: GET, POST, OPTIONS
   Access-Control-Allow-Headers: Content-Type, Authorization
   Access-Control-Max-Age: 86400

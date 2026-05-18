@@ -1,19 +1,19 @@
-# Security Policy for NeuroForge Technologies
+# Security Policy for AryaTech
 # https://securitytxt.org/
 
-Contact: mailto:security@neuroforgetechnologies.net
-Contact: https://neuroforgetechnologies.net/security-report
+Contact: mailto:security@ayra-tech.net
+Contact: https://ayra-tech.net/security-report
 Expires: 2026-12-31T23:59:59.000Z
-Encryption: https://neuroforgetechnologies.net/pgp-key.txt
-Acknowledgments: https://neuroforgetechnologies.net/security-acknowledgments
+Encryption: https://ayra-tech.net/pgp-key.txt
+Acknowledgments: https://ayra-tech.net/security-acknowledgments
 Preferred-Languages: en
-Canonical: https://neuroforgetechnologies.net/.well-known/security.txt
-Policy: https://neuroforgetechnologies.net/security-policy
+Canonical: https://ayra-tech.net/.well-known/security.txt
+Policy: https://ayra-tech.net/security-policy
 
 # Reporting Security Vulnerabilities
 #
 # If you discover a security vulnerability, please report it to us at:
-# security@neuroforgetechnologies.net
+# security@ayra-tech.net
 #
 # Please include:
 # - Description of the vulnerability
@@ -27,4 +27,4 @@ Policy: https://neuroforgetechnologies.net/security-policy
 # Please do not publicly disclose the vulnerability until we have had
 # a chance to address it.
 #
-# Thank you for helping keep NeuroForge Technologies secure!
+# Thank you for helping keep AryaTech secure!
