@@ -21,6 +21,7 @@ const Careers = lazy(() => import('./components/pages/Careers'));
 const PrivacyPolicy = lazy(() => import('./components/legal/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/legal/TermsOfService'));
 const CookiePolicy = lazy(() => import('./components/legal/CookiePolicy'));
+const NotFound = lazy(() => import('./components/common/NotFound'));
 
 /**
  * HomePage Component
@@ -101,6 +102,7 @@ function App() {
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
             <Route path="/cookies" element={<CookiePolicy />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
 
