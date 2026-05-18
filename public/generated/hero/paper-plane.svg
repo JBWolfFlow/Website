@@ -1,41 +1,54 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" role="img">
-  <title>Paper plane</title>
+  <title>Paper airplane</title>
   <defs>
-    <linearGradient id="ppWing" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FFB94F" />
+    <!-- Upper wing: light amber → vivid orange -->
+    <linearGradient id="planeUpper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFC370" />
       <stop offset="100%" stop-color="#FF8A1E" />
     </linearGradient>
-    <linearGradient id="ppFold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#D9650D" />
-      <stop offset="100%" stop-color="#B05208" />
+    <!-- Lower fold face: deeper orange → burnt, shows shadow of folded paper -->
+    <linearGradient id="planeLower" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E27514" />
+      <stop offset="100%" stop-color="#B5520A" />
     </linearGradient>
-    <filter id="ppGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="1.6" />
+    <!-- Highlight along the crease -->
+    <linearGradient id="planeCrease" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE0A8" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#FFB04A" stop-opacity="0.7" />
+    </linearGradient>
+    <!-- Soft warm glow halo -->
+    <filter id="planeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="1.8" />
     </filter>
   </defs>
 
-  <!-- Soft warm glow halo behind the plane -->
-  <g filter="url(#ppGlow)" opacity="0.55">
-    <path d="M4 42 L60 6 L32 30 Z" fill="#FF8A1E" />
-    <path d="M32 30 L60 6 L38 54 Z" fill="#FF8A1E" />
+  <!--
+    Geometry: classic 4-point paper-airplane silhouette (think Lucide `send`, Telegram).
+    A = nose (top-right)        : (58.7,  5.3)
+    B = tail-back tip           : (40,    58.7)
+    C = body center / fold      : (29.3,  34.7)   <- the "kink"
+    D = far wing tip            : ( 5.3,  24)
+    Outer dart: A -> B -> C -> D -> close
+    Internal crease: A -> C  (the folded centerline of the paper)
+  -->
+
+  <!-- Warm glow halo behind the plane -->
+  <g filter="url(#planeGlow)" opacity="0.55">
+    <path d="M58.7 5.3 L40 58.7 L29.3 34.7 L5.3 24 Z" fill="#FF8A1E" />
   </g>
 
-  <!-- Lower fold face (darker, sits behind the wing) -->
-  <path d="M4 42 L32 30 L38 54 Z" fill="url(#ppFold)" />
+  <!-- Upper wing face (light) — A -> D -> C  -->
+  <path d="M58.7 5.3 L5.3 24 L29.3 34.7 Z" fill="url(#planeUpper)" />
 
-  <!-- Top wing face (large, lighter) -->
-  <path d="M4 42 L60 6 L32 30 Z" fill="url(#ppWing)" />
+  <!-- Lower fold face (darker, the back wing showing underside) — A -> C -> B  -->
+  <path d="M58.7 5.3 L29.3 34.7 L40 58.7 Z" fill="url(#planeLower)" />
 
-  <!-- Side fin face (catches the light at the nose) -->
-  <path d="M32 30 L60 6 L38 54 Z" fill="url(#ppWing)" opacity="0.92" />
-
-  <!-- Subtle highlight stroke along the upper crease -->
-  <path
-    d="M4 42 L60 6"
-    stroke="#FFD08A"
-    stroke-width="0.6"
+  <!-- Crease highlight: bright line from nose down to the body-fold point -->
+  <line
+    x1="58.7" y1="5.3"
+    x2="29.3" y2="34.7"
+    stroke="url(#planeCrease)"
+    stroke-width="0.9"
     stroke-linecap="round"
-    fill="none"
-    opacity="0.7"
   />
 </svg>
