@@ -111,8 +111,8 @@ function Header() {
             aria-label="Go to home"
           >
             <img
-              src="/logo.svg"
-              alt="NeuroForge Technologies Logo"
+              src="/logo.png"
+              alt="AryaTech Logo"
               className="h-12 w-12 group-hover:scale-110 transition-transform duration-300"
             />
             <span className="text-xl font-bold text-neutral-800 hidden sm:block">
