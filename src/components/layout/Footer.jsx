@@ -1,61 +1,136 @@
-import { Link } from 'react-router-dom';
-import { Mail, Phone, Github } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Github, MapPin } from 'lucide-react';
 import { siteConfig } from '@data/siteConfig';
 
 /**
- * Footer Component
- * Site footer with company information, social links, and copyright
- * Features:
- * - Company branding
- * - Quick navigation links
- * - Social media icons
- * - Contact information
- * - Copyright notice
+ * Footer — AryaTech dark-navy footer
+ *
+ * Four-column layout: brand (logo + tagline + location), Explore nav,
+ * Products, Contact (dual emails + GitHub + Get in Touch CTA). Tiny
+ * paper-plane accent upper-right. Bottom strip: copyright + legal.
+ * Designed via gpt-image-2 mockup
+ * (public/generated/mockups/footer/image-20260518-003701-65c4ff-footer-v1.png).
  */
+
+const exploreLinks = [
+  { id: 'about', label: 'About' },
+  { id: 'services', label: 'Capabilities' },
+  { id: 'portfolio', label: 'Portfolio' },
+  { id: 'testimonials', label: 'Track Record' },
+  { id: 'contact', label: 'Contact' },
+];
+
+const productLinks = [
+  { id: 'portfolio', label: 'Huntress' },
+  { id: 'portfolio', label: 'Watch & See' },
+  { id: 'portfolio', label: 'Urban Aid' },
+];
+
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  // Smooth scroll to section
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  const goToSection = (sectionId) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      const el = document.getElementById(sectionId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  const linkClass =
+    'text-sm text-white/70 hover:text-white transition-colors duration-200 text-left';
+  const labelClass =
+    'text-xs font-semibold uppercase tracking-[0.2em] text-primary-400 mb-4';
+
   return (
-    <footer className="bg-neutral-900 text-neutral-300">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-3">
+    <footer className="relative bg-[#0A1530] text-white/80 overflow-hidden">
+      {/* Subtle blue radial tint upper-left */}
+      <div
+        className="pointer-events-none absolute -top-32 -left-32 w-[420px] h-[420px] rounded-full opacity-30"
+        aria-hidden="true"
+        style={{
+          background:
+            'radial-gradient(circle, rgba(30, 91, 255, 0.18) 0%, transparent 70%)',
+          filter: 'blur(60px)',
+        }}
+      />
+
+      {/* Paper-plane accent — upper-right */}
+      <img
+        src="/generated/hero/paper-plane.svg"
+        alt=""
+        aria-hidden="true"
+        className="absolute top-8 right-8 sm:right-12 w-8 sm:w-10 opacity-60 pointer-events-none select-none"
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-14 md:py-16">
+        {/* Top: 4-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 mb-12">
+          {/* Brand */}
+          <div className="md:col-span-4 space-y-4">
+            <button
+              onClick={() => goToSection('hero')}
+              className="flex items-center space-x-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 rounded-md"
+              aria-label="Go to home"
+            >
               <img
                 src="/logo-mark.png"
                 alt="AryaTech Logo"
-                className="h-10 w-auto"
+                className="h-10 w-auto group-hover:scale-105 transition-transform duration-300"
               />
               <span className="text-xl font-bold text-white">
                 {siteConfig.name}
               </span>
-            </div>
-            <p className="text-sm text-neutral-400">
+            </button>
+            <p className="text-sm text-white/70 leading-relaxed">
               {siteConfig.tagline}
             </p>
-            <p className="text-sm text-neutral-400">
-              {siteConfig.description}
+            <p className="text-xs text-white/50 leading-relaxed flex items-center gap-1.5">
+              <MapPin className="w-3 h-3 flex-shrink-0" aria-hidden="true" />
+              Based in Temple, TX · serving clients nationwide
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              {siteConfig.navigation.slice(1).map((item) => (
-                <li key={item.id}>
+          {/* Explore */}
+          <div className="md:col-span-3">
+            <h3 className={labelClass}>Explore</h3>
+            <ul className="space-y-2.5">
+              {exploreLinks.map((item) => (
+                <li key={`${item.label}-${item.id}`}>
                   <button
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200"
+                    type="button"
+                    onClick={() => goToSection(item.id)}
+                    className={linkClass}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+              <li>
+                <Link to="/team" className={linkClass}>
+                  Our Team
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Products */}
+          <div className="md:col-span-2">
+            <h3 className={labelClass}>Products</h3>
+            <ul className="space-y-2.5">
+              {productLinks.map((item) => (
+                <li key={item.label}>
+                  <button
+                    type="button"
+                    onClick={() => goToSection(item.id)}
+                    className={linkClass}
                   >
                     {item.label}
                   </button>
@@ -64,72 +139,75 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h3 className="text-white font-semibold mb-4">Contact</h3>
-            <ul className="space-y-3">
+          {/* Contact */}
+          <div className="md:col-span-3">
+            <h3 className={labelClass}>Contact</h3>
+            <ul className="space-y-2.5">
               <li>
                 <a
                   href={`mailto:${siteConfig.email}`}
-                  className="flex items-center space-x-2 text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200"
+                  className="font-mono text-[11px] sm:text-xs text-white/70 hover:text-white transition-colors duration-200 break-all"
                 >
-                  <Mail className="w-4 h-4" />
-                  <span>{siteConfig.email}</span>
+                  {siteConfig.email}
                 </a>
               </li>
               <li>
                 <a
-                  href={`tel:${siteConfig.phone}`}
-                  className="flex items-center space-x-2 text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200"
+                  href={`mailto:${siteConfig.secondaryEmail}`}
+                  className="font-mono text-[11px] sm:text-xs text-white/70 hover:text-white transition-colors duration-200 break-all"
                 >
-                  <Phone className="w-4 h-4" />
-                  <span>{siteConfig.phone}</span>
+                  {siteConfig.secondaryEmail}
                 </a>
               </li>
-              {siteConfig.social?.github && (
-                <li>
-                  <a
-                    href={siteConfig.social.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200"
-                    aria-label="AryaTech on GitHub"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span>GitHub</span>
-                  </a>
-                </li>
-              )}
             </ul>
+
+            <div className="mt-5 flex items-center gap-3">
+              {siteConfig.social?.github && (
+                <a
+                  href={siteConfig.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="AryaTech on GitHub"
+                  className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 text-white/80 hover:text-white transition-all duration-200"
+                >
+                  <Github className="w-4 h-4" aria-hidden="true" />
+                </a>
+              )}
+              <button
+                type="button"
+                onClick={() => goToSection('contact')}
+                className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold text-white border border-white/30 hover:border-white/50 hover:bg-white/5 transition-all duration-200"
+              >
+                Get in Touch
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-neutral-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-neutral-400">
-              © {currentYear} {siteConfig.name}. All rights reserved.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center md:justify-end">
-              <Link
-                to="/privacy"
-                className="text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                to="/terms"
-                className="text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                to="/cookies"
-                className="text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200"
-              >
-                Cookie Policy
-              </Link>
-            </div>
+        {/* Bottom strip */}
+        <div className="pt-7 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/50">
+            © {currentYear} {siteConfig.name}. All rights reserved.
+          </p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 justify-center md:justify-end">
+            <Link
+              to="/privacy"
+              className="text-xs text-white/55 hover:text-white transition-colors duration-200"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="text-xs text-white/55 hover:text-white transition-colors duration-200"
+            >
+              Terms of Service
+            </Link>
+            <Link
+              to="/cookies"
+              className="text-xs text-white/55 hover:text-white transition-colors duration-200"
+            >
+              Cookie Policy
+            </Link>
           </div>
         </div>
       </div>
