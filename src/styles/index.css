@@ -1,5 +1,6 @@
-/* Import Inter font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* Import brand fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 /* Tailwind CSS directives */
 @tailwind base;
@@ -66,14 +67,19 @@
     @apply py-16 md:py-24 lg:py-32;
   }
 
-  /* Gradient text */
+  /* Gradient text — brand blue → navy → orange */
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-500 via-primary-700 to-accent-500 bg-clip-text text-transparent;
   }
 
-  /* Glass effect */
+  /* Glass effect — light surfaces */
   .glass {
-    @apply bg-white/80 backdrop-blur-lg border border-neutral-200/50;
+    @apply bg-white/70 backdrop-blur-lg border border-neutral-200/50;
+  }
+
+  /* Glass effect — dark surfaces (used over hero gradient) */
+  .glass-dark {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
   }
 
   /* Card hover effect */
@@ -111,5 +117,18 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
+  }
+
+  /* Brand mesh background — for hero / dark sections */
+  .bg-brand-mesh {
+    background:
+      radial-gradient(circle at 20% 30%, rgba(30, 91, 255, 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(255, 138, 30, 0.25) 0%, transparent 50%),
+      linear-gradient(135deg, #050F33 0%, #0B2A6B 100%);
+  }
+
+  /* Mono utility (paired with tailwind fontFamily.mono) */
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
   }
 }
