@@ -32,7 +32,7 @@ import { submitContactForm } from '../../services/formService';
  * 5. Input Sanitization - Prevents XSS attacks (applied to all inputs)
  *
  * CRITICAL: Before deploying to production, you MUST:
- * - Configure domain whitelist in Web3Forms dashboard (neuroforgetechnologies.net)
+ * - Configure domain whitelist in Web3Forms dashboard (ayra-tech.net)
  * - Enable rate limiting in Web3Forms dashboard (recommended: 10/hour per IP)
  * - Test that submissions from unauthorized domains are blocked
  *
@@ -64,8 +64,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'contact@neuroforgetechnologies.net',
-      href: 'mailto:contact@neuroforgetechnologies.net'
+      value: 'jacobgonsalves@ayra-tech.net',
+      href: 'mailto:jacobgonsalves@ayra-tech.net'
     },
     {
       icon: Phone,
@@ -464,19 +464,19 @@ const Contact = () => {
                     <p className="text-gray-600 text-sm leading-relaxed">
                       Jacob —{' '}
                       <a
-                        href="mailto:jacobgonsalves@neuroforgetechnologies.net"
+                        href="mailto:jacobgonsalves@ayra-tech.net"
                         className="text-primary-600 hover:text-primary-700 break-all"
                       >
-                        jacobgonsalves@neuroforgetechnologies.net
+                        jacobgonsalves@ayra-tech.net
                       </a>
                     </p>
                     <p className="text-gray-600 text-sm leading-relaxed mt-1">
                       Ethan —{' '}
                       <a
-                        href="mailto:ethanhoover@neuroforgetechnologies.net"
+                        href="mailto:ethanhoover@ayra-tech.net"
                         className="text-primary-600 hover:text-primary-700 break-all"
                       >
-                        ethanhoover@neuroforgetechnologies.net
+                        ethanhoover@ayra-tech.net
                       </a>
                     </p>
                   </div>
