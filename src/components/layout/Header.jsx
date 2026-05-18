@@ -95,71 +95,104 @@ function Header() {
   return (
     <>
       <header
-        className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-          isScrolled
-            ? 'bg-white/80 backdrop-blur-lg shadow-md'
-            : 'bg-transparent'
-        )}
+        className="fixed top-4 inset-x-0 z-50 flex justify-center pointer-events-none px-4"
       >
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <nav
+          className={cn(
+            'pointer-events-auto flex items-center gap-2 md:gap-4 px-3 md:px-4 py-2 rounded-full',
+            'backdrop-blur-xl transition-all duration-300',
+            isScrolled
+              ? 'bg-white/80 border border-neutral-200/60 shadow-lg shadow-neutral-900/5'
+              : 'bg-white/[0.06] border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.25)]'
+          )}
+          aria-label="Primary"
+        >
           {/* Logo */}
           <button
             onClick={() => handleNavigation('hero')}
-            className="flex items-center space-x-3 group"
+            className="flex items-center space-x-2 group px-2 py-1 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
             aria-label="Go to home"
           >
             <img
               src="/logo-mark.png"
               alt="AryaTech Logo"
-              className="h-10 w-auto group-hover:scale-110 transition-transform duration-300"
+              className="h-8 w-auto group-hover:scale-110 transition-transform duration-300"
             />
-            <span className="text-xl font-bold text-neutral-800 hidden sm:block">
+            <span
+              className={cn(
+                'text-base font-bold hidden sm:block transition-colors duration-300',
+                isScrolled ? 'text-neutral-800' : 'text-white'
+              )}
+            >
               {siteConfig.name}
             </span>
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {siteConfig.navigation.map((item) => (
+          <div className="hidden md:flex items-center gap-1 ml-2">
+            {siteConfig.navigation.slice(1).map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleNavigation(item.id)}
-                className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200 relative group"
+                className={cn(
+                  'px-3 py-1.5 text-sm font-medium rounded-full transition-colors duration-200',
+                  isScrolled
+                    ? 'text-neutral-700 hover:text-primary-600 hover:bg-neutral-100'
+                    : 'text-white/75 hover:text-white hover:bg-white/10'
+                )}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300" />
               </button>
             ))}
-            {/* Our Team Link */}
             <button
               onClick={() => {
                 navigate('/team');
                 setIsMobileMenuOpen(false);
               }}
-              className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200 relative group"
+              className={cn(
+                'px-3 py-1.5 text-sm font-medium rounded-full transition-colors duration-200',
+                isScrolled
+                  ? 'text-neutral-700 hover:text-primary-600 hover:bg-neutral-100'
+                  : 'text-white/75 hover:text-white hover:bg-white/10'
+              )}
             >
               Our Team
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 group-hover:w-full transition-all duration-300" />
             </button>
           </div>
+
+          {/* Get in Touch CTA (desktop) */}
+          <button
+            onClick={() => handleNavigation('contact')}
+            className={cn(
+              'hidden md:inline-flex items-center px-4 py-1.5 ml-1 text-sm font-semibold rounded-full transition-all duration-300',
+              isScrolled
+                ? 'bg-primary-500 text-white hover:bg-primary-600 shadow-sm'
+                : 'bg-white/10 text-white border border-white/30 hover:bg-white/15'
+            )}
+            aria-label="Get in touch with AryaTech"
+          >
+            Get in Touch
+          </button>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-neutral-700 hover:text-primary-600 transition-colors"
+            className={cn(
+              'md:hidden p-2 rounded-full transition-colors',
+              isScrolled
+                ? 'text-neutral-700 hover:text-primary-600'
+                : 'text-white/85 hover:text-white'
+            )}
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             )}
           </button>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
 
     {/* Mobile Menu Backdrop */}
     <AnimatePresence mode="wait">

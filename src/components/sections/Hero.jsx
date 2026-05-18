@@ -1,336 +1,170 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
-import Button from '../ui/Button';
 
 /**
- * Hero Section Component
- * Features professional animations, animated gradient background,
- * and full accessibility support
- * Optimized for mobile performance
+ * Hero — AryaTech dark liquid-glass hero
+ *
+ * Layout: full-bleed dark navy with atmospheric gradient mesh,
+ * royal-blue eyebrow tagline, big headline with orange-gradient on
+ * "production", subheadline, two liquid-glass CTAs, tiny paper-plane
+ * accent upper-right. Designed via gpt-image-2 mockup
+ * (public/generated/mockups/hero/image-20260517-225918-ca6f6b-hero-v2-liquid-glass.png).
  */
 const Hero = () => {
   const prefersReducedMotion = useReducedMotion();
   const [isMobile, setIsMobile] = useState(false);
 
-  // Detect mobile device for performance optimization
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
   }, []);
 
-  // Smooth scroll to section
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  // Animation variants for different elements
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const headlineVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1], // Custom easeOut curve
-      },
-    },
-  };
-
-  const subtextVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        delay: 0.4,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
-  const ctaVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: (custom) => ({
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        delay: 0.6 + custom * 0.1,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    }),
-  };
-
-  // Split headline into words for stagger animation
-  const headline = "We build production software.";
-  const words = headline.split(' ');
-  const accentWord = 'production';
-
-  // Disable complex animations on mobile, but keep simple fade
   const shouldAnimate = !prefersReducedMotion && !isMobile;
-  
-  // Always provide animation props to ensure content renders
-  const animationProps = shouldAnimate
-    ? {
-        initial: "hidden",
-        animate: "visible",
-        variants: containerVariants,
-      }
-    : {
-        initial: { opacity: 0 },
-        animate: { opacity: 1 },
-        transition: { duration: 0.5 }
-      };
+
+  const fade = (delay = 0) =>
+    shouldAnimate
+      ? {
+          initial: { opacity: 0, y: 16 },
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] },
+        }
+      : { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.4 } };
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50"
       aria-label="Hero section"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0B1A3A]"
       style={{ maxWidth: '100vw' }}
     >
-      {/* Animated Gradient Background - Disabled on mobile for performance */}
-      <div className="absolute inset-0 overflow-hidden">
-        {!isMobile && (
-          <motion.div
-            className="absolute inset-0 opacity-30"
-            animate={
-              prefersReducedMotion
-                ? {}
-                : {
-                    background: [
-                      'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
-                      'radial-gradient(circle at 80% 50%, rgba(236, 72, 153, 0.15) 0%, transparent 50%)',
-                      'radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)',
-                      'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
-                    ],
-                  }
-            }
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-            style={{
-              background:
-                'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
-            }}
-          />
-        )}
-
-        {/* Floating Geometric Shapes - Reduced on mobile */}
-        {!prefersReducedMotion && !isMobile && (
-          <>
-            <motion.div
-              className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"
-              animate={{
-                x: [0, 100, 0],
-                y: [0, -50, 0],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-            <motion.div
-              className="absolute top-1/3 right-1/4 w-72 h-72 bg-accent-200 rounded-full mix-blend-multiply filter blur-xl opacity-20"
-              animate={{
-                x: [0, -100, 0],
-                y: [0, 100, 0],
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 25,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            />
-          </>
-        )}
-        
-        {/* Static gradient for mobile */}
-        {isMobile && (
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              background: 'radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%)',
-            }}
-          />
-        )}
+      {/* Background gradient mesh — soft blue glow upper-left, warm orange bloom lower-right */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 70% 60% at 15% 25%, rgba(30, 91, 255, 0.45) 0%, transparent 60%),' +
+              'radial-gradient(ellipse 55% 50% at 85% 80%, rgba(255, 138, 30, 0.28) 0%, transparent 65%),' +
+              'linear-gradient(135deg, #0B1A3A 0%, #060F2A 100%)',
+          }}
+        />
+        {/* Atmospheric orbs — translucent, with blur, for depth */}
+        <div
+          className="absolute -left-32 top-1/3 w-[480px] h-[480px] rounded-full"
+          style={{
+            background:
+              'radial-gradient(circle, rgba(30, 91, 255, 0.18) 0%, rgba(30, 91, 255, 0) 70%)',
+            filter: 'blur(40px)',
+          }}
+        />
+        <div
+          className="absolute right-0 bottom-0 w-[420px] h-[420px] rounded-3xl"
+          style={{
+            background:
+              'radial-gradient(circle at 30% 30%, rgba(255, 138, 30, 0.22) 0%, rgba(255, 138, 30, 0) 70%)',
+            filter: 'blur(50px)',
+          }}
+        />
       </div>
 
-      {/* Content Container - Separate rendering for mobile vs desktop */}
-      {isMobile || prefersReducedMotion ? (
-        // MOBILE & REDUCED MOTION: Pure HTML/CSS (no Framer Motion)
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 break-words">
-            {words.map((word, index) => (
-              <span key={index} className="inline-block mr-3 md:mr-4">
-                {word === accentWord ? (
-                  <span className="text-accent-500">{word}</span>
-                ) : (
-                  word
-                )}
-              </span>
-            ))}
-          </h1>
+      {/* Paper-plane accent — upper-right. PNG bg is solid #0B1A3A matching the hero base; mix-blend-mode: lighten cleanly blends any slight bg variance. */}
+      <img
+        src="/generated/hero/paper-plane.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute top-20 right-8 sm:right-16 w-20 sm:w-28 opacity-85 pointer-events-none select-none"
+        style={{ mixBlendMode: 'lighten' }}
+      />
 
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto">
-            AryaTech engineers software across desktop, web, and mobile. We build our own product portfolio and partner with companies that need{' '}
-            <span className="font-semibold text-gray-900">
-              production software built right.
-            </span>
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => scrollToSection('contact')}
-              aria-label="Get in touch with AryaTech"
-            >
-              Get in Touch
-            </Button>
-
-            <Button
-              variant="secondary"
-              size="lg"
-              onClick={() => scrollToSection('portfolio')}
-              aria-label="View our portfolio of work"
-            >
-              View Our Work
-            </Button>
-          </div>
-        </div>
-      ) : (
-        // DESKTOP: Fancy Framer Motion animations
-        <motion.div
-          className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 sm:px-8 text-center">
+        {/* Eyebrow */}
+        <motion.p
+          {...fade(0.1)}
+          className="text-xs sm:text-sm font-semibold uppercase tracking-[0.2em] text-primary-400 mb-6"
         >
-          {/* Headline with word stagger */}
-          <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 break-words"
-            variants={headlineVariants}
-          >
-            {words.map((word, index) => (
-              <motion.span
-                key={index}
-                className="inline-block mr-3 md:mr-4"
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.8,
-                      delay: index * 0.1,
-                      ease: [0.22, 1, 0.36, 1],
-                    },
-                  },
-                }}
-              >
-                {word === accentWord ? (
-                  <span className="text-accent-500">{word}</span>
-                ) : (
-                  word
-                )}
-              </motion.span>
-            ))}
-          </motion.h1>
+          Intelligent Solutions, Secure Future
+        </motion.p>
 
-          {/* Subheadline */}
-          <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto"
-            variants={subtextVariants}
+        {/* Headline */}
+        <motion.h1
+          {...fade(0.25)}
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.05] tracking-tight text-white mb-8"
+        >
+          We build{' '}
+          <span
+            className="bg-clip-text text-transparent"
+            style={{
+              backgroundImage: 'linear-gradient(135deg, #FFB04A 0%, #FF8A1E 100%)',
+            }}
           >
-            AryaTech engineers software across desktop, web, and mobile. We build our own product portfolio and partner with companies that need{' '}
-            <span className="font-semibold text-gray-900">
-              production software built right.
-            </span>
-          </motion.p>
+            production
+          </span>{' '}
+          software.
+        </motion.h1>
 
-          {/* CTA Buttons */}
-          <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            variants={containerVariants}
+        {/* Subheadline */}
+        <motion.p
+          {...fade(0.4)}
+          className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto leading-relaxed mb-12"
+        >
+          AryaTech engineers software across desktop, web, and mobile. We build our
+          own product portfolio and partner with companies that need{' '}
+          <span className="text-white font-medium">production software built right.</span>
+        </motion.p>
+
+        {/* CTAs — liquid-glass treatment */}
+        <motion.div
+          {...fade(0.55)}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+          {/* Primary — tinted royal-blue glass with glow */}
+          <button
+            onClick={() => scrollToSection('contact')}
+            aria-label="Get in touch with AryaTech"
+            className="group relative px-8 py-3.5 rounded-full text-white font-semibold text-base
+                       bg-primary-500/90 backdrop-blur-xl border border-primary-300/30
+                       shadow-[0_0_30px_rgba(30,91,255,0.4)] hover:shadow-[0_0_50px_rgba(30,91,255,0.6)]
+                       transition-all duration-300 hover:bg-primary-500 hover:scale-[1.02]
+                       focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1A3A]"
           >
-            <motion.div variants={ctaVariants} custom={0}>
-              <Button
-                variant="primary"
-                size="lg"
-                onClick={() => scrollToSection('contact')}
-                aria-label="Get in touch with AryaTech"
-              >
-                Get in Touch
-              </Button>
-            </motion.div>
+            Get in Touch
+          </button>
 
-            <motion.div variants={ctaVariants} custom={1}>
-              <Button
-                variant="secondary"
-                size="lg"
-                onClick={() => scrollToSection('portfolio')}
-                aria-label="View our portfolio of work"
-              >
-                View Our Work
-              </Button>
-            </motion.div>
-          </motion.div>
+          {/* Secondary — pure liquid glass */}
+          <button
+            onClick={() => scrollToSection('portfolio')}
+            aria-label="View our portfolio of work"
+            className="group relative px-8 py-3.5 rounded-full text-white font-semibold text-base
+                       bg-white/5 backdrop-blur-xl border border-white/20
+                       hover:bg-white/10 hover:border-white/30
+                       transition-all duration-300 hover:scale-[1.02]
+                       focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1A3A]"
+          >
+            View Our Work
+          </button>
         </motion.div>
-      )}
+      </div>
 
-      {/* Scroll Indicator - Disabled on mobile */}
-      {!prefersReducedMotion && !isMobile && (
+      {/* Scroll indicator — calm, faint, only when motion allowed */}
+      {!prefersReducedMotion && (
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            delay: 1.5,
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5, y: [0, 6, 0] }}
+          transition={{ opacity: { duration: 1, delay: 1.5 }, y: { duration: 1.8, repeat: Infinity, ease: 'easeInOut' } }}
+          aria-hidden="true"
         >
-          <svg
-            className="w-6 h-6 text-gray-400"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          <svg className="w-5 h-5 text-white/60" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M19 9l-7 7-7-7" />
           </svg>
         </motion.div>
       )}
