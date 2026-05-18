@@ -31,8 +31,8 @@ function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <img
-                src="/logo.svg"
-                alt="NeuroForge Technologies Logo"
+                src="/logo.png"
+                alt="AryaTech Logo"
                 className="h-12 w-12"
               />
               <span className="text-xl font-bold text-white">
@@ -93,7 +93,7 @@ function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-sm text-neutral-400 hover:text-primary-400 transition-colors duration-200"
-                    aria-label="NeuroForge Technologies on GitHub"
+                    aria-label="AryaTech on GitHub"
                   >
                     <Github className="w-4 h-4" />
                     <span>GitHub</span>
