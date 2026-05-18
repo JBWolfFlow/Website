@@ -176,7 +176,7 @@ export function About() {
               className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto space-y-4"
             >
               <p>
-                NeuroForge Technologies is an engineering company focused on production software. We design, build, and operate our own product portfolio, and we partner with companies that need software built to the same standard we apply to our own work.
+                AryaTech is an engineering company focused on production software. We design, build, and operate our own product portfolio, and we partner with companies that need software built to the same standard we apply to our own work.
               </p>
               <p>
                 The portfolio includes <span className="font-semibold text-gray-900">Huntress</span>, an AI-orchestrated bug bounty platform; <span className="font-semibold text-gray-900">Watch &amp; See</span>, a native iOS marketplace entering beta; and <span className="font-semibold text-gray-900">Urban Aid</span>, a civic-tech mobile app live on the App Store with a 5.0★ rating.
