@@ -201,7 +201,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto">
-            NeuroForge Technologies engineers software across desktop, web, and mobile. We build our own product portfolio and partner with companies that need{' '}
+            AryaTech engineers software across desktop, web, and mobile. We build our own product portfolio and partner with companies that need{' '}
             <span className="font-semibold text-gray-900">
               production software built right.
             </span>
@@ -213,7 +213,7 @@ const Hero = () => {
               variant="primary"
               size="lg"
               onClick={() => scrollToSection('contact')}
-              aria-label="Get in touch with NeuroForge Technologies"
+              aria-label="Get in touch with AryaTech"
             >
               Get in Touch
             </Button>
@@ -272,7 +272,7 @@ const Hero = () => {
             className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed mb-10 max-w-3xl mx-auto"
             variants={subtextVariants}
           >
-            NeuroForge Technologies engineers software across desktop, web, and mobile. We build our own product portfolio and partner with companies that need{' '}
+            AryaTech engineers software across desktop, web, and mobile. We build our own product portfolio and partner with companies that need{' '}
             <span className="font-semibold text-gray-900">
               production software built right.
             </span>
@@ -288,7 +288,7 @@ const Hero = () => {
                 variant="primary"
                 size="lg"
                 onClick={() => scrollToSection('contact')}
-                aria-label="Get in touch with NeuroForge Technologies"
+                aria-label="Get in touch with AryaTech"
               >
                 Get in Touch
               </Button>
