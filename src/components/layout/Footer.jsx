@@ -31,9 +31,9 @@ function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <img
-                src="/logo.png"
+                src="/logo-mark.png"
                 alt="AryaTech Logo"
-                className="h-12 w-12"
+                className="h-10 w-auto"
               />
               <span className="text-xl font-bold text-white">
                 {siteConfig.name}

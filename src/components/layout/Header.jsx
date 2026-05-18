@@ -111,9 +111,9 @@ function Header() {
             aria-label="Go to home"
           >
             <img
-              src="/logo.png"
+              src="/logo-mark.png"
               alt="AryaTech Logo"
-              className="h-12 w-12 group-hover:scale-110 transition-transform duration-300"
+              className="h-10 w-auto group-hover:scale-110 transition-transform duration-300"
             />
             <span className="text-xl font-bold text-neutral-800 hidden sm:block">
               {siteConfig.name}
