@@ -3,7 +3,7 @@ import { FileText, Scale, AlertTriangle, CheckCircle } from 'lucide-react';
 
 /**
  * Terms of Service Component
- * Comprehensive terms and conditions for NeuroForge Technologies
+ * Comprehensive terms and conditions for AryaTech
  */
 const TermsOfService = () => {
   const lastUpdated = 'January 27, 2025';
@@ -11,8 +11,8 @@ const TermsOfService = () => {
   return (
     <>
       <Helmet>
-        <title>Terms of Service | NeuroForge Technologies</title>
-        <meta name="description" content="Terms of Service for NeuroForge Technologies. Read our terms and conditions for using our services." />
+        <title>Terms of Service | AryaTech</title>
+        <meta name="description" content="Terms of Service for AryaTech. Read our terms and conditions for using our services." />
         <meta name="robots" content="index, follow" />
       </Helmet>
 
@@ -32,7 +32,7 @@ const TermsOfService = () => {
           {/* Introduction */}
           <section className="mb-8">
             <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Welcome to NeuroForge Technologies. These Terms of Service ("Terms") govern your access to and use of our website, services, and products. By accessing or using our services, you agree to be bound by these Terms.
+              Welcome to AryaTech. These Terms of Service ("Terms") govern your access to and use of our website, services, and products. By accessing or using our services, you agree to be bound by these Terms.
             </p>
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
               <div className="flex">
@@ -51,7 +51,7 @@ const TermsOfService = () => {
               1. Acceptance of Terms
             </h2>
             <p className="text-gray-700 mb-4">
-              By accessing or using NeuroForge Technologies' website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. These Terms apply to all visitors, users, and others who access or use our services.
+              By accessing or using AryaTech' website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. These Terms apply to all visitors, users, and others who access or use our services.
             </p>
             <p className="text-gray-700">
               We reserve the right to modify these Terms at any time. We will notify you of any changes by posting the new Terms on this page and updating the "Last Updated" date. Your continued use of our services after such modifications constitutes your acceptance of the updated Terms.
@@ -62,7 +62,7 @@ const TermsOfService = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">2. Services Description</h2>
             <p className="text-gray-700 mb-4">
-              NeuroForge Technologies provides software development services, including but not limited to:
+              AryaTech provides software development services, including but not limited to:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
               <li>Web application development</li>
@@ -102,7 +102,7 @@ const TermsOfService = () => {
             
             <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Our Intellectual Property</h3>
             <p className="text-gray-700 mb-4">
-              All content, features, and functionality on our website, including but not limited to text, graphics, logos, icons, images, audio clips, video clips, data compilations, and software, are the exclusive property of NeuroForge Technologies or its licensors and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property laws.
+              All content, features, and functionality on our website, including but not limited to text, graphics, logos, icons, images, audio clips, video clips, data compilations, and software, are the exclusive property of AryaTech or its licensors and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property laws.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Client-Owned Work Product</h3>
@@ -184,7 +184,7 @@ const TermsOfService = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Limitation of Liability</h2>
             <p className="text-gray-700 mb-4 uppercase font-semibold">
-              TO THE MAXIMUM EXTENT PERMITTED BY LAW, NEUROFORGE TECHNOLOGIES SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
+              TO THE MAXIMUM EXTENT PERMITTED BY LAW, ARYATECH SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR ANY LOSS OF PROFITS OR REVENUES, WHETHER INCURRED DIRECTLY OR INDIRECTLY, OR ANY LOSS OF DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.
             </p>
             <p className="text-gray-700">
               Our total liability for any claims arising out of or related to these Terms or our services shall not exceed the amount paid by you for the specific services giving rise to the claim, or $1,000, whichever is greater.
@@ -228,7 +228,7 @@ const TermsOfService = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Indemnification</h2>
             <p className="text-gray-700">
-              You agree to indemnify, defend, and hold harmless NeuroForge Technologies and its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to:
+              You agree to indemnify, defend, and hold harmless AryaTech and its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to:
             </p>
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 mt-4">
               <li>Your use of our services</li>
@@ -268,7 +268,7 @@ const TermsOfService = () => {
             
             <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Entire Agreement</h3>
             <p className="text-gray-700 mb-4">
-              These Terms, together with any Service Agreement and our Privacy Policy, constitute the entire agreement between you and NeuroForge Technologies regarding our services.
+              These Terms, together with any Service Agreement and our Privacy Policy, constitute the entire agreement between you and AryaTech regarding our services.
             </p>
 
             <h3 className="text-xl font-semibold text-gray-800 mb-3 mt-6">Severability</h3>
@@ -297,9 +297,9 @@ const TermsOfService = () => {
               If you have any questions about these Terms, please contact us:
             </p>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-700"><strong>NeuroForge Technologies</strong></p>
-              <p className="text-gray-700">Email: <a href="mailto:legal@neuroforgetechnologies.net" className="text-primary-600 hover:text-primary-700 underline">legal@neuroforgetechnologies.net</a></p>
-              <p className="text-gray-700">General Inquiries: <a href="mailto:contact@neuroforgetechnologies.net" className="text-primary-600 hover:text-primary-700 underline">contact@neuroforgetechnologies.net</a></p>
+              <p className="text-gray-700"><strong>AryaTech</strong></p>
+              <p className="text-gray-700">Email: <a href="mailto:legal@ayra-tech.net" className="text-primary-600 hover:text-primary-700 underline">legal@ayra-tech.net</a></p>
+              <p className="text-gray-700">General Inquiries: <a href="mailto:contact@ayra-tech.net" className="text-primary-600 hover:text-primary-700 underline">contact@ayra-tech.net</a></p>
               <p className="text-gray-700">Phone: <a href="tel:+12068760437" className="text-primary-600 hover:text-primary-700 underline">(206) 876-0437</a></p>
               <p className="text-gray-700">Location: Temple, TX, United States</p>
             </div>

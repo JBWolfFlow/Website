@@ -154,7 +154,7 @@ const Careers = () => {
       
       // Add subject and metadata
       formDataToSend.append('subject', `New Career Application - ${formData.name}`);
-      formDataToSend.append('from_name', 'NeuroForge Technologies Careers');
+      formDataToSend.append('from_name', 'AryaTech Careers');
       
       // Add form fields with clear labels
       formDataToSend.append('Name', formData.name);
@@ -215,8 +215,8 @@ const Careers = () => {
   return (
     <>
       <Helmet>
-        <title>Careers | NeuroForge Technologies</title>
-        <meta name="description" content="Join the NeuroForge Technologies team. Explore career opportunities and submit your application." />
+        <title>Careers | AryaTech</title>
+        <meta name="description" content="Join the AryaTech team. Explore career opportunities and submit your application." />
         <meta name="robots" content="index, follow" />
       </Helmet>
 

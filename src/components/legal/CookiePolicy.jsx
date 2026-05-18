@@ -3,7 +3,7 @@ import { Cookie, Settings, Info } from 'lucide-react';
 
 /**
  * Cookie Policy Component
- * Explains cookie usage on NeuroForge Technologies website
+ * Explains cookie usage on AryaTech website
  */
 const CookiePolicy = () => {
   const lastUpdated = 'January 27, 2025';
@@ -11,8 +11,8 @@ const CookiePolicy = () => {
   return (
     <>
       <Helmet>
-        <title>Cookie Policy | NeuroForge Technologies</title>
-        <meta name="description" content="Cookie Policy for NeuroForge Technologies. Learn about how we use cookies and similar technologies." />
+        <title>Cookie Policy | AryaTech</title>
+        <meta name="description" content="Cookie Policy for AryaTech. Learn about how we use cookies and similar technologies." />
         <meta name="robots" content="index, follow" />
       </Helmet>
 
@@ -32,7 +32,7 @@ const CookiePolicy = () => {
           {/* Introduction */}
           <section className="mb-8">
             <p className="text-lg text-gray-700 leading-relaxed">
-              This Cookie Policy explains how NeuroForge Technologies ("we," "our," or "us") uses cookies and similar technologies on our website. By using our website, you consent to the use of cookies as described in this policy.
+              This Cookie Policy explains how AryaTech ("we," "our," or "us") uses cookies and similar technologies on our website. By using our website, you consent to the use of cookies as described in this policy.
             </p>
           </section>
 
@@ -195,9 +195,9 @@ const CookiePolicy = () => {
               If you have questions about our use of cookies, please contact us:
             </p>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-700"><strong>NeuroForge Technologies</strong></p>
-              <p className="text-gray-700">Email: <a href="mailto:privacy@neuroforgetechnologies.net" className="text-primary-600 hover:text-primary-700 underline">privacy@neuroforgetechnologies.net</a></p>
-              <p className="text-gray-700">General Inquiries: <a href="mailto:contact@neuroforgetechnologies.net" className="text-primary-600 hover:text-primary-700 underline">contact@neuroforgetechnologies.net</a></p>
+              <p className="text-gray-700"><strong>AryaTech</strong></p>
+              <p className="text-gray-700">Email: <a href="mailto:privacy@ayra-tech.net" className="text-primary-600 hover:text-primary-700 underline">privacy@ayra-tech.net</a></p>
+              <p className="text-gray-700">General Inquiries: <a href="mailto:contact@ayra-tech.net" className="text-primary-600 hover:text-primary-700 underline">contact@ayra-tech.net</a></p>
               <p className="text-gray-700">Phone: <a href="tel:+12068760437" className="text-primary-600 hover:text-primary-700 underline">(206) 876-0437</a></p>
             </div>
           </section>

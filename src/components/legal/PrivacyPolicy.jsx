@@ -3,7 +3,7 @@ import { Shield, Lock, Eye, Database, Mail } from 'lucide-react';
 
 /**
  * Privacy Policy Component
- * Comprehensive privacy policy for NeuroForge Technologies
+ * Comprehensive privacy policy for AryaTech
  * GDPR, CCPA, and general privacy law compliant
  */
 const PrivacyPolicy = () => {
@@ -12,8 +12,8 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Helmet>
-        <title>Privacy Policy | NeuroForge Technologies</title>
-        <meta name="description" content="Privacy Policy for NeuroForge Technologies. Learn how we collect, use, and protect your personal information." />
+        <title>Privacy Policy | AryaTech</title>
+        <meta name="description" content="Privacy Policy for AryaTech. Learn how we collect, use, and protect your personal information." />
         <meta name="robots" content="index, follow" />
       </Helmet>
 
@@ -33,7 +33,7 @@ const PrivacyPolicy = () => {
           {/* Introduction */}
           <section className="mb-8">
             <p className="text-lg text-gray-700 leading-relaxed">
-              At NeuroForge Technologies ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+              At AryaTech ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
             </p>
           </section>
 
@@ -166,7 +166,7 @@ const PrivacyPolicy = () => {
               <li><strong>Withdraw Consent:</strong> Withdraw consent for data processing at any time</li>
             </ul>
             <p className="text-gray-700 mt-4">
-              To exercise these rights, please contact us at <a href="mailto:privacy@neuroforgetechnologies.net" className="text-primary-600 hover:text-primary-700 underline">privacy@neuroforgetechnologies.net</a>
+              To exercise these rights, please contact us at <a href="mailto:privacy@ayra-tech.net" className="text-primary-600 hover:text-primary-700 underline">privacy@ayra-tech.net</a>
             </p>
           </section>
 
@@ -212,9 +212,9 @@ const PrivacyPolicy = () => {
               If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
             </p>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <p className="text-gray-700"><strong>NeuroForge Technologies</strong></p>
-              <p className="text-gray-700">Email: <a href="mailto:privacy@neuroforgetechnologies.net" className="text-primary-600 hover:text-primary-700 underline">privacy@neuroforgetechnologies.net</a></p>
-              <p className="text-gray-700">General Inquiries: <a href="mailto:contact@neuroforgetechnologies.net" className="text-primary-600 hover:text-primary-700 underline">contact@neuroforgetechnologies.net</a></p>
+              <p className="text-gray-700"><strong>AryaTech</strong></p>
+              <p className="text-gray-700">Email: <a href="mailto:privacy@ayra-tech.net" className="text-primary-600 hover:text-primary-700 underline">privacy@ayra-tech.net</a></p>
+              <p className="text-gray-700">General Inquiries: <a href="mailto:contact@ayra-tech.net" className="text-primary-600 hover:text-primary-700 underline">contact@ayra-tech.net</a></p>
               <p className="text-gray-700">Phone: <a href="tel:+12068760437" className="text-primary-600 hover:text-primary-700 underline">(206) 876-0437</a></p>
               <p className="text-gray-700">Location: Temple, TX, United States</p>
             </div>

@@ -51,7 +51,7 @@ const submitToEmailJS = async (formData, config) => {
     company: formData.company || 'N/A',
     project_type: formData.projectType,
     message: formData.message,
-    to_email: 'contact@neuroforgetechnologies.net'
+    to_email: 'jacobgonsalves@ayra-tech.net'
   };
 
   const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
@@ -101,7 +101,7 @@ const submitToWeb3Forms = async (formData, accessKey) => {
     project_type: formData.projectType,
     message: formData.message,
     subject: `New Contact Form Submission - ${formData.projectType}`,
-    from_name: 'NeuroForge Technologies Website'
+    from_name: 'AryaTech Website'
   };
 
   const response = await fetch('https://api.web3forms.com/submit', {

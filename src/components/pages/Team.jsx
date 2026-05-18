@@ -10,8 +10,8 @@ const Team = () => {
   return (
     <>
       <Helmet>
-        <title>Our Team | NeuroForge Technologies</title>
-        <meta name="description" content="Meet the talented team behind NeuroForge Technologies. Expert engineers, AI specialists, and designers building the future of technology." />
+        <title>Our Team | AryaTech</title>
+        <meta name="description" content="Meet the talented team behind AryaTech. Expert engineers, AI specialists, and designers building the future of technology." />
         <meta name="robots" content="index, follow" />
       </Helmet>
 
@@ -28,7 +28,7 @@ const Team = () => {
               Meet Our Team
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The engineers building NeuroForge Technologies&apos; product portfolio. Small and senior by design — every product owned end-to-end by an experienced engineer.
+              The engineers building AryaTech&apos;s product portfolio. Small and senior by design — every product owned end-to-end by an experienced engineer.
             </p>
           </div>
 
