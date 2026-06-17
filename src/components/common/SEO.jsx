@@ -25,11 +25,12 @@ const SEO = ({
     url: url,
     logo: `${url}/logo.png`,
     image: `${url}${ogImage}`,
-    foundingDate: '2024',
+    foundingDate: '2025',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
       email: 'jacobgonsalves@ayra-tech.net',
+      telephone: '+1-206-876-0437',
       areaServed: 'US',
       availableLanguage: ['English'],
     },
@@ -42,11 +43,6 @@ const SEO = ({
       addressRegion: 'TX',
       addressCountry: 'US',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '47',
-    },
   };
 
   // Structured data for LocalBusiness
@@ -57,6 +53,7 @@ const SEO = ({
     description: description,
     url: url,
     email: 'jacobgonsalves@ayra-tech.net',
+    telephone: '+1-206-876-0437',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Temple',
