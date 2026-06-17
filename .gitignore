@@ -38,3 +38,14 @@ build
 
 # Claude Code session metadata
 .claude/
+
+# MCP server config (may contain API key references)
+.mcp.json
+
+# GPT Image 2 generated mockups & throwaway iterations (final assets are committed)
+public/generated/_staging/
+public/generated/mockups/
+
+# Visual-QA screenshots (regenerable via scripts/screenshot-*.mjs; not site assets)
+public/generated/screenshots/
+public/generated/smoke-test.png
