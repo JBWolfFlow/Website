@@ -1,3 +1,4 @@
+/* eslint-env node */
 import { chromium } from 'playwright';
 import { mkdirSync } from 'fs';
 import { resolve } from 'path';
