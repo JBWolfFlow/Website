@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { siteConfig } from '@data/siteConfig';
 import { cn } from '@utils/cn';
+import { useReducedMotion } from '../../hooks/useReducedMotion';
 
 /**
  * Header Component
@@ -19,6 +20,7 @@ function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const prefersReducedMotion = useReducedMotion();
 
   // Handle scroll effect for header background
   useEffect(() => {
@@ -94,7 +96,10 @@ function Header() {
 
   return (
     <>
-      <header
+      <motion.header
+        initial={prefersReducedMotion ? false : { y: -24, opacity: 0 }}
+        animate={prefersReducedMotion ? {} : { y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         className="fixed top-4 inset-x-0 z-50 flex justify-center pointer-events-none px-4"
       >
         <nav
@@ -102,7 +107,7 @@ function Header() {
             'pointer-events-auto flex items-center gap-2 md:gap-4 px-3 md:px-4 py-2 rounded-full',
             'backdrop-blur-xl transition-all duration-300',
             isScrolled
-              ? 'bg-white/80 border border-neutral-200/60 shadow-lg shadow-neutral-900/5'
+              ? 'bg-primary-950/85 border border-primary-300/25 shadow-[0_8px_32px_rgba(5,15,51,0.5)]'
               : 'bg-white/[0.06] border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.25)]'
           )}
           aria-label="Primary"
@@ -118,12 +123,7 @@ function Header() {
               alt="AryaTech Logo"
               className="h-8 w-auto group-hover:scale-110 transition-transform duration-300"
             />
-            <span
-              className={cn(
-                'text-base font-bold hidden sm:block transition-colors duration-300',
-                isScrolled ? 'text-neutral-800' : 'text-white'
-              )}
-            >
+            <span className="text-base font-bold hidden sm:block text-white transition-colors duration-300">
               {siteConfig.name}
             </span>
           </button>
@@ -134,12 +134,7 @@ function Header() {
               <button
                 key={item.id}
                 onClick={() => handleNavigation(item.id)}
-                className={cn(
-                  'px-3 py-1.5 text-sm font-medium rounded-full transition-colors duration-200',
-                  isScrolled
-                    ? 'text-neutral-700 hover:text-primary-600 hover:bg-neutral-100'
-                    : 'text-white/75 hover:text-white hover:bg-white/10'
-                )}
+                className="px-3 py-1.5 text-sm font-medium rounded-full text-white/75 hover:text-white hover:bg-white/10 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
               >
                 {item.label}
               </button>
@@ -149,12 +144,7 @@ function Header() {
                 navigate('/team');
                 setIsMobileMenuOpen(false);
               }}
-              className={cn(
-                'px-3 py-1.5 text-sm font-medium rounded-full transition-colors duration-200',
-                isScrolled
-                  ? 'text-neutral-700 hover:text-primary-600 hover:bg-neutral-100'
-                  : 'text-white/75 hover:text-white hover:bg-white/10'
-              )}
+              className="px-3 py-1.5 text-sm font-medium rounded-full text-white/75 hover:text-white hover:bg-white/10 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
             >
               Our Team
             </button>
@@ -163,12 +153,7 @@ function Header() {
           {/* Get in Touch CTA (desktop) */}
           <button
             onClick={() => handleNavigation('contact')}
-            className={cn(
-              'hidden md:inline-flex items-center px-4 py-1.5 ml-1 text-sm font-semibold rounded-full transition-all duration-300',
-              isScrolled
-                ? 'bg-primary-500 text-white hover:bg-primary-600 shadow-sm'
-                : 'bg-white/10 text-white border border-white/30 hover:bg-white/15'
-            )}
+            className="hidden md:inline-flex items-center px-4 py-1.5 ml-1 text-sm font-semibold rounded-full text-white bg-primary-500/90 backdrop-blur-xl border border-primary-300/30 hover:bg-primary-500 hover:shadow-[0_0_20px_rgba(30,91,255,0.5)] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
             aria-label="Get in touch with AryaTech"
           >
             Get in Touch
@@ -177,12 +162,7 @@ function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={cn(
-              'md:hidden p-2 rounded-full transition-colors',
-              isScrolled
-                ? 'text-neutral-700 hover:text-primary-600'
-                : 'text-white/85 hover:text-white'
-            )}
+            className="md:hidden p-2 rounded-full text-white/85 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
@@ -192,7 +172,7 @@ function Header() {
             )}
           </button>
         </nav>
-      </header>
+      </motion.header>
 
     {/* Mobile Menu Backdrop */}
     <AnimatePresence mode="wait">
@@ -226,7 +206,7 @@ function Header() {
             stiffness: 300,
             mass: 0.8
           }}
-          className="fixed top-0 right-0 bottom-0 w-[280px] bg-white shadow-2xl z-50 md:hidden"
+          className="fixed top-0 right-0 bottom-0 w-[280px] bg-primary-950/95 backdrop-blur-2xl border-l border-white/10 shadow-2xl z-50 md:hidden"
           style={{
             transform: 'translateZ(0)',
             WebkitBackfaceVisibility: 'hidden',
@@ -235,11 +215,11 @@ function Header() {
           }}
         >
           {/* Mobile Menu Header */}
-          <div className="flex items-center justify-between p-4 border-b border-neutral-200">
-            <span className="text-lg font-bold text-neutral-800">Menu</span>
+          <div className="flex items-center justify-between p-4 border-b border-white/10">
+            <span className="text-lg font-bold text-white">Menu</span>
             <button
               onClick={() => setIsMobileMenuOpen(false)}
-              className="p-2 text-neutral-700 hover:text-primary-600 transition-colors rounded-lg hover:bg-neutral-100"
+              className="p-2 text-white/80 hover:text-white transition-colors rounded-lg hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-400"
               aria-label="Close menu"
             >
               <X className="w-6 h-6" />
@@ -252,7 +232,7 @@ function Header() {
               <button
                 key={item.id}
                 onClick={() => handleNavigation(item.id)}
-                className="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-150 text-left px-4 py-3 hover:bg-primary-50 rounded-lg active:scale-95"
+                className="text-white/80 hover:text-white font-medium transition-colors duration-150 text-left px-4 py-3 hover:bg-white/10 rounded-lg active:scale-95"
               >
                 {item.label}
               </button>
