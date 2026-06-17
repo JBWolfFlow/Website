@@ -1301,10 +1301,10 @@ VITE_SITE_NAME=AryaTech
 # ==============================================
 
 # Contact Email (will be visible on website)
-VITE_CONTACT_EMAIL=hello@ayra-tech.net
+VITE_CONTACT_EMAIL=contact@ayra-tech.net
 
 # Contact Phone (will be visible on website)
-VITE_CONTACT_PHONE=+1-555-0123
+VITE_CONTACT_PHONE=+1-206-876-0437
 
 # ==============================================
 # Social Media

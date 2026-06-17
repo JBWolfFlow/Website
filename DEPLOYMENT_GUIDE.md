@@ -142,8 +142,8 @@ Create a `.env` file in the root directory with the following variables:
 # Site Configuration
 VITE_SITE_URL=https://ayra-tech.net
 VITE_SITE_NAME=AryaTech
-VITE_CONTACT_EMAIL=hello@ayra-tech.net
-VITE_CONTACT_PHONE=+1-555-0123
+VITE_CONTACT_EMAIL=contact@ayra-tech.net
+VITE_CONTACT_PHONE=+1-206-876-0437
 
 # Social Media
 VITE_GITHUB_URL=https://github.com/JBWolfFlow
@@ -844,8 +844,8 @@ openssl s_client -connect ayra-tech.net:443 -servername ayra-tech.net
 # Required variables
 VITE_SITE_URL=https://ayra-tech.net
 VITE_SITE_NAME=AryaTech
-VITE_CONTACT_EMAIL=hello@ayra-tech.net
-VITE_CONTACT_PHONE=+1-555-0123
+VITE_CONTACT_EMAIL=contact@ayra-tech.net
+VITE_CONTACT_PHONE=+1-206-876-0437
 
 # Social media
 VITE_GITHUB_URL=https://github.com/JBWolfFlow

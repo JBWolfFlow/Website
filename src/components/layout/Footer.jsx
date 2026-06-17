@@ -151,14 +151,6 @@ function Footer() {
                   {siteConfig.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`mailto:${siteConfig.secondaryEmail}`}
-                  className="font-mono text-[11px] sm:text-xs text-white/70 hover:text-white transition-colors duration-200 break-all"
-                >
-                  {siteConfig.secondaryEmail}
-                </a>
-              </li>
             </ul>
 
             <div className="mt-5 flex items-center gap-3">

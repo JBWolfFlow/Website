@@ -458,7 +458,7 @@ Copyright © 2024 AryaTech. All rights reserved.
 
 This project is proprietary software. Unauthorized copying, modification, distribution, or use of this software, via any medium, is strictly prohibited.
 
-For licensing inquiries, contact: hello@ayra-tech.net
+For licensing inquiries, contact: contact@ayra-tech.net
 
 ---
 
@@ -585,6 +585,6 @@ If you find this project helpful, please consider:
 
 **Built with ❤️ by AryaTech**
 
-[Website](https://ayra-tech.net) • [Documentation](ARCHITECTURE.md) • [Support](mailto:hello@ayra-tech.net)
+[Website](https://ayra-tech.net) • [Documentation](ARCHITECTURE.md) • [Support](mailto:contact@ayra-tech.net)
 
 </div>

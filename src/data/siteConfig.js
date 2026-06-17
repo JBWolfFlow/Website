@@ -11,8 +11,9 @@ export const siteConfig = {
   url: 'https://ayra-tech.net',
 
   // Contact information
-  email: 'jacobgonsalves@ayra-tech.net',
-  secondaryEmail: 'ethanhoover@ayra-tech.net',
+  // Canonical company inbox. Founders' personal addresses are surfaced
+  // individually in the Contact section (sourced from team data).
+  email: 'contact@ayra-tech.net',
   phone: '(206) 876-0437',
 
   // Social media links

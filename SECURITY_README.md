@@ -485,7 +485,7 @@ Please do not publicly disclose vulnerabilities until:
 
 - **Security Issues:** security@ayra-tech.net
 - **Technical Support:** support@ayra-tech.net
-- **General Inquiries:** hello@ayra-tech.net
+- **General Inquiries:** contact@ayra-tech.net
 
 ---
 

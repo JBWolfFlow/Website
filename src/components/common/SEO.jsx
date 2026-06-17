@@ -29,7 +29,7 @@ const SEO = ({
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      email: 'jacobgonsalves@ayra-tech.net',
+      email: 'contact@ayra-tech.net',
       telephone: '+1-206-876-0437',
       areaServed: 'US',
       availableLanguage: ['English'],
@@ -52,7 +52,7 @@ const SEO = ({
     name: 'AryaTech',
     description: description,
     url: url,
-    email: 'jacobgonsalves@ayra-tech.net',
+    email: 'contact@ayra-tech.net',
     telephone: '+1-206-876-0437',
     address: {
       '@type': 'PostalAddress',

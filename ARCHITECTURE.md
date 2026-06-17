@@ -557,7 +557,7 @@ export const siteConfig = {
   tagline: 'Crafting Digital Excellence',
   description: 'Professional web development agency...',
   url: 'https://ayra-tech.net',
-  email: 'hello@ayra-tech.net',
+  email: 'contact@ayra-tech.net',
   social: {
     github: 'https://github.com/JBWolfFlow'
   }
@@ -1317,7 +1317,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "telephone": "+1-XXX-XXX-XXXX",
     "contactType": "Customer Service",
-    "email": "hello@ayra-tech.net"
+    "email": "contact@ayra-tech.net"
   },
   "sameAs": [
     "https://github.com/JBWolfFlow"
@@ -1610,7 +1610,7 @@ jobs:
 ```bash
 # .env.example
 VITE_SITE_URL=https://ayra-tech.net
-VITE_CONTACT_EMAIL=hello@ayra-tech.net
+VITE_CONTACT_EMAIL=contact@ayra-tech.net
 VITE_FORMSPREE_ID=your_formspree_id
 VITE_GA_TRACKING_ID=G-XXXXXXXXXX
 VITE_API_URL=https://api.ayra-tech.net
