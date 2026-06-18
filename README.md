@@ -458,7 +458,7 @@ Copyright © 2024 AryaTech. All rights reserved.
 
 This project is proprietary software. Unauthorized copying, modification, distribution, or use of this software, via any medium, is strictly prohibited.
 
-For licensing inquiries, contact: contact@ayra-tech.net
+For licensing inquiries, contact: contact@arya-tech.net
 
 ---
 
@@ -468,8 +468,8 @@ For licensing inquiries, contact: contact@ayra-tech.net
 
 - **Documentation**: Check the guides in this repository
 - **Issues**: [GitHub Issues](https://github.com/JBWolfFlow/website/issues)
-- **Email**: dev@ayra-tech.net
-- **Website**: [ayra-tech.net](https://ayra-tech.net)
+- **Email**: dev@arya-tech.net
+- **Website**: [arya-tech.net](https://arya-tech.net)
 
 ### Reporting Bugs
 
@@ -563,8 +563,8 @@ Design inspiration from:
 
 **AryaTech**
 
-- **Website**: [ayra-tech.net](https://ayra-tech.net)
-- **Email**: contact@ayra-tech.net
+- **Website**: [arya-tech.net](https://arya-tech.net)
+- **Email**: contact@arya-tech.net
 - **Phone**: (206) 876-0437
 - **GitHub**: [@JBWolfFlow](https://github.com/JBWolfFlow)
 
@@ -585,6 +585,6 @@ If you find this project helpful, please consider:
 
 **Built with ❤️ by AryaTech**
 
-[Website](https://ayra-tech.net) • [Documentation](ARCHITECTURE.md) • [Support](mailto:contact@ayra-tech.net)
+[Website](https://arya-tech.net) • [Documentation](ARCHITECTURE.md) • [Support](mailto:contact@arya-tech.net)
 
 </div>

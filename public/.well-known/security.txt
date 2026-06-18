@@ -1,19 +1,19 @@
 # Security Policy for AryaTech
 # https://securitytxt.org/
 
-Contact: mailto:security@ayra-tech.net
-Contact: https://ayra-tech.net/security-report
+Contact: mailto:security@arya-tech.net
+Contact: https://arya-tech.net/security-report
 Expires: 2026-12-31T23:59:59.000Z
-Encryption: https://ayra-tech.net/pgp-key.txt
-Acknowledgments: https://ayra-tech.net/security-acknowledgments
+Encryption: https://arya-tech.net/pgp-key.txt
+Acknowledgments: https://arya-tech.net/security-acknowledgments
 Preferred-Languages: en
-Canonical: https://ayra-tech.net/.well-known/security.txt
-Policy: https://ayra-tech.net/security-policy
+Canonical: https://arya-tech.net/.well-known/security.txt
+Policy: https://arya-tech.net/security-policy
 
 # Reporting Security Vulnerabilities
 #
 # If you discover a security vulnerability, please report it to us at:
-# security@ayra-tech.net
+# security@arya-tech.net
 #
 # Please include:
 # - Description of the vulnerability

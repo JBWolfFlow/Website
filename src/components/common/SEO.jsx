@@ -11,7 +11,7 @@ const SEO = ({
   description = 'AryaTech is an engineering company designing and shipping production software across desktop, web, and mobile. We build our own product portfolio — Huntress, Watch & See, and Urban Aid — and partner with companies that need software built to a production standard.',
   keywords = 'AI orchestration, bug bounty platform, watch marketplace, civic tech, React Native, Rust engineering, mobile development, SwiftUI iOS, production software engineering, Temple TX',
   ogImage = '/og-image.jpg',
-  url = 'https://ayra-tech.net',
+  url = 'https://arya-tech.net',
   type = 'website',
   author = 'AryaTech',
 }) => {
@@ -29,7 +29,7 @@ const SEO = ({
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      email: 'contact@ayra-tech.net',
+      email: 'contact@arya-tech.net',
       telephone: '+1-206-876-0437',
       areaServed: 'US',
       availableLanguage: ['English'],
@@ -52,7 +52,7 @@ const SEO = ({
     name: 'AryaTech',
     description: description,
     url: url,
-    email: 'contact@ayra-tech.net',
+    email: 'contact@arya-tech.net',
     telephone: '+1-206-876-0437',
     address: {
       '@type': 'PostalAddress',

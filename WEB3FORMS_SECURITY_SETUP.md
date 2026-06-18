@@ -125,7 +125,7 @@ Many popular services use public API keys:
 2. Click **"Create New Form"**
 3. Configure form settings:
    - **Form Name**: "AryaTech Contact Form"
-   - **Email**: `contact@ayra-tech.net`
+   - **Email**: `contact@arya-tech.net`
    - **Subject**: "New Contact Form Submission"
    - **Redirect URL**: Leave blank (handled by React)
 
@@ -165,17 +165,17 @@ Domain restrictions are your **PRIMARY SECURITY MECHANISM**. Without them:
 
 ```
 Production Domain:
-✅ ayra-tech.net
-✅ www.ayra-tech.net
+✅ arya-tech.net
+✅ www.arya-tech.net
 
 Development (Optional - Remove before launch):
 ⚠️ localhost:3000
 ⚠️ 127.0.0.1:3000
 
 DO NOT ADD:
-❌ *.ayra-tech.net (wildcards)
-❌ http://ayra-tech.net (include protocol)
-❌ ayra-tech.net/ (trailing slash)
+❌ *.arya-tech.net (wildcards)
+❌ http://arya-tech.net (include protocol)
+❌ arya-tech.net/ (trailing slash)
 ```
 
 5. **Save changes**
@@ -204,7 +204,7 @@ DO NOT ADD:
 # From your production domain
 curl -X POST https://api.web3forms.com/submit \
   -H "Content-Type: application/json" \
-  -H "Origin: https://ayra-tech.net" \
+  -H "Origin: https://arya-tech.net" \
   -d '{
     "access_key": "your-key",
     "name": "Test User",
@@ -449,7 +449,7 @@ Web3Forms also provides:
    - Daily summary
 
 3. **Add notification emails**:
-   - Primary: `contact@ayra-tech.net`
+   - Primary: `contact@arya-tech.net`
    - Secondary: Your personal email
    - Team: Additional team members
 
@@ -501,7 +501,7 @@ Web3Forms also provides:
 ```bash
 # Should succeed from production domain
 curl -X POST https://api.web3forms.com/submit \
-  -H "Origin: https://ayra-tech.net" \
+  -H "Origin: https://arya-tech.net" \
   -d "access_key=your-key&name=Test&email=test@example.com&message=Test"
 
 # Should fail from unauthorized domain
@@ -515,7 +515,7 @@ curl -X POST https://api.web3forms.com/submit \
 # Submit multiple times rapidly
 for i in {1..15}; do
   curl -X POST https://api.web3forms.com/submit \
-    -H "Origin: https://ayra-tech.net" \
+    -H "Origin: https://arya-tech.net" \
     -d "access_key=your-key&name=Test$i&email=test@example.com&message=Test$i"
   sleep 1
 done
@@ -527,7 +527,7 @@ done
 ```bash
 # Submit with honeypot field filled (should be silently rejected)
 curl -X POST https://api.web3forms.com/submit \
-  -H "Origin: https://ayra-tech.net" \
+  -H "Origin: https://arya-tech.net" \
   -d "access_key=your-key&name=Test&email=test@example.com&message=Test&website=http://spam.com"
 ```
 

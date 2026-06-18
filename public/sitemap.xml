@@ -6,7 +6,7 @@
 
   <!-- Homepage (Hero / About / Services / Portfolio / Track Record / Contact) -->
   <url>
-    <loc>https://ayra-tech.net/</loc>
+    <loc>https://arya-tech.net/</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- Team -->
   <url>
-    <loc>https://ayra-tech.net/team</loc>
+    <loc>https://arya-tech.net/team</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -22,7 +22,7 @@
 
   <!-- Careers -->
   <url>
-    <loc>https://ayra-tech.net/careers</loc>
+    <loc>https://arya-tech.net/careers</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -30,7 +30,7 @@
 
   <!-- Privacy Policy -->
   <url>
-    <loc>https://ayra-tech.net/privacy</loc>
+    <loc>https://arya-tech.net/privacy</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -38,7 +38,7 @@
 
   <!-- Terms of Service -->
   <url>
-    <loc>https://ayra-tech.net/terms</loc>
+    <loc>https://arya-tech.net/terms</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
@@ -46,7 +46,7 @@
 
   <!-- Cookie Policy -->
   <url>
-    <loc>https://ayra-tech.net/cookies</loc>
+    <loc>https://arya-tech.net/cookies</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

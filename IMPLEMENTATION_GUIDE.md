@@ -126,8 +126,8 @@ export const siteConfig = {
   name: 'AryaTech',
   tagline: 'Crafting Digital Excellence',
   description: 'Professional web development agency specializing in modern, high-performance websites',
-  url: 'https://ayra-tech.net',
-  email: 'contact@ayra-tech.net',
+  url: 'https://arya-tech.net',
+  email: 'contact@arya-tech.net',
   phone: '+1-XXX-XXX-XXXX',
   social: {
     github: 'https://github.com/JBWolfFlow'

@@ -402,8 +402,8 @@ curl -I https://your-site.vercel.app
 
 ### How to Report
 
-**Email:** security@ayra-tech.net  
-**Security.txt:** https://ayra-tech.net/.well-known/security.txt
+**Email:** security@arya-tech.net  
+**Security.txt:** https://arya-tech.net/.well-known/security.txt
 
 ### What to Include
 
@@ -483,9 +483,9 @@ Please do not publicly disclose vulnerabilities until:
 
 ### Contact
 
-- **Security Issues:** security@ayra-tech.net
-- **Technical Support:** support@ayra-tech.net
-- **General Inquiries:** contact@ayra-tech.net
+- **Security Issues:** security@arya-tech.net
+- **Technical Support:** support@arya-tech.net
+- **General Inquiries:** contact@arya-tech.net
 
 ---
 

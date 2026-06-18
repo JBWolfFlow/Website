@@ -303,7 +303,7 @@ After deploying, test your headers:
 
 ```bash
 # Using curl
-curl -I https://ayra-tech.net
+curl -I https://arya-tech.net
 
 # Or use online tools:
 # - https://securityheaders.com
@@ -562,8 +562,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'contact@ayra-tech.net',
-      href: 'mailto:contact@ayra-tech.net'
+      value: 'contact@arya-tech.net',
+      href: 'mailto:contact@arya-tech.net'
     },
     {
       icon: Phone,
@@ -1288,10 +1288,10 @@ Update [`.env.example`](.env.example:1) with security warnings:
 # ==============================================
 
 # Site URL (used for SEO and canonical URLs)
-# Production: https://ayra-tech.net
-# Staging: https://staging.ayra-tech.net
+# Production: https://arya-tech.net
+# Staging: https://staging.arya-tech.net
 # Development: http://localhost:3000
-VITE_SITE_URL=https://ayra-tech.net
+VITE_SITE_URL=https://arya-tech.net
 
 # Site Name
 VITE_SITE_NAME=AryaTech
@@ -1301,7 +1301,7 @@ VITE_SITE_NAME=AryaTech
 # ==============================================
 
 # Contact Email (will be visible on website)
-VITE_CONTACT_EMAIL=contact@ayra-tech.net
+VITE_CONTACT_EMAIL=contact@arya-tech.net
 
 # Contact Phone (will be visible on website)
 VITE_CONTACT_PHONE=+1-206-876-0437
@@ -1339,7 +1339,7 @@ VITE_GITHUB_URL=https://github.com/JBWolfFlow
 # ==============================================
 
 # API Base URL (if using a backend API)
-# VITE_API_BASE_URL=https://api.ayra-tech.net
+# VITE_API_BASE_URL=https://api.arya-tech.net
 
 # ⚠️ WARNING: Never put API keys in VITE_ variables!
 # API keys should be handled server-side only
@@ -1435,8 +1435,8 @@ VITE_ENABLE_RATE_LIMITING=true
 # Emergency Contacts
 # ==============================================
 #
-# Security Issues: security@ayra-tech.net
-# Technical Support: support@ayra-tech.net
+# Security Issues: security@arya-tech.net
+# Technical Support: support@arya-tech.net
 # Emergency: [Your emergency contact]
 #
 # ==============================================
@@ -1682,7 +1682,7 @@ Create `public/privacy-policy.html`:
   </ul>
   
   <h2>5. Contact Us</h2>
-  <p>For privacy-related questions, contact us at: privacy@ayra-tech.net</p>
+  <p>For privacy-related questions, contact us at: privacy@arya-tech.net</p>
 </body>
 </html>
 ```
@@ -1928,8 +1928,8 @@ npm run build
 
 ### Emergency Contacts
 
-- **Security Team:** security@ayra-tech.net
-- **Technical Lead:** tech@ayra-tech.net
+- **Security Team:** security@arya-tech.net
+- **Technical Lead:** tech@arya-tech.net
 - **Emergency:** [Emergency contact]
 
 ---
@@ -1968,7 +1968,7 @@ Following this hardening guide will significantly improve the security posture o
 4. **Document everything** - Maintain clear documentation of security measures
 5. **Plan for incidents** - Have a response plan ready
 
-For questions or concerns, contact: security@ayra-tech.net
+For questions or concerns, contact: security@arya-tech.net
 
 ---
 

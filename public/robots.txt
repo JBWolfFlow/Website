@@ -1,5 +1,5 @@
 # robots.txt for AryaTech
-# https://ayra-tech.net/robots.txt
+# https://arya-tech.net/robots.txt
 
 User-agent: *
 Allow: /
@@ -9,7 +9,7 @@ Allow: /
 # Disallow: /private/
 
 # Sitemap location
-Sitemap: https://ayra-tech.net/sitemap.xml
+Sitemap: https://arya-tech.net/sitemap.xml
 
 # Crawl-delay (optional, in seconds)
 # Crawl-delay: 10

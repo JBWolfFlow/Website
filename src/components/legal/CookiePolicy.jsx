@@ -196,8 +196,8 @@ const CookiePolicy = () => {
             </p>
             <div className="bg-gray-50 p-6 rounded-lg">
               <p className="text-gray-700"><strong>AryaTech</strong></p>
-              <p className="text-gray-700">Email: <a href="mailto:privacy@ayra-tech.net" className="text-primary-600 hover:text-primary-700 underline">privacy@ayra-tech.net</a></p>
-              <p className="text-gray-700">General Inquiries: <a href="mailto:contact@ayra-tech.net" className="text-primary-600 hover:text-primary-700 underline">contact@ayra-tech.net</a></p>
+              <p className="text-gray-700">Email: <a href="mailto:privacy@arya-tech.net" className="text-primary-600 hover:text-primary-700 underline">privacy@arya-tech.net</a></p>
+              <p className="text-gray-700">General Inquiries: <a href="mailto:contact@arya-tech.net" className="text-primary-600 hover:text-primary-700 underline">contact@arya-tech.net</a></p>
               <p className="text-gray-700">Phone: <a href="tel:+12068760437" className="text-primary-600 hover:text-primary-700 underline">(206) 876-0437</a></p>
             </div>
           </section>

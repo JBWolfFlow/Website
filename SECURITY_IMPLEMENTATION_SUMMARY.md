@@ -487,8 +487,8 @@ lighthouse https://your-site.com --view
 
 ### Contact Information
 
-- **Security Issues:** security@ayra-tech.net
-- **Technical Support:** support@ayra-tech.net
+- **Security Issues:** security@arya-tech.net
+- **Technical Support:** support@arya-tech.net
 - **Emergency:** [Emergency contact]
 
 ---

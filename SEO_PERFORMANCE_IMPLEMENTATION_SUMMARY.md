@@ -22,7 +22,7 @@ This document summarizes the comprehensive SEO optimization, smooth scroll enhan
   title="AryaTech | Premium Web Development"
   description="Professional web development services"
   ogImage="/og-image.jpg"
-  url="https://ayra-tech.net"
+  url="https://arya-tech.net"
 />
 ```
 
@@ -332,7 +332,7 @@ function NewPage() {
       <SEO
         title="New Page | AryaTech"
         description="Description of the new page"
-        url="https://ayra-tech.net/new-page"
+        url="https://arya-tech.net/new-page"
       />
       {/* Page content */}
     </>

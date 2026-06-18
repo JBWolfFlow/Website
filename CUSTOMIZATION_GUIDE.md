@@ -1026,7 +1026,7 @@ npm run build
 Need help with customization?
 
 - **Documentation**: See [`README.md`](README.md:1)
-- **Email**: dev@ayra-tech.net
+- **Email**: dev@arya-tech.net
 - **Issues**: GitHub Issues
 
 ---

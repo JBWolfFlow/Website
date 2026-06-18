@@ -5,7 +5,7 @@ Complete guide for deploying AryaTech website to GitHub Pages with custom domain
 ## 🏗️ Architecture Overview
 
 ```
-ayra-tech.net (Squarespace DNS)
+arya-tech.net (Squarespace DNS)
            ↓
     GitHub Pages (185.199.108.153)
            ↓
@@ -105,7 +105,7 @@ git push -u origin main
 1. Go to https://squarespace.com
 2. Log in to your account
 3. Go to **Settings** → **Domains**
-4. Click on **ayra-tech.net**
+4. Click on **arya-tech.net**
 5. Click **"DNS Settings"**
 
 #### B. Add A Records
@@ -164,7 +164,7 @@ TTL: 3600
 2. Click **"Settings"** tab
 3. Click **"Pages"** (left sidebar)
 4. Under **"Custom domain"**:
-   - Enter: `ayra-tech.net`
+   - Enter: `arya-tech.net`
    - Click **"Save"**
 5. Wait for DNS check (may take a few minutes)
 6. Once verified, check **"Enforce HTTPS"**
@@ -193,13 +193,13 @@ https://jbwolfflow.github.io/Website/
 
 Your site will be available at:
 ```
-https://ayra-tech.net
+https://arya-tech.net
 ```
 
 **Test**:
 - [ ] Site loads at custom domain
 - [ ] SSL certificate is valid (green padlock)
-- [ ] www.ayra-tech.net redirects to main domain
+- [ ] www.arya-tech.net redirects to main domain
 - [ ] Contact form submits successfully
 - [ ] Email is received
 - [ ] Rate limiting works (try 4+ submissions)
@@ -303,7 +303,7 @@ https://ayra-tech.net
 
 ### Problem: Custom Domain Not Working
 
-**Symptoms**: Site works at jbwolfflow.github.io but not at ayra-tech.net
+**Symptoms**: Site works at jbwolfflow.github.io but not at arya-tech.net
 
 **Solutions**:
 1. Check DNS propagation: https://dnschecker.org/
@@ -328,7 +328,7 @@ https://ayra-tech.net
 
 **Solutions**:
 1. Check Web3Forms dashboard for submission logs
-2. Verify domain whitelist includes ayra-tech.net
+2. Verify domain whitelist includes arya-tech.net
 3. Check spam folder
 4. Verify `VITE_WEB3FORMS_ACCESS_KEY` secret is correct
 5. Check browser console for errors (F12)
@@ -437,7 +437,7 @@ npm install -D vite-plugin-imagemin
    git push
    ```
 5. **Wait 2-5 minutes** for automatic deployment
-6. **Verify changes** at https://ayra-tech.net
+6. **Verify changes** at https://arya-tech.net
 
 ### To Update Content:
 
@@ -481,7 +481,7 @@ npm install -D vite-plugin-imagemin
 
 Your deployment is successful when:
 
-✅ Website loads at https://ayra-tech.net
+✅ Website loads at https://arya-tech.net
 ✅ SSL certificate is valid (green padlock)
 ✅ All pages work correctly
 ✅ Images load properly
@@ -525,5 +525,5 @@ Your deployment is successful when:
 
 **Last Updated**: 2025-01-14
 **Repository**: https://github.com/JBWolfFlow/Website
-**Live Site**: https://ayra-tech.net (after DNS propagation)
+**Live Site**: https://arya-tech.net (after DNS propagation)
 **Maintained By**: AryaTech

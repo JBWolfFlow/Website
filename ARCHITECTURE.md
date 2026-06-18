@@ -556,8 +556,8 @@ export const siteConfig = {
   name: 'AryaTech',
   tagline: 'Crafting Digital Excellence',
   description: 'Professional web development agency...',
-  url: 'https://ayra-tech.net',
-  email: 'contact@ayra-tech.net',
+  url: 'https://arya-tech.net',
+  email: 'contact@arya-tech.net',
   social: {
     github: 'https://github.com/JBWolfFlow'
   }
@@ -1306,8 +1306,8 @@ export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "AryaTech",
-  "url": "https://ayra-tech.net",
-  "logo": "https://ayra-tech.net/logo.png",
+  "url": "https://arya-tech.net",
+  "logo": "https://arya-tech.net/logo.png",
   "description": "Professional web development agency specializing in modern, high-performance websites",
   "address": {
     "@type": "PostalAddress",
@@ -1317,7 +1317,7 @@ export const organizationSchema = {
     "@type": "ContactPoint",
     "telephone": "+1-XXX-XXX-XXXX",
     "contactType": "Customer Service",
-    "email": "contact@ayra-tech.net"
+    "email": "contact@arya-tech.net"
   },
   "sameAs": [
     "https://github.com/JBWolfFlow"
@@ -1331,10 +1331,10 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "AryaTech",
-  "url": "https://ayra-tech.net",
+  "url": "https://arya-tech.net",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://ayra-tech.net/search?q={search_term_string}",
+    "target": "https://arya-tech.net/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
@@ -1404,7 +1404,7 @@ function App() {
 User-agent: *
 Allow: /
 
-Sitemap: https://ayra-tech.net/sitemap.xml
+Sitemap: https://arya-tech.net/sitemap.xml
 ```
 
 #### Sitemap Generation
@@ -1413,19 +1413,19 @@ Sitemap: https://ayra-tech.net/sitemap.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ayra-tech.net/</loc>
+    <loc>https://arya-tech.net/</loc>
     <lastmod>2025-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ayra-tech.net/#about</loc>
+    <loc>https://arya-tech.net/#about</loc>
     <lastmod>2025-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ayra-tech.net/#portfolio</loc>
+    <loc>https://arya-tech.net/#portfolio</loc>
     <lastmod>2025-10-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -1609,11 +1609,11 @@ jobs:
 
 ```bash
 # .env.example
-VITE_SITE_URL=https://ayra-tech.net
-VITE_CONTACT_EMAIL=contact@ayra-tech.net
+VITE_SITE_URL=https://arya-tech.net
+VITE_CONTACT_EMAIL=contact@arya-tech.net
 VITE_FORMSPREE_ID=your_formspree_id
 VITE_GA_TRACKING_ID=G-XXXXXXXXXX
-VITE_API_URL=https://api.ayra-tech.net
+VITE_API_URL=https://api.arya-tech.net
 ```
 
 **Security Note**: Never commit `.env` file. Use platform-specific environment variable management.

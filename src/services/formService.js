@@ -51,7 +51,7 @@ const submitToEmailJS = async (formData, config) => {
     company: formData.company || 'N/A',
     project_type: formData.projectType,
     message: formData.message,
-    to_email: 'contact@ayra-tech.net'
+    to_email: 'contact@arya-tech.net'
   };
 
   const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {

@@ -391,11 +391,11 @@ npm run preview
 ## 📞 Support & Contacts
 
 **Security Issues:**
-- Email: security@ayra-tech.net
+- Email: security@arya-tech.net
 - Report vulnerabilities privately
 
 **Technical Support:**
-- Email: support@ayra-tech.net
+- Email: support@arya-tech.net
 - Documentation: See project README.md
 
 ---

@@ -88,7 +88,7 @@ script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net;
 style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
 font-src 'self' https://fonts.gstatic.com;
 img-src 'self' data: https:;
-connect-src 'self' https://api.ayra-tech.net;
+connect-src 'self' https://api.arya-tech.net;
 frame-ancestors 'none';
 base-uri 'self';
 form-action 'self';
@@ -338,7 +338,7 @@ isSuspiciouslyFast(startTime, submitTime, minTime)
 ## 📞 Support
 
 For security concerns or questions:
-- Email: security@ayra-tech.net
+- Email: security@arya-tech.net
 - Review: SECURITY_AUDIT.md for detailed security analysis
 
 ## 🔄 Version History

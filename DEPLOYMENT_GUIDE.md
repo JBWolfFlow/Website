@@ -140,9 +140,9 @@ Create a `.env` file in the root directory with the following variables:
 
 ```bash
 # Site Configuration
-VITE_SITE_URL=https://ayra-tech.net
+VITE_SITE_URL=https://arya-tech.net
 VITE_SITE_NAME=AryaTech
-VITE_CONTACT_EMAIL=contact@ayra-tech.net
+VITE_CONTACT_EMAIL=contact@arya-tech.net
 VITE_CONTACT_PHONE=+1-206-876-0437
 
 # Social Media
@@ -287,7 +287,7 @@ vercel --prod
 #### Custom Domain Setup (Vercel)
 
 1. Go to Project Settings → Domains
-2. Add your custom domain (e.g., `ayra-tech.net`)
+2. Add your custom domain (e.g., `arya-tech.net`)
 3. Configure DNS records:
    ```
    Type: A
@@ -485,7 +485,7 @@ export default defineConfig({
 
 1. Add `CNAME` file to `public/` directory:
    ```
-   ayra-tech.net
+   arya-tech.net
    ```
 
 2. Configure DNS:
@@ -560,7 +560,7 @@ Create `.htaccess` in upload directory:
 ```nginx
 server {
     listen 80;
-    server_name ayra-tech.net www.ayra-tech.net;
+    server_name arya-tech.net www.arya-tech.net;
     root /var/www/html;
     index index.html;
 
@@ -634,7 +634,7 @@ After deploying, verify the following:
   npm install -g lighthouse
 
   # Run audit
-  lighthouse https://ayra-tech.net --view
+  lighthouse https://arya-tech.net --view
   ```
 
   **Target scores:**
@@ -659,11 +659,11 @@ After deploying, verify the following:
   - Verify title, description, OG tags
 
 - [ ] **Sitemap accessible**
-  - Visit `https://ayra-tech.net/sitemap.xml`
+  - Visit `https://arya-tech.net/sitemap.xml`
   - Verify all URLs listed
 
 - [ ] **Robots.txt configured**
-  - Visit `https://ayra-tech.net/robots.txt`
+  - Visit `https://arya-tech.net/robots.txt`
   - Verify allows crawling
 
 - [ ] **Submit to search engines**
@@ -758,7 +758,7 @@ Include [`nginx-security.conf`](nginx-security.conf:1) in your server block:
 ```nginx
 server {
     listen 443 ssl http2;
-    server_name ayra-tech.net;
+    server_name arya-tech.net;
     
     # Include security configuration
     include /path/to/nginx-security.conf;
@@ -821,7 +821,7 @@ HTTPS is essential for security. Most modern hosting platforms provide automatic
 sudo apt-get install certbot python3-certbot-apache
 
 # Get certificate
-sudo certbot --apache -d ayra-tech.net -d www.ayra-tech.net
+sudo certbot --apache -d arya-tech.net -d www.arya-tech.net
 
 # Auto-renewal (already configured)
 sudo certbot renew --dry-run
@@ -830,7 +830,7 @@ sudo certbot renew --dry-run
 **Verify HTTPS:**
 ```bash
 # Check SSL certificate
-openssl s_client -connect ayra-tech.net:443 -servername ayra-tech.net
+openssl s_client -connect arya-tech.net:443 -servername arya-tech.net
 
 # Test SSL configuration
 # Use: https://www.ssllabs.com/ssltest/
@@ -842,9 +842,9 @@ openssl s_client -connect ayra-tech.net:443 -servername ayra-tech.net
 
 ```bash
 # Required variables
-VITE_SITE_URL=https://ayra-tech.net
+VITE_SITE_URL=https://arya-tech.net
 VITE_SITE_NAME=AryaTech
-VITE_CONTACT_EMAIL=contact@ayra-tech.net
+VITE_CONTACT_EMAIL=contact@arya-tech.net
 VITE_CONTACT_PHONE=+1-206-876-0437
 
 # Social media
@@ -976,7 +976,7 @@ ls -lh dist/assets/
 
 ```bash
 # 1. Test security headers
-curl -I https://ayra-tech.net
+curl -I https://arya-tech.net
 
 # 2. Test SSL
 # Visit: https://www.ssllabs.com/ssltest/
@@ -988,7 +988,7 @@ curl -I https://ayra-tech.net
 # Open browser console and check for violations
 
 # 5. Run Lighthouse audit
-lighthouse https://ayra-tech.net --view
+lighthouse https://arya-tech.net --view
 ```
 
 ### Security Incident Response
@@ -1020,8 +1020,8 @@ lighthouse https://ayra-tech.net --view
    - Implement preventive measures
 
 **Emergency Contacts:**
-- Security Team: security@ayra-tech.net
-- Technical Lead: tech@ayra-tech.net
+- Security Team: security@arya-tech.net
+- Technical Lead: tech@arya-tech.net
 - Emergency: [Your emergency contact]
 
 ### Security Maintenance
@@ -1059,8 +1059,8 @@ lighthouse https://ayra-tech.net --view
 - [Lighthouse](https://developers.google.com/web/tools/lighthouse) - Performance & security
 
 **Support:**
-- Security Issues: security@ayra-tech.net
-- Technical Support: support@ayra-tech.net
+- Security Issues: security@arya-tech.net
+- Technical Support: support@arya-tech.net
 - Documentation: See [README.md](README.md:1)
 
 
@@ -1189,7 +1189,7 @@ git push --force origin main
 - [GTmetrix](https://gtmetrix.com)
 
 ### Support
-- **Email**: dev@ayra-tech.net
+- **Email**: dev@arya-tech.net
 - **Documentation**: See [`README.md`](README.md:1)
 - **Issues**: GitHub Issues
 

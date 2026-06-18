@@ -263,7 +263,7 @@ find public/images -type f -size +500k
 npm install -g lighthouse
 
 # Run audit
-lighthouse https://ayra-tech.net --view
+lighthouse https://arya-tech.net --view
 
 # Or use Chrome DevTools
 # Open DevTools → Lighthouse → Generate Report
@@ -361,10 +361,10 @@ npm audit
 
 ```bash
 # Verify site is accessible
-curl -I https://ayra-tech.net
+curl -I https://arya-tech.net
 
 # Check response time
-time curl -s https://ayra-tech.net > /dev/null
+time curl -s https://arya-tech.net > /dev/null
 ```
 
 **Monitoring tools:**
@@ -413,7 +413,7 @@ npm run preview
 
 ```bash
 # Test security headers
-curl -I https://ayra-tech.net
+curl -I https://arya-tech.net
 
 # Or use online tools:
 # - https://securityheaders.com
@@ -496,7 +496,7 @@ git push origin main
 **Review security headers:**
 ```bash
 # Check current headers
-curl -I https://ayra-tech.net
+curl -I https://arya-tech.net
 
 # Compare with security policy
 # See: SECURITY_HARDENING_GUIDE.md
@@ -524,10 +524,10 @@ diff .env.example .env.production.example
 
 ```bash
 # Check certificate expiration
-echo | openssl s_client -servername ayra-tech.net -connect ayra-tech.net:443 2>/dev/null | openssl x509 -noout -dates
+echo | openssl s_client -servername arya-tech.net -connect arya-tech.net:443 2>/dev/null | openssl x509 -noout -dates
 
 # Check certificate details
-echo | openssl s_client -servername ayra-tech.net -connect ayra-tech.net:443 2>/dev/null | openssl x509 -noout -text
+echo | openssl s_client -servername arya-tech.net -connect arya-tech.net:443 2>/dev/null | openssl x509 -noout -text
 
 # Test SSL configuration
 # Use: https://www.ssllabs.com/ssltest/
@@ -581,13 +581,13 @@ npm audit
 npm outdated
 
 # Review security headers
-curl -I https://ayra-tech.net
+curl -I https://arya-tech.net
 
 # Test SSL configuration
 # https://www.ssllabs.com/ssltest/
 
 # Run Lighthouse audit
-lighthouse https://ayra-tech.net --view
+lighthouse https://arya-tech.net --view
 
 # Check for exposed secrets
 # Use: GitGuardian, TruffleHog
@@ -888,8 +888,8 @@ Sentry.init({
 ### Emergency Contacts
 
 **Security Team:**
-- Security Lead: security@ayra-tech.net
-- Technical Lead: tech@ayra-tech.net
+- Security Lead: security@arya-tech.net
+- Technical Lead: tech@arya-tech.net
 - Emergency: [Emergency contact]
 
 **External Support:**
@@ -1083,7 +1083,7 @@ npm run preview
 **Diagnosis:**
 ```bash
 # Run Lighthouse audit
-lighthouse https://ayra-tech.net
+lighthouse https://arya-tech.net
 
 # Check bundle size
 npm run build
@@ -1433,9 +1433,9 @@ _______________________________________
 
 ### Internal Team
 
-- **Lead Developer**: dev@ayra-tech.net
-- **DevOps**: ops@ayra-tech.net
-- **Support**: support@ayra-tech.net
+- **Lead Developer**: dev@arya-tech.net
+- **DevOps**: ops@arya-tech.net
+- **Support**: support@arya-tech.net
 
 ### External Services
 

@@ -465,10 +465,10 @@ Missing `security.txt` file for responsible disclosure of security vulnerabiliti
 **Recommendation:**
 Create `public/.well-known/security.txt`:
 ```
-Contact: mailto:security@ayra-tech.net
+Contact: mailto:security@arya-tech.net
 Expires: 2025-12-31T23:59:59.000Z
 Preferred-Languages: en
-Canonical: https://ayra-tech.net/.well-known/security.txt
+Canonical: https://arya-tech.net/.well-known/security.txt
 ```
 
 **Priority:** Low - Implement within 1 month
@@ -911,8 +911,8 @@ npx vite-bundle-visualizer
 
 ## Appendix C: Contact Information
 
-**Security Issues:** security@ayra-tech.net  
-**General Support:** support@ayra-tech.net  
+**Security Issues:** security@arya-tech.net  
+**General Support:** support@arya-tech.net  
 **Emergency:** [Emergency contact procedure]
 
 ---

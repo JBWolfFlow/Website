@@ -8,12 +8,12 @@ export const siteConfig = {
   name: 'AryaTech',
   tagline: 'Intelligent Solutions, Secure Future.',
   description: 'AryaTech is an engineering company designing and shipping production software across desktop, web, and mobile. We build our own product portfolio — Huntress, Watch & See, and Urban Aid — and partner with companies that need software built to a production standard.',
-  url: 'https://ayra-tech.net',
+  url: 'https://arya-tech.net',
 
   // Contact information
   // Canonical company inbox. Founders' personal addresses are surfaced
   // individually in the Contact section (sourced from team data).
-  email: 'contact@ayra-tech.net',
+  email: 'contact@arya-tech.net',
   phone: '(206) 876-0437',
 
   // Social media links
